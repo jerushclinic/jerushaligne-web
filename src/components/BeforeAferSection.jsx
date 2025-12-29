@@ -1,0 +1,211 @@
+import { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const patients = [
+  {
+    name: "S. Kumar",
+    procedure: "Clear Aligner Treatment",
+    date: "Aug 2025",
+    before: "/images/dental-aligns/before.jpg",
+    after: "/images/dental-aligns/after.jpg",
+  },
+  {
+    name: "R. Meena",
+    procedure: "Smile Correction",
+    date: "Jul 2025",
+    before: "/images/dental-aligns/before.jpg",
+    after: "/images/dental-aligns/after.jpg",
+  },
+  {
+    name: "A. Joseph",
+    procedure: "Teeth Alignment",
+    date: "Jun 2025",
+    before: "/images/dental-aligns/before.jpg",
+    after: "/images/dental-aligns/after.jpg",
+  },
+];
+
+export default function BeforeAfterCarousel() {
+  const [active, setActive] = useState(0);
+  const [slider, setSlider] = useState(50);
+  const intervalRef = useRef(null);
+
+  const patient = patients[active];
+
+  // Auto-scroll
+  useEffect(() => {
+    intervalRef.current = setInterval(next, 10000);
+    return () => clearInterval(intervalRef.current);
+  }, [active]);
+
+  const next = () => {
+    setSlider(50);
+    setActive((p) => (p + 1) % patients.length);
+  };
+
+  const prev = () => {
+    setSlider(50);
+    setActive((p) => (p === 0 ? patients.length - 1 : p - 1));
+  };
+
+  return (
+    <section className="py-20 bg-gradient-to-b from-white to-slate-50 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4">
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-12"
+        >
+          <h2 className="text-3xl font-bold text-gray-900">
+            Before & After – Patient Smiles
+          </h2>
+          <p className="text-gray-600 mt-2 max-w-2xl">
+            Real patient transformations. Slide or tap to compare results.
+          </p>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* LEFT CONTENT – ENHANCED CARD */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={active}
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 30 }}
+              transition={{ duration: 0.5 }}
+              className="
+                relative
+                bg-gradient-to-br from-white to-amber-50
+                rounded-3xl
+                p-8
+                shadow-xl
+                border border-amber-100
+              "
+            >
+              {/* Accent bar */}
+              <div className="absolute left-0 top-8 h-16 w-1 bg-amber-400 rounded-full" />
+
+              <p className="text-sm font-semibold text-amber-600 mb-2 tracking-wide">
+                Patient Details
+              </p>
+
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                {patient.name}
+              </h3>
+
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex gap-3">
+                  <span className="mt-2 w-2 h-2 rounded-full bg-amber-400" />
+                  <span>
+                    <strong>Procedure:</strong> {patient.procedure}
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-2 w-2 h-2 rounded-full bg-amber-400" />
+                  <span>
+                    <strong>Completed:</strong> {patient.date}
+                  </span>
+                </li>
+              </ul>
+
+              {/* Trust Note */}
+              <div className="mt-5 text-sm text-gray-600 bg-white/70 rounded-xl p-4 border border-amber-100">
+                Images shared with patient consent. Individual results may vary.
+              </div>
+
+              {/* CTA */}
+              <div className="mt-6">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  className="bg-amber-500 hover:bg-amber-600 text-black px-6 py-3 rounded-full font-semibold shadow-md"
+                >
+                  Book Consultation
+                </motion.button>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* IMAGE AREA */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={active}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.5 }}
+              className="relative w-full h-[420px] rounded-2xl overflow-hidden shadow-xl"
+            >
+              {/* Before */}
+              <img
+                src={patient.before}
+                className="absolute inset-0 w-full h-full object-cover"
+                alt="Before"
+              />
+
+              {/* After */}
+              <motion.div
+                className="absolute inset-0 overflow-hidden"
+                animate={{ width: `${slider}%` }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >
+                <img
+                  src={patient.after}
+                  className="w-full h-full object-cover"
+                  alt="After"
+                />
+              </motion.div>
+
+              {/* Before / After Buttons */}
+              <div className="absolute inset-x-0 top-4 flex justify-between px-4 z-10">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  onClick={() => setSlider(0)}
+                  className="bg-white/90 px-4 py-1 rounded-full text-sm font-medium"
+                >
+                  Before
+                </motion.button>
+
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  onClick={() => setSlider(100)}
+                  className="bg-white/90 px-4 py-1 rounded-full text-sm font-medium"
+                >
+                  After
+                </motion.button>
+              </div>
+
+              {/* Slider */}
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value={slider}
+                onChange={(e) => setSlider(e.target.value)}
+                className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] accent-amber-500 cursor-pointer"
+              />
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* CONTROLS */}
+        <div className="flex justify-end gap-3 mt-10">
+          <button
+            onClick={prev}
+            className="w-10 h-10 rounded-full border hover:bg-amber-100"
+          >
+            ←
+          </button>
+          <button
+            onClick={next}
+            className="w-10 h-10 rounded-full border hover:bg-amber-100"
+          >
+            →
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
