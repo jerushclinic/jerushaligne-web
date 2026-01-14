@@ -1,30 +1,18 @@
 import React from "react";
 
 /**
- * WhatsAppButton
- *
- * Props:
- * - phone: string (required) e.g. "+919876543210" or "919876543210"
- * - message: string (optional) default message
- * - bottom / right: position offsets (Tailwind spacing classes or px values)
- * - showBadge: boolean (show small dot)
+ * WhatsApp Floating Glass Button
  *
  * Usage:
- * <WhatsAppButton phone="+919876543210" message="Hi, I want to book an appointment" />
+ * <WhatsAppButton />
  */
 
 export default function WhatsAppButton({
   phone = "+919876543210",
-  message = "Hi! I found your site and would like to know more about appointments.",
-  bottom = "25", // tailwind spacing units (eg. 6 -> bottom-6). Use px via style if needed.
-  right = "6",
-  showBadge = false,
+  message = "Hi! I want to know more about your treatments.",
 }) {
-  // sanitize phone for wa.me link (remove spaces, +, dashes)
   const cleaned = phone.replace(/[^\d]/g, "");
-  const encoded = encodeURIComponent(message);
-  // fallback: prefer whatsapp:// on mobile but wa.me works cross-platform
-  const href = `https://wa.me/${cleaned}?text=${encoded}`;
+  const href = `https://wa.me/${cleaned}?text=${encodeURIComponent(message)}`;
 
   return (
     <>
@@ -32,46 +20,106 @@ export default function WhatsAppButton({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat on WhatsApp"
-        className={`fixed z-50 flex items-center justify-center w-14 h-14 rounded-full shadow-lg transform transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-amber-200`}
-        style={{
-          right: `${parseInt(right, 10) * 4}px`, // tailwind spacing 1 => 4px. adjust if you pass px
-          bottom: `${parseInt(bottom, 10) * 4}px`,
-          background: "linear-gradient(135deg,#25D366,#128C7E)", // WhatsApp green gradient
-        }}
+        aria-label="Chat with us on WhatsApp"
+        className="wa-glass"
       >
-        {/* WhatsApp SVG icon */}
-        <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" aria-hidden>
-          <path d="M20.52 3.48A11.93 11.93 0 0012 0C5.373 0 .01 4.85.01 10.84c0 1.91.5 3.69 1.44 5.26L0 24l7.2-1.89A11.82 11.82 0 0012 22c6.627 0 11.99-4.85 11.99-10.84 0-2.9-1.07-5.59-3.46-7.68z" fill="currentColor" opacity="0.08"/>
-          <path d="M17.472 14.382c-.297-.149-1.756-.867-2.03-.967-.273-.1-.47-.148-.669.148-.199.297-.768.967-.942 1.165-.173.199-.346.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.885-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.447-.52.149-.174.198-.298.298-.497.099-.198.05-.373-.025-.522-.074-.149-.669-1.611-.916-2.203-.242-.578-.487-.5-.669-.51l-.571-.01c-.199 0-.522.074-.795.348-.273.273-1.04 1.015-1.04 2.477 0 1.462 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.08 4.487 1.414.61 2.262.973 3.036 1.246.956.332 1.83.285 2.52.173.769-.123 2.366-.965 2.7-1.898.334-.932.334-1.73.233-1.898-.1-.198-.363-.297-.66-.446z" fill="#fff"/>
-        </svg>
+        <span className="wa-text">Need Help? Chat with Us</span>
 
-        {/* optional small unread badge */}
-        {showBadge && (
-          <span
-            aria-hidden="true"
-            className="absolute block rounded-full"
-            style={{
-              width: 10,
-              height: 10,
-              background: "#FFD166",
-              right: 6,
-              top: 6,
-              boxShadow: "0 2px 6px rgba(0,0,0,0.18)",
-            }}
-          />
-        )}
+        <span className="wa-icon">
+          {/* WhatsApp SVG */}
+          <svg viewBox="0 0 32 32" aria-hidden>
+            <path
+              fill="#fff"
+              d="M19.11 17.24c-.27-.14-1.6-.79-1.85-.88-.25-.09-.44-.14-.62.14-.18.27-.71.88-.87 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.2-1.35-.82-.73-1.37-1.63-1.53-1.9-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.04-.34-.02-.48-.07-.14-.62-1.48-.85-2.03-.22-.53-.44-.46-.62-.47h-.53c-.18 0-.48.07-.73.34-.25.27-.96.93-.96 2.27s.98 2.64 1.12 2.82c.14.18 1.94 2.94 4.73 4.12.79.34 1.41.55 1.89.71.79.25 1.5.21 2.06.13.63-.09 1.93-.79 2.21-1.55.27-.76.27-1.41.19-1.55-.07-.14-.25-.23-.52-.36z"
+            />
+            <path
+              fill="#fff"
+              d="M16 3C8.82 3 3 8.64 3 15.6c0 2.22.6 4.38 1.73 6.27L3 29l7.34-1.9c1.82.99 3.87 1.51 5.98 1.51 7.18 0 13-5.64 13-12.6C29 8.64 23.18 3 16 3z"
+              opacity=".15"
+            />
+          </svg>
+        </span>
       </a>
 
-      {/* subtle entrance animation — adds small flash above button */}
+      {/* Glass Styles */}
       <style>{`
-        a[aria-label="Chat on WhatsApp"] {
-          animation: floatIn 800ms cubic-bezier(.2,.9,.2,1) both;
+        .wa-glass {
+          position: fixed;
+          right: 18px;
+          bottom: 18px;
+          z-index: 999;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 6px 10px 6px 10px;
+          border-radius: 999px;
+          text-decoration: none;
+          color: #111827;
+          font-weight: 600;
+          font-size: 14px;
+
+          /* Glassmorphism */
+          background: rgba(255, 255, 255, 0.55);
+          backdrop-filter: blur(14px) saturate(160%);
+          -webkit-backdrop-filter: blur(14px) saturate(160%);
+          border: 1px solid rgba(255, 255, 255, 0.35);
+
+          box-shadow:
+            0 20px 40px rgba(0,0,0,0.18),
+            inset 0 1px 0 rgba(255,255,255,0.6);
+
+          transition: transform .25s ease, box-shadow .25s ease;
+          animation: wa-glass-in .7s cubic-bezier(.2,.9,.2,1) both;
         }
-        @keyframes floatIn {
-          0% { transform: translateY(26px) scale(.96); opacity: 0; }
-          60% { transform: translateY(-6px) scale(1.02); opacity: 1; }
-          100% { transform: translateY(0) scale(1); }
+
+        .wa-glass:hover {
+          transform: translateY(-4px) scale(1.03);
+          box-shadow:
+            0 28px 60px rgba(0,0,0,0.25),
+            inset 0 1px 0 rgba(255,255,255,0.8);
+        }
+
+        .wa-text {
+          white-space: nowrap;
+        }
+
+        .wa-icon {
+          width: 46px;
+          height: 46px;
+          border-radius: 16px;
+          background: linear-gradient(135deg,#25D366,#128C7E);
+          display: grid;
+          place-items: center;
+          box-shadow:
+            0 8px 20px rgba(0,0,0,0.25),
+            inset 0 0 0 2px rgba(255,255,255,.2);
+        }
+
+        .wa-icon svg {
+          width: 22px;
+          height: 22px;
+        }
+
+        @keyframes wa-glass-in {
+          0% {
+            opacity: 0;
+            transform: translateY(28px) scale(.95);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+
+        /* Mobile: icon only */
+        @media (max-width: 640px) {
+          .wa-text {
+            display: none;
+          }
+          .wa-glass {
+            padding: 12px;
+            border-radius: 50%;
+          }
         }
       `}</style>
     </>

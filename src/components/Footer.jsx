@@ -18,6 +18,7 @@ export default function Footer({
       className="w-56 h-auto object-contain"
     />
   </a>
+  
 
   <div className="mt-4 space-y-2 text-sm">
 

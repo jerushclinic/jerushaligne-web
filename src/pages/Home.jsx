@@ -3,15 +3,19 @@ import React from "react";
 import { motion } from "framer-motion";
 import { fadeUp } from "../animations/motionPresets";
 
-import HeroSlider from "../components/HeroSlider"
+import HeroVideo from "../components/HeroVideo";
 import ServicesSection from "../components/ServicesSection";
 import AboutSection from "../components/AboutSection";
 import DoctorsCarousel from "../components/DoctorsCarousel";
 import WhatsAppButton from "../components/WhatsAppButton";
 import BeforeAfterSection from "../components/BeforeAferSection";
-import TreatmentsSection from "../components/TreatmentsSection";
 import HappySmilesSection from "../components/HappySmilesSection";
 import EventsCarousel from "../components/EventsCarousel";
+import HowItWorks from "../components/HowItWorks";
+import CompariosnTable from "../components/ComparisonTable";
+
+
+
 
 export default function Home() {
   return (
@@ -21,7 +25,7 @@ export default function Home() {
     >
       <main>
         {/* Hero already animated internally */}
-        <HeroSlider />
+        <HeroVideo />
 
         {/* Services */}
         <motion.div
@@ -32,6 +36,8 @@ export default function Home() {
         >
           <ServicesSection />
         </motion.div>
+
+        
 
         {/* About already animated internally */}
         <AboutSection />
@@ -46,15 +52,27 @@ export default function Home() {
           <DoctorsCarousel />
         </motion.div>
 
-        {/* Treatments */}
+
+      {/* Doctors */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
         >
-          <TreatmentsSection />
+          <HowItWorks />
         </motion.div>
+
+      {/* Happy Smiles */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          <CompariosnTable />
+        </motion.div>
+       
 
         {/* Happy Smiles */}
         <motion.div
