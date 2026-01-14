@@ -291,7 +291,7 @@ export default function TreatmentsSection({
         </div>
 
         <div className="relative max-w-6xl mx-auto px-4">
-          <button
+          <button         
             onClick={goPrev}
             className="hidden md:flex absolute left-3 top-1/2 -translate-y-1/2 z-40 w-10 h-10 rounded-full bg-white border shadow-md items-center justify-center hover:scale-105 transition"
             aria-label="Previous"

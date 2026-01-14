@@ -30,7 +30,7 @@ export default function BackToTop() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.3 }}
-          className="fixed bottom-6 right-6 z-50 w-12 h-12 cursor-pointer rounded-full bg-gradient-to-r from-amber-400 to-amber-600 text-white shadow-lg flex items-center justify-center hover: focus:outline-none focus:ring-2 focus:ring-amber-300"
+          className="fixed bottom-25 right-6 z-50 w-12 h-12 cursor-pointer rounded-full bg-gradient-to-r from-amber-400 to-amber-600 text-white shadow-lg flex items-center justify-center hover: focus:outline-none focus:ring-2 focus:ring-amber-300"
         >
           ↑
         </motion.button>
