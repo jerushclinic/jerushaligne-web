@@ -5,7 +5,7 @@ import "../styles/component.css";
 export default function AboutSection({
   title = "About Jerushaligne",
   text = "We combine advanced dental technology and thoughtful patient care to deliver exceptional results. Our team focuses on comfort, precision and long-lasting outcomes.",
-  image = "/images/about.jpg",
+  image = "/images/jerushaligner-product.webp",
   headerImage = null,
   headerImageAlt = "Jerushaligne clinic",
 }) {
@@ -89,21 +89,6 @@ export default function AboutSection({
             <img src={image} alt="Jerushaligne clinic" />
             <div className="about-image-overlay" />
 
-            <motion.div
-              className="about-float-icon left"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity }}
-            >
-              🦷
-            </motion.div>
-
-            <motion.div
-              className="about-float-icon right"
-              animate={{ x: [0, -8, 0] }}
-              transition={{ duration: 5, repeat: Infinity }}
-            >
-              ✨
-            </motion.div>
           </motion.div>
         </div>
       </div>

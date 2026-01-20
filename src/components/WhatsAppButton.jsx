@@ -1,11 +1,5 @@
 import React from "react";
-
-/**
- * WhatsApp Floating Glass Button
- *
- * Usage:
- * <WhatsAppButton />
- */
+import "../styles/component.css";
 
 export default function WhatsAppButton({
   phone = "+919876543210",
@@ -41,87 +35,7 @@ export default function WhatsAppButton({
         </span>
       </a>
 
-      {/* Glass Styles */}
-      <style>{`
-        .wa-glass {
-          position: fixed;
-          right: 18px;
-          bottom: 18px;
-          z-index: 999;
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          padding: 6px 10px 6px 10px;
-          border-radius: 999px;
-          text-decoration: none;
-          color: #111827;
-          font-weight: 600;
-          font-size: 14px;
 
-          /* Glassmorphism */
-          background: rgba(255, 255, 255, 0.55);
-          backdrop-filter: blur(14px) saturate(160%);
-          -webkit-backdrop-filter: blur(14px) saturate(160%);
-          border: 1px solid rgba(255, 255, 255, 0.35);
-
-          box-shadow:
-            0 20px 40px rgba(0,0,0,0.18),
-            inset 0 1px 0 rgba(255,255,255,0.6);
-
-          transition: transform .25s ease, box-shadow .25s ease;
-          animation: wa-glass-in .7s cubic-bezier(.2,.9,.2,1) both;
-        }
-
-        .wa-glass:hover {
-          transform: translateY(-4px) scale(1.03);
-          box-shadow:
-            0 28px 60px rgba(0,0,0,0.25),
-            inset 0 1px 0 rgba(255,255,255,0.8);
-        }
-
-        .wa-text {
-          white-space: nowrap;
-        }
-
-        .wa-icon {
-          width: 46px;
-          height: 46px;
-          border-radius: 16px;
-          background: linear-gradient(135deg,#25D366,#128C7E);
-          display: grid;
-          place-items: center;
-          box-shadow:
-            0 8px 20px rgba(0,0,0,0.25),
-            inset 0 0 0 2px rgba(255,255,255,.2);
-        }
-
-        .wa-icon svg {
-          width: 22px;
-          height: 22px;
-        }
-
-        @keyframes wa-glass-in {
-          0% {
-            opacity: 0;
-            transform: translateY(28px) scale(.95);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-          }
-        }
-
-        /* Mobile: icon only */
-        @media (max-width: 640px) {
-          .wa-text {
-            display: none;
-          }
-          .wa-glass {
-            padding: 12px;
-            border-radius: 50%;
-          }
-        }
-      `}</style>
     </>
   );
 }
