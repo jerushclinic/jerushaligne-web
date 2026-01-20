@@ -6,16 +6,16 @@ import { fadeUp } from "../animations/motionPresets";
 import HeroVideo from "../components/HeroVideo";
 import ServicesSection from "../components/ServicesSection";
 import AboutSection from "../components/AboutSection";
-import DoctorsCarousel from "../components/DoctorsCarousel";
 import WhatsAppButton from "../components/WhatsAppButton";
 import BeforeAfterSection from "../components/BeforeAferSection";
 import HappySmilesSection from "../components/HappySmilesSection";
 import EventsCarousel from "../components/EventsCarousel";
 import HowItWorks from "../components/HowItWorks";
-import CompariosnTable from "../components/ComparisonTable";
-
-
-
+import Timeline from "../components/Timeline";
+import GallerySection from "../components/GallerySection";
+import TechEnabledSection from "../components/TechEnabledSection";
+import TreatmentComparison from "../components/TreatmentComparison";
+import DoctorsSection from "../components/DoctorsSection";
 
 export default function Home() {
   return (
@@ -37,23 +37,11 @@ export default function Home() {
           <ServicesSection />
         </motion.div>
 
-        
-
         {/* About already animated internally */}
         <AboutSection />
 
-        {/* Doctors */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-        >
-          <DoctorsCarousel />
-        </motion.div>
 
-
-      {/* Doctors */}
+      {/* HowItWorks */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -63,16 +51,27 @@ export default function Home() {
           <HowItWorks />
         </motion.div>
 
-      {/* Happy Smiles */}
+      {/* Comparison Table */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
         >
-          <CompariosnTable />
+          <TreatmentComparison />
         </motion.div>
-       
+
+
+        {/* DoctorsSection */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          <DoctorsSection />
+        </motion.div>
+
 
         {/* Happy Smiles */}
         <motion.div
@@ -84,8 +83,42 @@ export default function Home() {
           <HappySmilesSection />
         </motion.div>
 
+
+          {/* TechEnabled Sectiom */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          <TechEnabledSection />
+        </motion.div>
+
+
         {/* Before / After already animated internally */}
         <BeforeAfterSection />
+
+        {/* Timeline */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          <Timeline />
+        </motion.div>
+
+        {/* Timeline */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          <GallerySection />
+        </motion.div>
+
+     
 
         {/* Events */}
         <motion.div
