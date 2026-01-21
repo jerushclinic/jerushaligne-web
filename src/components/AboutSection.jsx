@@ -121,8 +121,8 @@ const features = [
 ];
 
 const stats = [
-  { value: "12k+", label: "Happy Smiles" },
-  { value: "25+", label: "Years of Care" },
+  { value: "1 Lakh+", label: "Happy Smiles" },
+  { value: "24+", label: "Years of Care" },
   { value: "99.9%", label: "Best Results" },
 ];
 

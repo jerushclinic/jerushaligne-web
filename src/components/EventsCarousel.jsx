@@ -4,24 +4,19 @@ import "../styles/component.css";
 /* ================= EVENTS DATA ================= */
 const EVENTS_DATA = [
   {
-    title: "A Significant Step Towards International Expansion ",
+    title: "A Significant Step Towards International Expansion with Hon. Minister of Foreign Affairs, Mauritius 🇲🇺 regarding the Jerush expansion. Building bridges beyond borders.",
     tag: "19-01-2026",
     image: "/images/events/event2.webp",
   },
   {
-    title: "Jerush Dental Conclave 2024",
-    tag: "Latest Update",
+    title: "I.A.E & Euro Star Awards 2025 - Global Clear Aligner Innovation Award. Certificate of Excellence in London, UK, for 𝗝𝗘𝗥𝗨𝗦𝗛𝗔𝗟𝗜𝗚𝗡𝗘 (Clear Aligners).",
+    tag: "10-12-2026",
     image: "/images/events/event1.jpeg",
   },
   {
-    title: "Jerush Hospital completes 500 robotic cardiac procedures",
-    tag: "Latest Update",
-    image: "/images/events/event1.jpeg",
-  },
-  {
-    title: "Jerush achieves 4.5-hour dental treatment window",
-    tag: "Latest Update",
-    image: "/images/events/event1.jpeg",
+    title: "Honoured as *Cosmetic Dentist of the Year 2024* at the prestigious IAE & British Healthcare Awards held in London, UK",
+    tag: "04-12-2024",
+    image: "/images/events/event3.webp",
   },
 ];
 
