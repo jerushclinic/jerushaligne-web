@@ -40,9 +40,9 @@ export default function TimelineSection() {
     <>
       <section className="timeline-section">
         <div className="timeline-container">
-          <h2 className="timeline-title">Jerushaligne Brand Journey</h2>
+          <h2 className="timeline-title">Journey of Jerushaligne</h2>
           <p className="timeline-subtitle">
-            From a vision to a trusted smile transformation brand
+            From a Vision to a Trusted Smile Transformation Brand
           </p>
 
           {/* YEARS */}

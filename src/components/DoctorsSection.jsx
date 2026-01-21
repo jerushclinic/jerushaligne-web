@@ -3,18 +3,18 @@ import "../styles/component.css";
 
 const doctors = [
   {
-    name: "Dr. Jerush Kumar",
-    role: "Chief Orthodontist",
-    experience: "25+ Years Experience",
+    name: "Dr. A. Bladbin",
+    role: "MBBS(Ukraine), LLB, MDS(OMFS), PHD(Srilanka), PHD(Hons), FAM(Ger), MCHT(Ger), MCDC(Ger), Maxillofacial Surgeon",
+    experience: "Chaiman, Jerush Groups",
     image: "/images/doctors/dr-bladbin-2.png",
-    bio: "Pioneer in advanced orthodontics with decades of experience in complex smile transformations.",
+    bio: "Dr. A. Bladbin stands as a paragon of excellence in the fields of dentistry and oral surgery, serving as the founding Chairman and Chief Dental Surgeon of Jerush Hospitals. Under his visionary leadership, the hospital has grown to serve and treat over one lakh active patients, becoming a beacon of advanced dental and facial healthcare.",
   },
   {
-    name: "Dr. Ananya Jerush",
-    role: "Senior Smile Design Specialist",
-    experience: "12+ Years Experience",
+    name: "Dr. C. Binila Asir",
+    role: "Oral & Maxillofacial Surgeon and Cosmetologist",
+    experience: "Director, Jerush Groups",
     image: "/images/doctors/dr-binila.png",
-    bio: "Expert in aesthetic smile design, digital planning, and patient-focused care.",
+    bio: "Dr. Binila serves as the esteemed Director of Jerush Dental Hospitals, bringing over 15 years of clinical experience as a leading dental surgeon. She completed her B.D.S. degree in 2004 and subsequently pursued a Postgraduate Master’s degree in Oral and Maxillofacial Surgery in 2012. Alongside her clinical excellence, she has carved a niche for herself as a Cosmetologist, seamlessly integrating aesthetic treatments into her dental practice.",
   },
 ];
 
@@ -24,9 +24,9 @@ export default function DoctorsSection() {
   return (
     <>
       <section className="doctors-section">
-        <h2 className="doctors-title">Our Experts</h2>
+        <h2 className="doctors-title">Our Dental Experts</h2>
         <p className="doctors-subtitle">
-          The minds behind confident smiles
+          The Minds Behind Confident Smiles
         </p>
 
         <div className="doctors-list">
