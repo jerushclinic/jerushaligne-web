@@ -5,13 +5,14 @@ import NavBar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import OurOutlets from "./pages/OurOutlets";
 import Contact from "./pages/Contact";
 import AppointmentSlots from "./pages/AppointmentSlots";
 import AdminSlots from "./pages/AdminSlots";
 
 import PageTransition from "./animations/PageTransition";
 import BackToTopIcon from "./components/BacktoTopIcon";
-import DentalChatbot from "./components/DentalChatbot";
+
 
 function App() {
   const location = useLocation();
@@ -33,10 +34,10 @@ function App() {
           />
 
           <Route
-            path="/about"
+            path="/our-outlets"
             element={
               <PageTransition>
-                <About />
+                <OurOutlets />
               </PageTransition>
             }
           />
@@ -50,30 +51,11 @@ function App() {
             }
           />
 
-          {/* 🦷 Patient Appointment Page */}
-          <Route
-            path="/appointments"
-            element={
-              <PageTransition>
-                <AppointmentSlots />
-              </PageTransition>
-            }
-          />
 
-          {/* 🔐 Admin Slot Manager */}
-          <Route
-            path="/admin-slots"
-            element={
-              <PageTransition>
-                <AdminSlots />
-              </PageTransition>
-            }
-          />
         </Routes>
       </AnimatePresence>
-
       <BackToTopIcon />
-      <DentalChatbot />
+   
       <Footer />
     </>
   );
