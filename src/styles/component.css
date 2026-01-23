@@ -1,4 +1,9 @@
 
+
+
+
+
+
 /* ================= ABOUT SECTION ================= */
 
 .about-section {
@@ -308,10 +313,7 @@
   transition: transform 0.35s ease;
 }
 
-/* Subtle image lift on hover */
-.compare-card:hover .compare-image {
-  transform: translateY(-6px);
-}
+
 
 /* ================= MOBILE ================= */
 

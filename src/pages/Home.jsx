@@ -6,16 +6,15 @@ import { fadeUp } from "../animations/motionPresets";
 import HeroVideo from "../components/HeroVideo";
 import ServicesSection from "../components/ServicesSection";
 import AboutSection from "../components/AboutSection";
-import WhatsAppButton from "../components/WhatsAppButton";
 import BeforeAfterSection from "../components/BeforeAferSection";
 import HappySmilesSection from "../components/HappySmilesSection";
 import EventsCarousel from "../components/EventsCarousel";
 import HowItWorks from "../components/HowItWorks";
-import Timeline from "../components/Timeline";
 import GallerySection from "../components/GallerySection";
 import TechEnabledSection from "../components/TechEnabledSection";
 import TreatmentComparison from "../components/TreatmentComparison";
 import DoctorsSection from "../components/DoctorsSection";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 export default function Home() {
   return (
@@ -98,15 +97,7 @@ export default function Home() {
         {/* Before / After already animated internally */}
         <BeforeAfterSection />
 
-        {/* Timeline */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-        >
-          <Timeline />
-        </motion.div>
+       
 
         {/* Timeline */}
         <motion.div
