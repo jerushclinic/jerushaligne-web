@@ -1,5 +1,6 @@
 // OurOutlets.jsx
 import "../styles/outlets.css";
+import HeroBreadcrumb from "../components/HeroBreadcrumb";
 
 const outlets = [
   {
@@ -36,9 +37,14 @@ const outlets = [
 
 export default function OurOutlets() {
   return (
+    <>
+    <HeroBreadcrumb
+        title="Our Outlets"
+        subtitle="Find your nearest Jerush Dentofacial & Cosmetic Laser Centre"
+        image="/images/comparison/girl.webp"
+    />
     <section className="outlets-section">
-      <h2 className="outlets-title">Our Outlets</h2>
-
+      <div className="outlets-title">Make Your Nearest Jerush Centre Now</div>
       <div className="outlets-grid">
         {outlets.map((outlet, i) => (
           <div className="outlet-card" key={i}>
@@ -86,5 +92,6 @@ export default function OurOutlets() {
         ))}
       </div>
     </section>
+    </>
   );
 }

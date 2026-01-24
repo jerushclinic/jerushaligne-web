@@ -4,9 +4,9 @@ import { AnimatePresence } from "framer-motion";
 import NavBar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import About from "./pages/About";
+import WhyJerushaligneIsDifferent from "./pages/WhyJerushaligneIsDifferent";
 import OurOutlets from "./pages/OurOutlets";
-import Contact from "./pages/Contact";
+import ContactUs from "./pages/ContactUs";
 import AppointmentSlots from "./pages/AppointmentSlots";
 import AdminSlots from "./pages/AdminSlots";
 
@@ -33,6 +33,17 @@ function App() {
             }
           />
 
+
+           <Route
+            path="/why-jerushaligne-is-different"
+            element={
+              <PageTransition>
+                <WhyJerushaligneIsDifferent />
+              </PageTransition>
+            }
+          />
+
+
           <Route
             path="/our-outlets"
             element={
@@ -43,10 +54,10 @@ function App() {
           />
 
           <Route
-            path="/contact"
+            path="/contact-us"
             element={
               <PageTransition>
-                <Contact />
+                <ContactUs />
               </PageTransition>
             }
           />

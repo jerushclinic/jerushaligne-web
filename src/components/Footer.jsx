@@ -51,7 +51,7 @@ export default function Footer() {
           <h5 className="footer-title">Opening Hours</h5>
           <p className="footer-hours">
             24/7 Services<br/>
-            Monday – Saturday: 9:00 AM – 6:00 PM <br />
+           Consultation Time : 9:00 AM – 6:00 PM <br />
           </p>
 
           <div className="footer-social">

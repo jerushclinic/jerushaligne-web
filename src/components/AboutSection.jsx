@@ -5,7 +5,7 @@ import "../styles/component.css";
 export default function AboutSection({
   title = "About Jerushaligne",
   text = "We combine advanced dental technology and thoughtful patient care to deliver exceptional results. Our team focuses on comfort, precision and long-lasting outcomes.",
-  image = "/images/jerushaligner-product.webp",
+  image = "/images/jerushaligne-all-kit.webp",
   headerImage = null,
   headerImageAlt = "Jerushaligne clinic",
 }) {

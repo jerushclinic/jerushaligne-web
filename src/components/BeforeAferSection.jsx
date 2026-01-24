@@ -59,7 +59,7 @@ export default function BeforeAfterCarousel() {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h2 className="text-3xl font-bold text-gray-900">
+          <h2 className="text-4xl font-bold text-black-800">
             Before & After – Patient Smiles
           </h2>
           <p className="text-gray-600 mt-2 max-w-2xl">
