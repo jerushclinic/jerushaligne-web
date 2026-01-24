@@ -52,7 +52,7 @@ export default function EventsCarousel() {
 
         {/* Header */}
         <div className="events-header">
-          <h2 className="events-title">What’s New At Jerushaligne</h2>
+          <h2 className="events-title">What’s New At JERUSHALIGNE</h2>
           <button className="events-btn">Explore More →</button>
         </div>
 

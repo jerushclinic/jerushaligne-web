@@ -65,7 +65,7 @@
 
 .about-title {
   margin-top: 1.2rem;
-  font-size: 3rem;
+  font-size: 32px;
   font-weight: 800;
   color: #0f172a;
 }
@@ -102,13 +102,13 @@
 }
 
 .about-feature-icon {
-  width: 44px;
-  height: 44px;
-  background: #fff3d1;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  font-size: 20px;
+    width: 36px;
+    height: 36px;
+    background: #fff3d1;
+    border-radius: 33px;
+    display: grid;
+    place-items: center;
+    font-size: 25px;
 }
 
 .about-feature-card h4 {
@@ -237,14 +237,16 @@
 /* ================= HEADER ================= */
 
 .compare-title {
-  font-size: 2.4rem;
+  font-size: 32px;
+  text-align: center;
   font-weight: 800;
   color: #111827;
 }
 
 .compare-subtitle {
   margin-top: 0.5rem;
-  color: #6b7280;
+  color: #000000;
+  text-align: center;
 }
 
 /* ================= GRID ================= */
@@ -592,7 +594,7 @@
 /* ================= CONTENT ================= */
 
 .tech-content h2 {
-  font-size: 2.1rem;
+  font-size: 32px;
   font-weight: 800;
   color: #000000;
   margin-bottom: 1.2rem;
@@ -673,7 +675,7 @@
 }
 
 .flow-title {
-  font-size: 2.6rem;
+  font-size: 32px;
   font-weight: 800;
   color: #111827;
 }
@@ -893,6 +895,47 @@
   }
 }
 
+
+/* ================= SERVICES SECTION ================= */
+
+.services-section {
+  padding: 5rem 1rem;
+  background: linear-gradient(180deg, #fffaf0, #fff3d6);
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.services-header h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.services-header p {
+  margin-top: 0.6rem;
+  color: #4b5563;
+}
+
+/* ================= GRID ================= */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 60px;
+}
+
+.services-anim {
+  animation: fadeUp 0.6s ease both;
+}
+
 /* ================= SERVICE CARD ================= */
 
 .service-card {
@@ -901,7 +944,9 @@
   padding: 28px;
   border-radius: 22px;
   overflow: hidden;
-  background: radial-gradient(600px 300px at center, rgba(255, 200, 90, 0.25), transparent 70%), linear-gradient(180deg, #F1C635, #ffe89d);
+  background:
+    radial-gradient(600px 300px at center, rgba(255, 200, 90, 0.25), transparent 70%),
+    linear-gradient(180deg, #f1c635, #ffe89d);
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.14);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
@@ -937,6 +982,7 @@
   align-items: flex-start;
 }
 
+/* ICON */
 .service-icon {
   width: 56px;
   height: 56px;
@@ -952,12 +998,14 @@
   color: #b45309;
 }
 
+/* TITLE */
 .service-title {
   font-size: 18px;
   font-weight: 700;
   color: #111827;
 }
 
+/* DESCRIPTION */
 .service-desc {
   margin-top: 6px;
   font-size: 14px;
@@ -975,14 +1023,13 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 16px;
-  border-radius: 10px;
+  padding: 10px 18px;
+  border-radius: 999px;
   font-size: 14px;
   font-weight: 600;
-  color: #081126;
+  color: #111;
   text-decoration: none;
-
-  background: linear-gradient(90deg, #ffb347, #ff6f00);
+  background: linear-gradient(90deg, #f97316, #f59e0b);
   box-shadow: 0 8px 18px rgba(255, 110, 0, 0.18);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -997,98 +1044,6 @@
   box-shadow: 0 12px 28px rgba(255, 110, 0, 0.28);
 }
 
-/* ================= SERVICES SECTION ================= */
-
-
-.services-section {
-  padding: 5rem 1rem;
-  background: linear-gradient(180deg, #fffaf0, #fff3d6);
-}
-
-.services-container {
-  max-width: 1200px;
-  margin: auto;
-}
-
-.services-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.services-header h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #111827;
-}
-
-.services-header p {
-  margin-top: 0.6rem;
-  color: #4b5563;
-}
-
-/* ================= GRID ================= */
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 60px;
-}
-
-.services-anim {
-  animation: fadeUp 0.6s ease both;
-}
-
-/* ================= CARD ================= */
-
-/* icon */
-.service-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  margin-bottom: 16px;
-}
-
-/* title */
-.service-title {
-  font-size: 18px;
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 8px;
-}
-
-/* desc */
-.service-desc {
-  font-size: 14px;
-  color: #3f3f46;
-  line-height: 1.6;
-  margin-bottom: 18px;
-}
-
-/* button */
-.service-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 9px 16px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #f97316, #f59e0b);
-  color: #111;
-  font-size: 13px;
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.service-btn:hover {
-  transform: translateX(4px);
-}
-
 /* ================= ANIMATION ================= */
 
 @keyframes fadeUp {
@@ -1101,6 +1056,7 @@
     transform: translateY(0);
   }
 }
+
 
 
 /* ================= TIMELINE ================= */
@@ -1336,7 +1292,7 @@
 /* ================= TITLE ================= */
 
 .gallery-title {
-  font-size: 2.6rem;
+  font-size: 32px;
   font-weight: 800;
   color: #1f2937;
 }
@@ -1496,8 +1452,8 @@
 }
 
 .events-title {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 32px;
+  font-weight: 800;
   color: #1f2937;
 }
 
@@ -1690,3 +1646,114 @@
             border-radius: 50%;
           }
         }
+
+
+
+ /* ================= WHY JERUSHALIGNE IS DIFFERENT PAGE 
+                       BENEFITS SECTION ================= */
+
+.benefits-section {
+  padding: 6rem 1.5rem;
+  background: linear-gradient(180deg, #facc15, #fbbf24);
+}
+
+.benefits-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* ================= VIDEO ================= */
+
+.benefits-video {
+  display: flex;
+  justify-content: center;
+}
+
+.video-card {
+  background: #000;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+  max-width: 420px;
+}
+
+.video-card video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ================= CONTENT ================= */
+
+.benefits-content h2 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+.benefits-subtitle {
+  margin-top: 0.6rem;
+  margin-bottom: 2rem;
+  color: #1f2937;
+  font-size: 1.05rem;
+}
+
+/* ================= LIST ================= */
+
+.benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.benefit-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1.2rem 1.4rem;
+  background: rgba(255,255,255,0.9);
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-item:hover {
+  transform: translateX(8px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.18);
+}
+
+.benefit-icon {
+  font-size: 1.6rem;
+}
+
+.benefit-item h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.benefit-item p {
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .benefits-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .benefits-video {
+    order: 2;
+  }
+
+  .benefit-item {
+    justify-content: center;
+    text-align: left;
+  }
+}

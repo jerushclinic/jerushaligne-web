@@ -44,11 +44,11 @@ export default function Navbar() {
               )}
             </div>
 
-            <a href="/why-jerushaligne">Why Jerushaligne</a>
+            <a href="/why-jerushaligne-is-different">Why Jerushaligne is Diiferent</a>
             <a href="/our-outlets">Our Outlets</a>
             <a href="/blog">Blog</a>
             <a href="/testimonials">Testimonials</a>
-            <a href="/contact">Contact</a>
+            <a href="/contact-us">Contact Us</a>
           </nav>
 
           {/* DESKTOP CTA */}
@@ -89,7 +89,7 @@ export default function Navbar() {
             </div>
           )}
 
-          <a href="/why-jerushaligne">Why Jerushaligne</a>
+          <a href="/why-jerushaligne-is-different">Why Jerushaligne is Different</a>
           <a href="/outlets">Our Outlets</a>
           <a href="/blog">Blog</a>
           <a href="/testimonials">Testimonials</a>
