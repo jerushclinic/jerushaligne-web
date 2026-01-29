@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import "../styles/component.css";
 
 /* ================= EVENTS DATA ================= */
-const EVENTS_DATA = [
+const events = [
   {
     title: "A Significant Step Towards International Expansion with Hon. Minister of Foreign Affairs, Mauritius 🇲🇺 regarding the Jerush expansion. Building bridges beyond borders.",
     tag: "19-01-2026",
@@ -22,61 +21,74 @@ const EVENTS_DATA = [
 
 export default function EventsCarousel() {
   const sliderRef = useRef(null);
-  const slideRef = useRef(null);
   const [index, setIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
 
-  const goTo = (i) => {
-    if (!sliderRef.current || !slideRef.current) return;
-    const next = (i + EVENTS_DATA.length) % EVENTS_DATA.length;
+  // Auto scroll
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 4000);
 
-    setIndex(next);
+    return () => clearInterval(interval);
+  }, [index]);
+
+  const nextSlide = () => {
+    const newIndex = (index + 1) % events.length;
+    setIndex(newIndex);
     sliderRef.current.scrollTo({
-      left: slideRef.current.offsetWidth * next,
+      left: sliderRef.current.clientWidth * newIndex,
       behavior: "smooth",
     });
   };
 
-  const next = () => goTo(index + 1);
-  const prev = () => goTo(index - 1);
-
-  useEffect(() => {
-    if (paused) return;
-    const interval = setInterval(next, 4000);
-    return () => clearInterval(interval);
-  }, [index, paused]);
+  const prevSlide = () => {
+    const newIndex = index === 0 ? events.length - 1 : index - 1;
+    setIndex(newIndex);
+    sliderRef.current.scrollTo({
+      left: sliderRef.current.clientWidth * newIndex,
+      behavior: "smooth",
+    });
+  };
 
   return (
-    <section className="events-section">
-      <div className="events-container">
-
+    <section className="w-full py-12 bg-white">
+      <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
-        <div className="events-header">
-          <h2 className="events-title">What’s New At JERUSHALIGNE</h2>
-          <button className="events-btn">Explore More →</button>
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-2xl font-semibold text-gray-900">
+            What’s New At Jerushaligne
+          </h2>
+          <button className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-5 py-2 rounded-full font-medium hover:bg-yellow-500 transition">
+            Explore More →
+          </button>
         </div>
 
-        {/* Carousel */}
-        <div className="events-carousel">
+        {/* Slider */}
+        <div className="relative">
           <div
             ref={sliderRef}
-            className="events-track"
-            onMouseEnter={() => setPaused(true)}
-            onMouseLeave={() => setPaused(false)}
-            onTouchStart={() => setPaused(true)}
-            onTouchEnd={() => setPaused(false)}
+            className="flex overflow-x-hidden scroll-smooth"
           >
-            {EVENTS_DATA.map((event, i) => (
+            {events.map((event, i) => (
               <div
                 key={i}
-                ref={i === 0 ? slideRef : null}
-                className="events-slide"
+                className="min-w-full sm:min-w-[50%] lg:min-w-[33.333%] px-3"
               >
-                <div className="event-card">
-                  <img src={event.image} alt={event.title} />
-                  <div className="event-overlay">
-                    <span>{event.tag}</span>
-                    <h3>{event.title}</h3>
+                <div className="relative h-[420px] rounded-2xl overflow-hidden group">
+                  <img
+                    src={event.image}
+                    alt={event.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  />
+
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-5 flex flex-col justify-end">
+                    <span className="text-xs text-white/80 mb-2">
+                      {event.tag}
+                    </span>
+                    <h3 className="text-white text-lg font-semibold leading-snug">
+                      {event.title}
+                    </h3>
                   </div>
                 </div>
               </div>
@@ -84,12 +96,29 @@ export default function EventsCarousel() {
           </div>
 
           {/* Arrows */}
-          <div className="events-arrows">
-            <button onClick={prev}>←</button>
-            <button onClick={next}>→</button>
+          <div className="absolute right-4 -bottom-12 flex gap-3">
+            <button
+              onClick={prevSlide}
+              className="w-10 h-10 rounded-full cursor-pointer border border-gray-500 flex items-center justify-center hover:bg-gradient-to-r from-yellow-400 to-orange-500"
+            >
+              ←
+            </button>
+            <button
+              onClick={nextSlide}
+              className="w-10 h-10 rounded-full cursor-pointer border border-gray-500 flex items-center justify-center hover:bg-gradient-to-r from-yellow-400 to-orange-500"
+            >
+              →
+            </button>
           </div>
         </div>
       </div>
     </section>
   );
 }
+
+
+
+
+
+
+

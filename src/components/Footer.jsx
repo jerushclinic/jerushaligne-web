@@ -68,7 +68,7 @@ export default function Footer() {
       <div className="footer-bottom">
         © {new Date().getFullYear()}{" "}
         <span className="footer-brand-highlight"><a href="/" alt="home-page">Jerushaligne</a></span>.
-        All rights reserved. Developed by <span className="footer-brand-highlight">Jerush Digital Marketing</span>
+        All rights reserved. Developed by <span className="footer-brand-highlight">Jerush Digital Marketing Thuckalay</span>
       </div>
 
     </footer>
