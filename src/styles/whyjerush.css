@@ -131,3 +131,622 @@
 
 
 
+
+/* ================= BENEFITS SHOWCASE SECTION ================= */
+
+.benefits-showcase {
+  background: linear-gradient(180deg, #facc15, #fbbf24);
+  padding: 6rem 1.5rem;
+  overflow: hidden;
+}
+
+/* ================= HEADER ================= */
+
+.benefits-header {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.benefits-header h3 {
+  font-size: 38px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.benefits-header p {
+  margin-top: 0.6rem;
+  font-size: 1.05rem;
+  color: #1f2937;
+}
+
+/* ================= WRAPPER ================= */
+
+.benefits-wrapper {
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* ================= LEFT – VIDEO ================= */
+
+.benefits-visual {
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+}
+
+.video-card {
+  position: relative;
+  width: 27rem;
+  height: 20rem;
+  border-radius: 28px;
+  background: #000;
+  overflow: hidden;
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.35);
+  transform-style: preserve-3d;
+}
+
+.video-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Pulse ring */
+.pulse-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  animation: pulse 2.5s infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.12);
+    opacity: 0;
+  }
+}
+
+/* ================= RIGHT – CONTENT ================= */
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.8rem;
+}
+
+/* ================= BENEFIT CARD ================= */
+
+.benefit-card {
+  background: linear-gradient(145deg,rgba(255, 255, 255, 0.65), rgba(255, 245, 220, 0.55));
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+  transform-style: preserve-3d;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.benefit-card:hover {
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.25);
+}
+
+.benefit-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.benefit-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: #111827;
+}
+
+.benefit-card p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .benefits-header h2 {
+    font-size: 2.4rem;
+  }
+
+  .video-card {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 900px) {
+  .benefits-wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits-visual {
+    margin-bottom: 3rem;
+  }
+
+  .video-card {
+    width: 20rem;
+    height: 13rem;
+  }
+}
+ 
+
+
+/* ================= JERUSH TECHNOLOGY SECTION (UNIQUE) ================= */
+
+.jt-section {
+  background: #ffffff;
+  padding: 6rem 1.5rem;
+}
+
+.jt-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* ================= LEFT CONTENT ================= */
+
+.jt-content h2 {
+  font-size: 38px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.jt-subtitle {
+  margin-top: 0.6rem;
+  margin-bottom: 2.5rem;
+  font-size: 1.05rem;
+  color: #4b5563;
+}
+
+.jt-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+/* ================= CARD ================= */
+
+.jt-card {
+  display: flex;
+  gap: 1.2rem;
+  padding: 1.6rem;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #fffaf0, #fff3d6);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.jt-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 60px rgba(0,0,0,0.18);
+}
+
+.jt-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: #ffffff;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.jt-icon img {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+}
+
+.jt-card h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.jt-card p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* ================= RIGHT VISUAL ================= */
+
+.jt-visual {
+  display: flex;
+  justify-content: center;
+  perspective: 1400px;
+}
+
+.jt-visual-card {
+  position: relative;
+  width: 375px;
+  height: 324px;
+  margin-top: 7rem;
+  border-radius: 28px;
+  background: linear-gradient(180deg, #fbbf24, #facc15);
+  box-shadow: 0 40px 90px rgba(251,191,36,0.55);
+  overflow: visible;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  animation: jtFloat 6s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+.jt-visual-card img {
+  position: absolute;
+  top: 12px;
+  width: 150%;
+  max-width: none;
+  transform: translateY(-80px);
+  filter: drop-shadow(0 30px 40px rgba(0,0,0,0.35));
+  pointer-events: none;
+}
+
+/* ================= FLOAT ================= */
+
+@keyframes jtFloat {
+  0% {
+    transform: translateY(0px) rotateX(3deg);
+  }
+  50% {
+    transform: translateY(-18px) rotateX(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotateX(3deg);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .jt-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .jt-card {
+    text-align: left;
+  }
+
+  .jt-visual-card {
+    width: 285px;
+    height: 233px;
+    margin-top: 3rem;
+  }
+
+  .jt-visual-card img {
+    width: 145%;
+    transform: translateY(-65px);
+  }
+}
+
+
+
+/* ================= HOW JERUSHALIGNE WORKS – FLOW ================= */
+
+.jerush-process {
+  padding: 6.5rem 1.5rem;
+  background: linear-gradient(180deg, #facb16, #f59e0b);
+}
+
+.jerush-process-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 4rem;
+}
+
+.jerush-process-header h3 {
+  font-size: 38px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.jerush-process-header p {
+  margin-top: 0.6rem;
+  font-size: 1.05rem;
+  color: #4b5563;
+}
+
+/* FLOW */
+
+.jerush-process-flow {
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* WRAPPER */
+
+.jerush-process-wrap {
+  display: flex;
+  align-items: center;
+}
+
+/* CARD */
+
+.jerush-process-card {
+  width: 210px;
+  padding: 1.8rem 1.4rem;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #fffaf0, #fff3d6);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.jerush-process-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 36px 90px rgba(0, 0, 0, 0.28);
+}
+
+/* STEP */
+
+.jerush-step {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #facc15;
+  margin-bottom: 0.6rem;
+}
+
+/* IMAGE */
+
+.jerush-process-img {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 0.8rem;
+}
+
+.jerush-process-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  object-fit: contain;
+}
+
+/* TEXT */
+
+.jerush-process-card h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: #111827;
+}
+
+.jerush-process-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+/* ================= ARROW ================= */
+
+.jerush-arrow {
+  width: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.jerush-arrow span {
+  width: 38px;
+  height: 2px;
+  background: #111827;
+  position: relative;
+  animation: arrowFlow 1.6s infinite;
+}
+
+.jerush-arrow span::after {
+  content: "";
+  position: absolute;
+  right: -6px;
+  top: -4px;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #111827;
+  border-bottom: 2px solid #111827;
+  transform: rotate(-45deg);
+}
+
+/* ARROW FLOW ANIMATION */
+
+@keyframes arrowFlow {
+  0% {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(6px);
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .jerush-process-flow {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  .jerush-arrow {
+    display: none;
+  }
+}
+
+
+/* ================= HOW TO GET JERUSHALIGNE SECTION ================= */
+
+.get-jerush-section {
+  padding: 7rem 1.5rem;
+  background: linear-gradient(180deg, #fffaf0, #fff1cc);
+  position: relative;
+  overflow: hidden;
+}
+
+/* HEADER */
+
+.get-jerush-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 4.5rem;
+}
+
+.get-jerush-header h3 {
+  font-size: 38px;
+  font-weight: 800;
+  color: #111827;
+}
+
+
+.get-jerush-header p {
+  margin-top: 0.6rem;
+  font-size: 1.1rem;
+  color: #4b5563;
+}
+
+/* FLOW */
+
+.get-jerush-flow {
+  max-width: 1250px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  position: relative;
+}
+
+/* FLOW LINE */
+
+.get-jerush-line {
+  position: absolute;
+  top: 110px;
+  left: 8%;
+  width: 84%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #facc15,
+    #facc15,
+    transparent
+  );
+  z-index: 0;
+}
+
+/* STEP */
+
+.get-jerush-step {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+/* IMAGE CARD */
+
+.get-jerush-image {
+  position: relative;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #fde68a, #facc15);
+  box-shadow: 2px 4px 22px #facc15;
+  padding: 7px;
+  margin-bottom: 1.4rem;
+  transition: transform 0.35s ease;
+}
+
+.get-jerush-image:hover {
+  transform: translateY(-10px);
+}
+
+.get-jerush-image img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+/* STEP NUMBER */
+
+.get-jerush-number {
+  position: absolute;
+  top: -18px;
+  left: 18px;
+  background: #111827;
+  color: #facc15;
+  font-weight: 900;
+  font-size: 1.2rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* TEXT */
+
+.get-jerush-step h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: #111827;
+}
+
+.get-jerush-step p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .get-jerush-flow {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  .get-jerush-line {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .get-jerush-flow {
+    grid-template-columns: 1fr;
+  }
+}

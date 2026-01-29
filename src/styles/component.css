@@ -335,235 +335,249 @@
 }
 
 
-
 /* ================= DOCTORS SECTION ================= */
 
-.doctors-section {
-  padding: 6rem 1.5rem;
-  background: radial-gradient(800px 400px at top center, rgba(255, 214, 120, 0.35), transparent 70%), linear-gradient(356deg, #fde68a, #facc15);
-  text-align: center;
+.doctor-section {
+  padding: 7rem 1.5rem;
+  background: linear-gradient(180deg, #fffaf0, #fff1cc);
+  overflow: hidden;
 }
 
-/* ================= TITLE ================= */
+/* HEADER */
 
-.doctors-title {
-  font-size: 2.8rem;
-  font-weight: 800;
+.doctor-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3.5rem;
+}
+
+.doctor-header h2 {
+  font-size: 38px;
+  font-weight: 900;
   color: #111827;
 }
 
-.doctors-subtitle {
+.doctor-header p {
   margin-top: 0.6rem;
-  color: #6b7280;
+  font-size: 1.05rem;
+  color: #4b5563;
 }
 
-/* ================= LIST ================= */
+/* ================= CAROUSEL LAYOUT ================= */
 
-.doctors-list {
-  max-width: 1200px;
-  margin: 4.5rem auto 0;
+.doctor-carousel-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  position: relative;
   display: flex;
-  flex-direction: column;
-  gap: 4rem;
+  align-items: center;
+  gap: 1rem;
+}
+
+.doctor-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* TRACK (MOVES LEFT) */
+
+.doctor-track {
+  display: flex;
+  will-change: transform;
 }
 
 /* ================= CARD ================= */
 
 .doctor-card {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  align-items: center;
-  padding: 40px 0px 40px 40px;
-  border-radius: 32px;
-
-  /* GLASS + GRADIENT */
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.75),
-      rgba(255, 247, 220, 0.65)
-    );
-  backdrop-filter: blur(18px);
-
-  box-shadow:
-    0 30px 60px rgba(0, 0, 0, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7);
-
-  overflow: hidden;
+  width: 320px;
+  flex-shrink: 0;
+  margin-right: 24px;
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 2.2rem 1.6rem;
+  box-shadow: 0 28px 80px rgba(0,0,0,0.16);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* GOLD GLOW LAYER */
-.doctor-card::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  border-radius: inherit;
-  background: radial-gradient(
-    circle at top right,
-    rgba(255, 200, 90, 0.45),
-    transparent 65%
-  );
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
+.doctor-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.22);
 }
 
-.doctor-card:hover::before {
-  opacity: 1;
+.doctor-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
 }
 
-/* ================= INFO ================= */
-
-.doctor-info {
-  text-align: left;
-  position: relative;
-  z-index: 2;
-}
-
-.doctor-info h3 {
-  font-size: 2.1rem;
+.doctor-card h4 {
+  font-size: 1.15rem;
   font-weight: 800;
-  color: #7c3a12;
+  margin-bottom: 0.25rem;
+  color: #111827;
 }
 
-.doctor-role {
-  display: block;
-  margin-top: 0.4rem;
-  font-weight: 600;
-  color: #92400e;
+.doctor-card span {
+  font-size: 0.9rem;
+  color: #6b7280;
 }
 
-.doctor-exp {
-  margin-top: 0.9rem;
-  color: #4b5563;
-  font-size: 0.95rem;
-}
+/* ================= ARROWS ================= */
 
-/* BUTTON */
-
-.doctor-btn {
-  margin-top: 2rem;
-  padding: 14px 34px;
-  border-radius: 999px;
+.doc-arrow {
+  background: #111827;
+  color: #facc15;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  font-size: 28px;
   border: none;
   cursor: pointer;
-  font-weight: 600;
-  font-size: 0.95rem;
-  background: linear-gradient(90deg, #facc15, #f59e0b);
-  box-shadow:
-    0 14px 30px rgba(245, 158, 11, 0.45),
-    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  display: grid;
+  place-items: center;
+  transition: transform 0.25s ease, background 0.25s ease;
+  z-index: 5;
 }
 
-/* ================= IMAGE ================= */
-
-.doctor-image {
-  width: 100%;
-  max-width: 460px;
-  justify-self: center;
-  cursor: pointer;
-  border-radius: 28px;
-  filter: drop-shadow(var(--drop-shadow-lg));
-
-  transition:
-    transform 0.45s ease,
-    filter 0.45s ease;
+.doc-arrow:hover {
+  transform: scale(1.1);
+  background: #000000;
 }
 
-.doctor-card:hover .doctor-image {
-  transform: translateY(-14px) scale(1.02);
- filter: drop-shadow(var(--drop-shadow-lg));
+.doc-arrow.left {
+  margin-right: 6px;
 }
 
-/* ================= POPUP ================= */
+.doc-arrow.right {
+  margin-left: 6px;
+}
 
-.doctor-popup-overlay {
+/* ================= MODAL ================= */
+
+.doctor-modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(8px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: rgba(17, 24, 39, 0.78);
+  display: grid;
+  place-items: center;
   z-index: 9999;
+  padding: 1.5rem;
 }
 
-.doctor-popup {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.85),
-      rgba(255, 247, 220, 0.8)
-    );
-  backdrop-filter: blur(22px);
-  border-radius: 24px;
-  padding: 1rem;
-  max-width: 380px;
+.doctor-modal {
+  background: #ffffff;
+  width: 420px;
+  max-width: 100%;
+  border-radius: 28px;
+  padding: 2.4rem 2rem;
   text-align: center;
   position: relative;
-  box-shadow: 0 30px 70px #facc15;
+  box-shadow: 0 40px 120px rgba(0,0,0,0.35);
 }
 
-.doctor-popup img {
-  width: 100%;
-  max-width: 348px;
-  border-radius: 24px;
-  margin-bottom: 1.8rem;
-  filter: drop-shadow(var(--drop-shadow-lg));
+.doctor-modal img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
 }
 
-.doctor-popup h3 {
-  font-size: 1.6rem;
-  color: #7c3a12;
-  margin-bottom: 0.4rem;
+.doctor-modal h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #111827;
 }
 
-.doctor-popup span {
-  font-weight: 600;
-  color: #92400e;
-}
-
-.doctor-popup p {
-  margin-top: 1rem;
-  color: #374151;
+.doctor-modal .degree {
   font-size: 0.95rem;
-  line-height: 1.6;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.doctor-modal .desc {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #4b5563;
+}
+
+/* SOCIAL ICONS */
+
+.doctor-socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin: 1.4rem 0;
+}
+
+.doctor-socials a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #111827;
+  color: #facc15;
+  display: grid;
+  place-items: center;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+
+.doctor-socials a:hover {
+  transform: scale(1.15);
+}
+
+/* CONSULT BUTTON */
+
+.consult-btn.big {
+  display: inline-block;
+  padding: 12px 32px;
+  background: linear-gradient(180deg, #fde68a, #facc15);
+  border-radius: 999px;
+  font-weight: 800;
+  color: #111827;
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
 }
 
 /* CLOSE */
 
-.popup-close {
+.modal-close {
   position: absolute;
-  top: -16px;
-  right: -16px;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
+  top: 14px;
+  right: 16px;
+  font-size: 28px;
+  background: none;
   border: none;
   cursor: pointer;
-  background: linear-gradient(180deg, #facc15, #f59e0b);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.3);
+  color: #111827;
 }
 
 /* ================= MOBILE ================= */
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+  .doctor-carousel-wrapper {
+    gap: 0.5rem;
+  }
+
   .doctor-card {
-    grid-template-columns: 1fr;
-    text-align: center;
-    padding: 2.8rem 2rem;
+    width: 100%;
+    margin-right: 0;
   }
 
-  .doctor-info {
-    text-align: center;
-  }
-
-  .doctor-image {
-    margin-top: 2.5rem;
-    max-width: 320px;
+  .doc-arrow {
+    width: 40px;
+    height: 40px;
   }
 }
+
+
+
 
 
 
@@ -573,7 +587,7 @@
 
 .tech-section {
   padding: 4rem 1rem;
-  background: linear-gradient(180deg, #f2c316, #f5d04c);
+  background: linear-gradient(180deg,#f2c316,#f5d04c);
   display: flex;
   justify-content: center;
 }
@@ -1646,114 +1660,3 @@
             border-radius: 50%;
           }
         }
-
-
-
- /* ================= WHY JERUSHALIGNE IS DIFFERENT PAGE 
-                       BENEFITS SECTION ================= */
-
-.benefits-section {
-  padding: 6rem 1.5rem;
-  background: linear-gradient(180deg, #facc15, #fbbf24);
-}
-
-.benefits-container {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-/* ================= VIDEO ================= */
-
-.benefits-video {
-  display: flex;
-  justify-content: center;
-}
-
-.video-card {
-  background: #000;
-  border-radius: 22px;
-  overflow: hidden;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.35);
-  max-width: 420px;
-}
-
-.video-card video {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* ================= CONTENT ================= */
-
-.benefits-content h2 {
-  font-size: 2.6rem;
-  font-weight: 800;
-  color: #111827;
-}
-
-.benefits-subtitle {
-  margin-top: 0.6rem;
-  margin-bottom: 2rem;
-  color: #1f2937;
-  font-size: 1.05rem;
-}
-
-/* ================= LIST ================= */
-
-.benefits-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.4rem;
-}
-
-.benefit-item {
-  display: flex;
-  gap: 1rem;
-  padding: 1.2rem 1.4rem;
-  background: rgba(255,255,255,0.9);
-  border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.benefit-item:hover {
-  transform: translateX(8px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.18);
-}
-
-.benefit-icon {
-  font-size: 1.6rem;
-}
-
-.benefit-item h4 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 0.2rem;
-}
-
-.benefit-item p {
-  font-size: 0.95rem;
-  color: #4b5563;
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 900px) {
-  .benefits-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .benefits-video {
-    order: 2;
-  }
-
-  .benefit-item {
-    justify-content: center;
-    text-align: left;
-  }
-}

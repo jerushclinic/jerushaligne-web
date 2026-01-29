@@ -13,7 +13,6 @@ import HowItWorks from "../components/HowItWorks";
 import GallerySection from "../components/GallerySection";
 import TechEnabledSection from "../components/TechEnabledSection";
 import TreatmentComparison from "../components/TreatmentComparison";
-import DoctorsSection from "../components/DoctorsSection";
 import WhatsAppButton from "../components/WhatsAppButton";
 
 export default function Home() {
@@ -60,16 +59,6 @@ export default function Home() {
           <TreatmentComparison />
         </motion.div>
 
-
-        {/* DoctorsSection */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-        >
-          <DoctorsSection />
-        </motion.div>
 
 
         {/* Happy Smiles */}

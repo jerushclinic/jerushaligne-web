@@ -6,7 +6,7 @@ export default function HeroVideo() {
       {/* Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
-        src="/videos/hero-video.mp4"
+        src="/videos/aligner.mp4"
         autoPlay
         loop
         muted
@@ -14,10 +14,10 @@ export default function HeroVideo() {
       />
 
       {/* Overlay for text visibility */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/20" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-black/20" />     
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto h-full px-6 flex items-center">
+      {/* <div className="relative z-10 max-w-7xl mx-auto h-full px-6 flex items-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -47,7 +47,7 @@ export default function HeroVideo() {
             </a>
           </div>
         </motion.div>
-      </div>
+      </div> */}
     </section>
   );
 }
