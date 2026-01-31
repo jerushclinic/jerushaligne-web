@@ -1,20 +1,53 @@
+import { motion } from "framer-motion";
 import "../styles/component.css";
 
 export default function TreatmentComparison() {
   return (
-    <section className="compare-section">
+    <motion.section
+      className="compare-section"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       <div className="compare-box">
-        <h2 className="compare-title">
-          Jerushaligne Treatment Comparison
-        </h2>
-        <p className="compare-subtitle">
-          See why doctor-guided aligners make the difference
-        </p>
 
+        {/* TITLE */}
+        <motion.h2
+          className="compare-title"
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          Jerushaligne Treatment Comparison
+        </motion.h2>
+
+        {/* SUBTITLE */}
+        <motion.p
+          className="compare-subtitle"
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          viewport={{ once: true }}
+        >
+          See why doctor-guided aligners make the difference
+        </motion.p>
+
+        {/* GRID */}
         <div className="compare-grid">
+
           {/* CARD 1 */}
-          <div className="compare-card">
+          <motion.div
+            className="compare-card"
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -10 }}
+          >
             <h3>Jerushaligne</h3>
+
             <ul>
               <li>Simple to complex tooth movements</li>
               <li>Doctor-designed & supervised</li>
@@ -23,16 +56,28 @@ export default function TreatmentComparison() {
               <li>Doctor-decided pricing</li>
             </ul>
 
-            <img
+            <motion.img
               src="/images/comparison/girl.webp"
               alt="Jerushaligne Aligners"
               className="compare-image"
+              initial={{ scale: 0.9, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true }}
             />
-          </div>
+          </motion.div>
 
           {/* CARD 2 */}
-          <div className="compare-card">
+          <motion.div
+            className="compare-card"
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -10 }}
+          >
             <h3>Essentials of Jerushaligne</h3>
+
             <ul>
               <li>Simple to moderate corrections</li>
               <li>Doctor supervised</li>
@@ -40,16 +85,28 @@ export default function TreatmentComparison() {
               <li>Clinic-based monitoring</li>
             </ul>
 
-            <img
+            <motion.img
               src="/images/comparison/girl-2.webp"
               alt="Essentials Aligners"
               className="compare-image"
+              initial={{ scale: 0.9, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.45 }}
+              viewport={{ once: true }}
             />
-          </div>
+          </motion.div>
 
           {/* CARD 3 */}
-          <div className="compare-card">
+          <motion.div
+            className="compare-card"
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -10 }}
+          >
             <h3>Other Online Aligners</h3>
+
             <ul>
               <li>Only cosmetic corrections</li>
               <li>Limited or no doctor supervision</li>
@@ -58,14 +115,19 @@ export default function TreatmentComparison() {
               <li>Lower cost, limited control</li>
             </ul>
 
-            <img
+            <motion.img
               src="/images/comparison/girl-3.webp"
               alt="Online Aligners"
               className="compare-image"
+              initial={{ scale: 0.9, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              viewport={{ once: true }}
             />
-          </div>
+          </motion.div>
+
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

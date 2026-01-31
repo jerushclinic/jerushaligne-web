@@ -1,0 +1,583 @@
+/* ================= CLEAR ALIGNERS HERO ================= */
+
+
+/* PREMIUM HERO TEXT FEEL */
+.clear-hero-content h1 {
+  font-size: 100px;
+  font-weight: 900;
+  line-height: 1.05;
+  white-space: nowrap;
+  letter-spacing: -2px;
+}
+
+.clear-hero-content h1 span {
+  color: #facc15;
+}
+
+/* SUBTLE BACKGROUND “BREATHING” */
+.clear-hero::before {
+  animation: heroZoom 18s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.08);
+  }
+}
+
+/* MOBILE REFINEMENTS */
+@media (max-width: 600px) {
+  .clear-hero-content h1 {
+    font-size: 2.4rem;
+    white-space: normal;
+    letter-spacing: -1px;
+  }
+}
+
+
+
+.clear-hero {
+  position: relative;
+  min-height: 100vh;
+  background: #000;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* FULL COVER IMAGE */
+.clear-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/clear-aligners/smiling-girl.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 65% center; /* desktop focus */
+  z-index: 0;
+}
+
+/* DARK GRADIENT OVERLAY */
+.clear-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.25)
+  );
+  z-index: 1;
+}
+
+/* CONTAINER */
+.clear-hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1300px;
+  margin: auto;
+  padding: 7rem 21rem 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* CONTENT */
+.clear-hero-content {
+  max-width: 560px;
+  color: #ffffff;
+  text-align: left;
+}
+
+
+/* HEADING */
+.clear-hero-content h1 {
+  font-size: 100px;
+  font-weight: 900;
+  line-height: 1.1;
+  white-space: nowrap; /* 👈 no wrap on desktop */
+}
+
+.clear-hero-content h1 span {
+  color: #facc15;
+}
+
+
+/* ACTION BUTTONS */
+.clear-hero-actions {
+  margin-top: 2.4rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.clear-btn {
+  padding: 13px 30px;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.clear-btn.primary {
+  background: linear-gradient(180deg, #fde68a, #facc15);
+  color: #111827;
+  box-shadow: 0 18px 45px rgba(250, 204, 21, 0.45);
+}
+
+.clear-btn.secondary {
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  color: #ffffff;
+}
+
+.clear-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* PRICE */
+.clear-price {
+  margin-top: 1.8rem;
+  font-size: 1rem;
+  color: #e5e7eb;
+}
+
+.clear-price strong {
+  color: #facc15;
+  font-size: 1.15rem;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .clear-hero-container {
+    justify-content: center;
+  }
+
+  .clear-hero-content {
+    text-align: center;
+  }
+
+  .clear-hero-actions {
+    justify-content: center;
+  }
+
+  .clear-hero-content h1 {
+    white-space: normal; /* allow wrap on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .clear-hero {
+    min-height: auto;
+  }
+
+  /* CENTER IMAGE ON MOBILE */
+  .clear-hero::before {
+    background-position: center center;
+  }
+
+  .clear-hero-container {
+    padding: 10.5rem 1.2rem;
+  }
+
+  .clear-hero-content h1 {
+    font-size: 2.4rem;
+    line-height: 1.15;
+  }
+}
+
+
+
+
+/* ================= DESIGNED FOR YOUR SMILE SECTION ================= */
+
+.designed-section {
+  position: relative;
+  min-height: 90vh;
+  background: linear-gradient(180deg, #fde68a, #facc15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+/* SMALL TOP TEXT */
+.designed-eyebrow {
+  max-width: 680px;
+  font-size: 1.1rem;
+  color: #5b4636;
+  margin-bottom: 1.2rem;
+  z-index: 2;
+}
+
+/* MAIN HEADLINE */
+.designed-title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #2a1406;
+  z-index: 2;
+}
+
+/* HUGE BACKGROUND WORD */
+.designed-bg-text {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18rem;
+  font-weight: 900;
+  color: #7c3a124f;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* FLOATING ALIGNER */
+.designed-aligner {
+  position: relative;
+  width: 420px;
+  max-width: 90%;
+  margin-top: 4rem;
+  z-index: 3;
+  filter: drop-shadow(0 40px 80px rgba(0,0,0,0.25));
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .designed-bg-text {
+    font-size: 10rem;
+  }
+
+  .designed-title {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .designed-section {
+    min-height: 75vh;
+  }
+
+  .designed-bg-text {
+    font-size: 85px;
+    bottom: 30%;
+  }
+
+  .designed-aligner {
+    width: 300px;
+  }
+
+  .designed-title {
+    font-size: 3rem;
+  }
+}
+
+
+
+
+
+/* ================= INTERACTIVE ALIGNER SECTION ================= */
+
+.aligner-360-section {
+  background: radial-gradient(circle at top, #141414, #000);
+  padding: 9rem 1.5rem;
+  overflow: hidden;
+}
+
+.aligner-360-container {
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 5.5rem;
+}
+
+/* ================= TEXT ================= */
+
+.aligner-360-content h2 {
+  font-size: 3.6rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.15;
+}
+
+.aligner-360-content h2 span {
+  color: #facc15;
+}
+
+/* ================= FEATURE GLASS CARDS ================= */
+
+.aligner-features {
+  margin-top: 3.2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+}
+
+.aligner-feature-card {
+  padding: 1.25rem 1.6rem;
+  border-radius: 20px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.16),
+    rgba(255,255,255,0.05)
+  );
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #f3f4f6;
+  font-weight: 600;
+  font-size: 0.95rem;
+
+  box-shadow:
+    inset 0 0 0 rgba(255,255,255,0),
+    0 20px 50px rgba(0,0,0,0.45);
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.aligner-feature-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 30px 70px #fbbf24;
+}
+
+/* ================= 3D STAGE ================= */
+
+.aligner-360-stage {
+  perspective: 1600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: grab;
+  user-select: none;
+}
+
+.aligner-360-stage:active {
+  cursor: grabbing;
+}
+
+.aligner-360-image {
+  width: 460px;
+  max-width: 100%;
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 60px 120px rgba(0,0,0,0.85));
+}
+
+/* ================= HINT ================= */
+
+.drag-hint {
+  margin-top: 1.2rem;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: #9ca3af;
+  text-transform: uppercase;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+  .aligner-360-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .aligner-features {
+    grid-template-columns: 1fr;
+  }
+
+  .aligner-360-stage {
+    margin-top: 3.5rem;
+  }
+
+  .aligner-360-image {
+    pointer-events: none;
+  }
+}
+
+
+
+/* ================= ALIGNER ISSUES SECTION ================= */
+
+.aligner-issues-section {
+  padding: 8rem 1.5rem;
+  background: linear-gradient(180deg, #fde68a, #facc15);
+}
+
+.aligner-issues-title {
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: #2a1406;
+  margin-bottom: 4.5rem;
+  letter-spacing: -0.5px;
+}
+
+/* GRID */
+.aligner-issues-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.5rem;
+}
+
+/* SINGLE ITEM */
+.aligner-issue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* IMAGE */
+.issue-image {
+  width: 100%;
+  max-width: 360px;
+  margin-bottom: 1.6rem;
+  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.25));
+}
+
+/* TEXT PANEL (NOT CARD) */
+.issue-text {
+  padding: 1.2rem 1.6rem;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+}
+
+.issue-text h4 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+  color: #111827;
+}
+
+.issue-text p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .aligner-issues-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .aligner-issues-title {
+    font-size: 2rem;
+  }
+
+  .aligner-issues-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+
+
+
+/* ================= FAQ SECTION ================= */
+
+.faq-section {
+  padding: 8rem 1.5rem;
+  background: linear-gradient(180deg, #000, #0b0b0b);
+}
+
+.faq-title {
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 4.5rem;
+}
+
+/* GRID */
+.faq-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+/* COLUMN */
+.faq-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* ITEM */
+.faq-item {
+  border-radius: 18px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.12);
+  overflow: hidden;
+}
+
+/* QUESTION */
+.faq-question {
+  width: 100%;
+  padding: 1.2rem 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: left;
+}
+
+.faq-icon {
+  font-size: 1.4rem;
+  color: #facc15;
+}
+
+/* ANSWER */
+.faq-answer {
+  padding: 0 1.6rem 1.4rem;
+}
+
+.faq-answer p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #d1d5db;
+}
+
+/* HOVER */
+.faq-item:hover {
+  border-color: rgba(250,204,21,0.4);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-title {
+    font-size: 2.1rem;
+  }
+}
