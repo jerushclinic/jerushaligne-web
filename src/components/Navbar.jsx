@@ -4,15 +4,26 @@ import "../styles/Navbar.css";
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [alignerOpen, setAlignerOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
+  // Disable body scroll on mobile menu
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "auto";
   }, [mobileOpen]);
 
+  // SCROLL DETECTION
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <>
       {/* HEADER */}
-      <header className="nav-header">
+      <header className={`nav-header ${scrolled ? "scrolled" : ""}`}>
         <div className="nav-container">
           {/* LOGO */}
           <a href="/">
@@ -44,7 +55,9 @@ export default function Navbar() {
               )}
             </div>
 
-            <a href="/why-jerushaligne-is-different">Why Jerushaligne is Diiferent</a>
+            <a href="/why-jerushaligne-is-different">
+              Why Jerushaligne is Different
+            </a>
             <a href="/our-outlets">Our Outlets</a>
             <a href="/blog">Blog</a>
             <a href="/testimonials">Testimonials</a>
@@ -53,12 +66,17 @@ export default function Navbar() {
 
           {/* DESKTOP CTA */}
           <div className="nav-cta">
-            <a href="/book" className="cta-primary">Book Appointment</a>
+            <a href="/book" className="cta-primary">
+              Book Appointment
+            </a>
             <a href="tel:+919999999999" className="cta-call">📞</a>
           </div>
 
           {/* HAMBURGER */}
-          <button className="nav-hamburger" onClick={() => setMobileOpen(true)}>
+          <button
+            className="nav-hamburger"
+            onClick={() => setMobileOpen(true)}
+          >
             ☰
           </button>
         </div>
@@ -67,14 +85,17 @@ export default function Navbar() {
       {/* MOBILE MENU */}
       <div className={`mobile-menu ${mobileOpen ? "open" : ""}`}>
         <div className="mobile-header">
-          <img src="/images/jerushaligne-logo.png" className="mobile-logo" />
+          <img
+            src="/images/jerushaligne-logo.png"
+            alt="Jerushaligne"
+            className="mobile-logo"
+          />
           <button onClick={() => setMobileOpen(false)}>✕</button>
         </div>
 
         <nav className="mobile-nav">
           <a href="/">Home</a>
 
-          {/* MOBILE ALIGNERS */}
           <button
             className="mobile-dropdown-btn"
             onClick={() => setAlignerOpen(!alignerOpen)}
@@ -89,16 +110,20 @@ export default function Navbar() {
             </div>
           )}
 
-          <a href="/why-jerushaligne-is-different">Why Jerushaligne is Different</a>
-          <a href="/outlets">Our Outlets</a>
+          <a href="/why-jerushaligne-is-different">
+            Why Jerushaligne is Different
+          </a>
+          <a href="/our-outlets">Our Outlets</a>
           <a href="/blog">Blog</a>
           <a href="/testimonials">Testimonials</a>
-          <a href="/contact">Contact</a>
+          <a href="/contact-us">Contact Us</a>
         </nav>
 
         <div className="mobile-cta">
           <a href="/book" className="cta-primary">Book Appointment</a>
-          <a href="tel:+919999999999" className="cta-secondary">Call Now</a>
+          <a href="tel:+919999999999" className="cta-secondary">
+            Call Now
+          </a>
         </div>
       </div>
     </>

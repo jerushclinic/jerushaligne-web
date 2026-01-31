@@ -1,4 +1,5 @@
 // OurOutlets.jsx
+import { motion } from "framer-motion";
 import "../styles/outlets.css";
 import HeroBreadcrumb from "../components/HeroBreadcrumb";
 
@@ -11,7 +12,7 @@ const outlets = [
     phone: "+91 99999 99999",
     rating: 4.6,
     reviews: 320,
-    map: "https://www.google.com/maps?q=Jerush+Dentofacial+and+Cosmetic+Laser+Centre+Thuckalay"
+    map: "https://www.google.com/maps?q=Jerush+Dentofacial+and+Cosmetic+Laser+Centre+Thuckalay",
   },
   {
     city: "Jerush Dentofacial and Cosmetic Laser Centre, Trichy",
@@ -21,7 +22,7 @@ const outlets = [
     phone: "+91 88888 88888",
     rating: 4.4,
     reviews: 210,
-    map: "https://www.google.com/maps?q=Jerush+Dentofacial+and+Cosmetic+Laser+Centre+Trichy"
+    map: "https://www.google.com/maps?q=Jerush+Dentofacial+and+Cosmetic+Laser+Centre+Trichy",
   },
   {
     city: "Jerush Dentofacial and Cosmetic Laser Centre, Chennai",
@@ -31,67 +32,121 @@ const outlets = [
     phone: "+91 77777 77777",
     rating: 4.5,
     reviews: 185,
-    map: "https://www.google.com/maps?q=Jerush+Dentofacial+and+Cosmetic+Laser+Centre+Chennai"
-  }
+    map: "https://www.google.com/maps?q=Jerush+Dentofacial+and+Cosmetic+Laser+Centre+Chennai",
+  },
 ];
+
+/* ===== Motion Variants ===== */
+
+const containerVariant = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.18,
+    },
+  },
+};
+
+const cardVariant = {
+  hidden: {
+    opacity: 0,
+    y: 40,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.55,
+      ease: "easeOut",
+    },
+  },
+};
 
 export default function OurOutlets() {
   return (
     <>
-    <HeroBreadcrumb
-        title="Our Outlets"
-        subtitle="Find your nearest Jerush Dentofacial & Cosmetic Laser Centre"
-        image="/images/comparison/girl.webp"
-    />
-    <section className="outlets-section">
-      <div className="outlets-title">Make Your Nearest Jerush Centre Now</div>
-      <div className="outlets-grid">
-        {outlets.map((outlet, i) => (
-          <div className="outlet-card" key={i}>
-            {/* IMAGE */}
-            <img src={outlet.image} alt={outlet.city} />
+      {/* HERO */}
+      <motion.div
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <HeroBreadcrumb
+          title="Our Outlets"
+          subtitle="Find your nearest Jerush Dentofacial & Cosmetic Laser Centre"
+          image="/images/comparison/girl.webp"
+        />
+      </motion.div>
 
-            {/* CONTENT */}
-            <div className="outlet-content">
-              <h3 className="outlet-city">{outlet.city}</h3>
-              <p className="outlet-address">{outlet.address}</p>
+      {/* OUTLETS */}
+      <section className="outlets-section">
+        <motion.div
+          className="outlets-title"
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          Make Your Nearest Jerush Centre Now
+        </motion.div>
 
-              <p className="outlet-phone">📞 {outlet.phone}</p>
+        <motion.div
+          className="outlets-grid"
+          variants={containerVariant}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          {outlets.map((outlet, i) => (
+            <motion.div
+              className="outlet-card"
+              key={i}
+              variants={cardVariant}
+              whileHover={{ y: -8 }}
+            >
+              {/* IMAGE */}
+              <img src={outlet.image} alt={outlet.city} />
 
-             {/* GOOGLE RATING */}
-<div className="outlet-rating">
-  <span className="google">
-    <img src="/images/outlets/g-logo.webp" alt="Google" />
-  </span>
-  <span className="stars">
-    {"★".repeat(Math.floor(outlet.rating))}
-    {"☆".repeat(5 - Math.floor(outlet.rating))}
-  </span>
-  <span className="rating-text">
-    {outlet.rating} ({outlet.reviews})
-  </span>
-</div>
+              {/* CONTENT */}
+              <div className="outlet-content">
+                <h3 className="outlet-city">{outlet.city}</h3>
+                <p className="outlet-address">{outlet.address}</p>
 
+                <p className="outlet-phone">📞 {outlet.phone}</p>
 
-              {/* ACTIONS */}
-              <div className="outlet-actions">
-                <a
-                  href={outlet.map}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-outline"
-                >
-                  View More
-                </a>
-                <a href="/book" className="btn-primary">
-                  Make Appointment
-                </a>
+                {/* GOOGLE RATING */}
+                <div className="outlet-rating">
+                  <span className="google">
+                    <img src="/images/outlets/g-logo.webp" alt="Google" />
+                  </span>
+                  <span className="stars">
+                    {"★".repeat(Math.floor(outlet.rating))}
+                    {"☆".repeat(5 - Math.floor(outlet.rating))}
+                  </span>
+                  <span className="rating-text">
+                    {outlet.rating} ({outlet.reviews})
+                  </span>
+                </div>
+
+                {/* ACTIONS */}
+                <div className="outlet-actions">
+                  <a
+                    href={outlet.map}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-outline"
+                  >
+                    View More
+                  </a>
+                  <a href="/book" className="btn-primary">
+                    Make Appointment
+                  </a>
+                </div>
               </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
     </>
   );
 }
