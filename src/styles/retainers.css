@@ -1,0 +1,312 @@
+/* ================= RETAINERS HERO ================= */
+
+.ret-hero {
+  position: relative;
+  min-height: 100vh;
+  background: url("/images/retainers/retainers-hero.webp") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+/* OVERLAY */
+.ret-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    95deg,
+    rgba(0, 0, 0, 0.15) 35%,
+    rgba(0, 0, 0, 0.55) 75%
+  );
+}
+
+/* INNER */
+.ret-hero-inner {
+  position: relative;
+  max-width: 1440px;
+  width: 100%;
+  padding: 0 22rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* CONTENT */
+.ret-hero-content {
+  max-width: 520px;
+  color: #ffffff;
+  padding: 3rem;
+}
+
+/* EYEBROW */
+.ret-eyebrow {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #facc15;
+  font-weight: 700;
+}
+
+/* ================= TITLE (FIXED SYSTEM) ================= */
+
+.ret-title {
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  font-weight: 900;
+  line-height: 1.05;
+  text-transform: uppercase;
+  margin-bottom: 1.8rem;
+}
+
+.ret-title span {
+  display: block;
+  font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+  color: #facc15;
+  line-height: 1.1;
+  margin-top: 0.3rem;
+}
+
+/* ACTIONS */
+.ret-hero-actions {
+  display: flex;
+}
+
+/* BUTTON */
+.ret-btn {
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  background: linear-gradient(90deg, #facc15, #f59e0b);
+  color: #111;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ret-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .ret-hero {
+    justify-content: center;
+    padding: 1.5rem;
+    background-position: center left;
+  }
+
+  .ret-hero-inner {
+    padding: 0;
+    justify-content: center;
+  }
+
+  .ret-hero-content {
+    max-width: 340px;
+    padding: 1.6rem 1.4rem;
+    text-align: center;
+  }
+
+  .ret-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 1.4px;
+    margin-bottom: 0.6rem;
+  }
+
+  .ret-title {
+    font-size: 2.4rem;
+    line-height: 1.15;
+  }
+
+  .ret-title span {
+    font-size: 2rem;
+    margin-top: 0.25rem;
+  }
+
+  .ret-hero-actions {
+    justify-content: center;
+  }
+
+  .ret-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+}
+
+/* EXTRA SMALL */
+@media (max-width: 420px) {
+  .ret-hero-content {
+    max-width: 92%;
+  }
+
+  .ret-title {
+    font-size: 2.1rem;
+  }
+
+  .ret-title span {
+    font-size: 1.8rem;
+  }
+}
+
+
+
+ 
+/* ================= RETAINERS WHY SECTION ================= */
+
+.ret-why-alt {
+  background: linear-gradient(180deg, #0f172a, #020617);
+  color: #f8fafc;
+  padding: 7rem 1.5rem;
+  overflow: hidden;
+}
+
+.ret-why-alt-inner {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* ================= LEFT STORY ================= */
+
+.ret-why-story {
+  position: relative;
+}
+
+.ret-why-tag {
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: #facc15;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.ret-why-story h2 {
+  font-size: clamp(2.6rem, 5vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.05;
+  margin: 1rem 0;
+}
+
+.ret-why-story h2 span {
+  color: #facc15;
+}
+
+/* TENSION LINE */
+.ret-why-line {
+  height: 4px;
+  background: linear-gradient(90deg, #facc15, transparent);
+  margin: 1.5rem 0 2rem;
+}
+
+/* COPY */
+.ret-why-copy {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #cbd5f5;
+  max-width: 420px;
+  margin-bottom: 2.5rem;
+}
+
+/* ================= SEQUENTIAL STATEMENTS ================= */
+
+.ret-why-statements {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+/* ROW = TEXT + TICK */
+.ret-why-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* TEXT */
+.ret-why-row p {
+  font-size: 1.1rem;
+  line-height: 1.45;
+  color: #e5e7eb;
+  margin: 0;
+}
+
+.ret-why-row strong {
+  color: #facc15;
+  font-weight: 700;
+}
+
+/* GREEN TICK */
+.ret-green-tick {
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #052e16;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 900;
+  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.45);
+}
+
+/* ================= IMAGE ================= */
+
+.ret-why-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.ret-why-image img {
+  width: 100%;
+  max-width: 620px;
+  border-radius: 26px;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .ret-why-alt {
+    padding: 4.5rem 1.2rem;
+  }
+
+  .ret-why-alt-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .ret-why-copy {
+    max-width: 100%;
+  }
+
+  .ret-why-row {
+    align-items: flex-start;
+  }
+
+  .ret-why-row p {
+    font-size: 1rem;
+  }
+
+  .ret-why-image img {
+    max-width: 320px;
+  }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 420px) {
+  .ret-why-story h2 {
+    font-size: 2.2rem;
+  }
+
+  .ret-why-row p {
+    font-size: 0.95rem;
+  }
+}

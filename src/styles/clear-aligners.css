@@ -236,6 +236,7 @@
   white-space: nowrap;
   pointer-events: none;
   user-select: none;
+  z-index: 1;
 }
 
 /* FLOATING ALIGNER */

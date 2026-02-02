@@ -2,15 +2,30 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import "../styles/clear-aligners.css";
+
 import DesignedForSmile from "../components/DesignedForSmile";
 import AlignerInteractive from "../components/AlignerInteractive";
 import ClearAlignerIssues from "../components/ClearAlignerIssues";
 import ClearAlignersFAQ from "../components/ClearAlignersFAQ.jsx";
 
+/* ================= REUSABLE VARIANTS ================= */
+
+const sectionFadeUp = {
+  hidden: { opacity: 0, y: 80 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.9,
+      ease: "easeOut",
+    },
+  },
+};
+
 export default function ClearAlignersHero() {
   const ref = useRef(null);
 
-  // subtle parallax for content
+  /* HERO PARALLAX */
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -37,9 +52,7 @@ export default function ClearAlignersHero() {
             animate="show"
             variants={{
               hidden: {},
-              show: {
-                transition: { staggerChildren: 0.18 },
-              },
+              show: { transition: { staggerChildren: 0.18 } },
             }}
           >
             {/* LINE 1 */}
@@ -75,7 +88,6 @@ export default function ClearAlignersHero() {
               <span>SMILE</span>
             </motion.h1>
 
-
             {/* ACTIONS */}
             <motion.div
               className="clear-hero-actions"
@@ -108,20 +120,40 @@ export default function ClearAlignersHero() {
         </div>
       </section>
 
-      {/* ================= DESIGNED FOR SMILE SECTION ================= */}
-      <DesignedForSmile />
+      {/* ================= DESIGNED FOR SMILE (NO ANIMATION) ================= */}
+      <section>
+        <DesignedForSmile />
+      </section>
 
-      {/* ================= ALIGNER INTERACTIVE SECTION ================= */}
-      <AlignerInteractive />
+      {/* ================= ALIGNER INTERACTIVE ================= */}
+      <motion.section
+        variants={sectionFadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-120px" }}
+      >
+        <AlignerInteractive />
+      </motion.section>
 
-       {/* ================= ALIGNER INTERACTIVE SECTION ================= */}
-      <ClearAlignerIssues />
+      {/* ================= ALIGNER ISSUES ================= */}
+      <motion.section
+        variants={sectionFadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-120px" }}
+      >
+        <ClearAlignerIssues />
+      </motion.section>
 
-
-      {/* ================= ALIGNER FAQ SECTION ================= */}
-      <ClearAlignersFAQ/>
-      
-
+      {/* ================= FAQ ================= */}
+      <motion.section
+        variants={sectionFadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-120px" }}
+      >
+        <ClearAlignersFAQ />
+      </motion.section>
     </>
   );
 }
