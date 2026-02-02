@@ -5,7 +5,7 @@ import "../styles/clear-aligners.css";
 import DesignedForSmile from "../components/DesignedForSmile";
 import AlignerInteractive from "../components/AlignerInteractive";
 import ClearAlignerIssues from "../components/ClearAlignerIssues";
-import ClearAlignersFaq from "../components/ClearAlignersFaq";
+import AlignerFaq from "../components/ClearAlignersFAQ_temp";
 
 export default function ClearAlignersHero() {
   const ref = useRef(null);
@@ -117,8 +117,10 @@ export default function ClearAlignersHero() {
        {/* ================= ALIGNER INTERACTIVE SECTION ================= */}
       <ClearAlignerIssues />
 
-      {/* ================= ALIGNER INTERACTIVE SECTION ================= */}
-      <ClearAlignersFaq />
+
+      {/* ================= ALIGNER FAQ SECTION ================= */}
+      <ClearAlignersFAQ_temp.jsx />
+      
 
     </>
   );
