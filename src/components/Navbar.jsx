@@ -1,82 +1,103 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import "../styles/Navbar.css";
 
 export default function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [alignerOpen, setAlignerOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileDropdown, setMobileDropdown] = useState(false);
 
-  // Disable body scroll on mobile menu
+  const currentPath = window.location.pathname;
+
+  const isActive = (path) => currentPath === path;
+
+  const isAlignerActive =
+    currentPath === "/clear-aligners" || currentPath === "/retainers";
+
+  // Scroll effect
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Lock body scroll on mobile
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "auto";
   }, [mobileOpen]);
 
-  // SCROLL DETECTION
-  useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 40);
-    };
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
     <>
-      {/* HEADER */}
-      <header className={`nav-header ${scrolled ? "scrolled" : ""}`}>
-        <div className="nav-container">
+      <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
+        <div className="navbar-container">
           {/* LOGO */}
-          <a href="/">
+          <a href="/" className="navbar-logo">
             <img
-              src="/images/jerushaligne-logo.png"
+              src={scrolled ? "/images/logo-black.png" : "/images/logo-white.png"}
               alt="Jerushaligne"
-              className="nav-logo"
             />
           </a>
 
           {/* DESKTOP NAV */}
-          <nav className="nav-desktop">
-            <a href="/">Home</a>
+          <nav className="navbar-links">
+            <a href="/" className={isActive("/") ? "active" : ""}>
+              Home
+            </a>
 
-            <div
-              className="nav-dropdown"
-              onMouseEnter={() => setAlignerOpen(true)}
-              onMouseLeave={() => setAlignerOpen(false)}
-            >
-              <button className="nav-btn">
-                Aligners <span>▾</span>
-              </button>
-
-              {alignerOpen && (
-                <div className="dropdown-menu">
-                  <a href="/clear-aligners">Clear Aligners</a>
-                  <a href="/retainers">Retainers</a>
-                </div>
-              )}
+            <div className="nav-dropdown">
+              <span className={isAlignerActive ? "active" : ""}>
+                Aligners <i>▾</i>
+              </span>
+              <div className="dropdown">
+                <a
+                  href="/clear-aligners"
+                  className={isActive("/clear-aligners") ? "active" : ""}
+                >
+                  Clear Aligners
+                </a>
+                <a
+                  href="/retainers"
+                  className={isActive("/retainers") ? "active" : ""}
+                >
+                  Retainers
+                </a>
+              </div>
             </div>
 
-            <a href="/why-jerushaligne-is-different">
-              Why Jerushaligne is Different
+            <a
+              href="/why-jerushaligne-is-different"
+              className={isActive("/why-jerushaligne-is-different") ? "active" : ""}
+            >
+              Why Jerushaligne
             </a>
-            <a href="/our-outlets">Our Outlets</a>
-            <a href="/blog">Blog</a>
-            <a href="/testimonials">Testimonials</a>
-            <a href="/contact-us">Contact Us</a>
+
+            <a
+              href="/our-outlets"
+              className={isActive("/our-outlets") ? "active" : ""}
+            >
+              Outlets
+            </a>
+
+            <a href="/blog" className={isActive("/blog") ? "active" : ""}>
+              Blog
+            </a>
+
+            <a
+              href="/contact-us"
+              className={isActive("/contact-us") ? "active" : ""}
+            >
+              Contact
+            </a>
           </nav>
 
-          {/* DESKTOP CTA */}
-          <div className="nav-cta">
-            <a href="/book" className="cta-primary">
+          {/* CTA */}
+          <div className="navbar-cta">
+            <a href="/book" className="btn-primary">
               Book Appointment
             </a>
-            <a href="tel:+919999999999" className="cta-call">📞</a>
           </div>
 
           {/* HAMBURGER */}
-          <button
-            className="nav-hamburger"
-            onClick={() => setMobileOpen(true)}
-          >
+          <button className="hamburger" onClick={() => setMobileOpen(true)}>
             ☰
           </button>
         </div>
@@ -85,43 +106,72 @@ export default function Navbar() {
       {/* MOBILE MENU */}
       <div className={`mobile-menu ${mobileOpen ? "open" : ""}`}>
         <div className="mobile-header">
-          <img
-            src="/images/jerushaligne-logo.png"
-            alt="Jerushaligne"
-            className="mobile-logo"
-          />
+          <img src="/images/logo-black.png" alt="Logo" />
           <button onClick={() => setMobileOpen(false)}>✕</button>
         </div>
 
-        <nav className="mobile-nav">
-          <a href="/">Home</a>
+        <nav className="mobile-links">
+          <a href="/" className={isActive("/") ? "active" : ""}>
+            Home
+          </a>
 
           <button
-            className="mobile-dropdown-btn"
-            onClick={() => setAlignerOpen(!alignerOpen)}
+            className={`mobile-dropdown-btn ${
+              isAlignerActive ? "active" : ""
+            }`}
+            onClick={() => setMobileDropdown(!mobileDropdown)}
           >
-            Aligners <span>{alignerOpen ? "▴" : "▾"}</span>
+            Aligners <span>{mobileDropdown ? "−" : "+"}</span>
           </button>
 
-          {alignerOpen && (
+          {mobileDropdown && (
             <div className="mobile-submenu">
-              <a href="/clear-aligners">Clear Aligners</a>
-              <a href="/retainers">Retainers</a>
+              <a
+                href="/clear-aligners"
+                className={isActive("/clear-aligners") ? "active" : ""}
+              >
+                Clear Aligners
+              </a>
+              <a
+                href="/retainers"
+                className={isActive("/retainers") ? "active" : ""}
+              >
+                Retainers
+              </a>
             </div>
           )}
 
-          <a href="/why-jerushaligne-is-different">
-            Why Jerushaligne is Different
+          <a
+            href="/why-jerushaligne-is-different"
+            className={isActive("/why-jerushaligne-is-different") ? "active" : ""}
+          >
+            Why Jerushaligne
           </a>
-          <a href="/our-outlets">Our Outlets</a>
-          <a href="/blog">Blog</a>
-          <a href="/testimonials">Testimonials</a>
-          <a href="/contact-us">Contact Us</a>
+
+          <a
+            href="/our-outlets"
+            className={isActive("/our-outlets") ? "active" : ""}
+          >
+            Outlets
+          </a>
+
+          <a href="/blog" className={isActive("/blog") ? "active" : ""}>
+            Blog
+          </a>
+
+          <a
+            href="/contact-us"
+            className={isActive("/contact-us") ? "active" : ""}
+          >
+            Contact
+          </a>
         </nav>
 
         <div className="mobile-cta">
-          <a href="/book" className="cta-primary">Book Appointment</a>
-          <a href="tel:+919999999999" className="cta-secondary">
+          <a href="/book" className="btn-primary">
+            Book Appointment
+          </a>
+          <a href="tel:+919999999999" className="btn-secondary">
             Call Now
           </a>
         </div>
