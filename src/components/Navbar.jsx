@@ -4,50 +4,43 @@ import "../styles/Navbar.css";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileDropdown, setMobileDropdown] = useState(false);
+  const [mobileAligners, setMobileAligners] = useState(false);
 
-  const currentPath = window.location.pathname;
+  const path = window.location.pathname;
+  const isActive = (p) => path === p;
 
-  const isActive = (path) => currentPath === path;
-
-  const isAlignerActive =
-    currentPath === "/clear-aligners" || currentPath === "/retainers";
-
-  // Scroll effect
+  /* SCROLL EFFECT */
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 60);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Lock body scroll on mobile
+  /* LOCK BODY SCROLL */
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "auto";
   }, [mobileOpen]);
 
   return (
     <>
+      {/* ================= NAVBAR ================= */}
       <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
-        <div className="navbar-container">
+        <div className="nav-inner">
           {/* LOGO */}
-          <a href="/" className="navbar-logo">
-            <img
-              src={scrolled ? "/images/logo-black.png" : "/images/logo-white.png"}
-              alt="Jerushaligne"
-            />
+          <a href="/" className="logo">
+            <img src="/images/logo-black.png" alt="Jerushaligne" />
           </a>
 
           {/* DESKTOP NAV */}
-          <nav className="navbar-links">
-            <a href="/" className={isActive("/") ? "active" : ""}>
+          <nav className="nav-links">
+            <a className={`pill ${isActive("/") ? "active" : ""}`} href="/">
               Home
             </a>
 
-            <div className="nav-dropdown">
-              <span className={isAlignerActive ? "active" : ""}>
-                Aligners <i>▾</i>
-              </span>
-              <div className="dropdown">
+            {/* DROPDOWN (NO ACTIVE ON PARENT) */}
+            <div className="dropdown">
+              <button className="pill">Aligners ▾</button>
+              <div className="dropdown-menu">
                 <a
                   href="/clear-aligners"
                   className={isActive("/clear-aligners") ? "active" : ""}
@@ -64,37 +57,40 @@ export default function Navbar() {
             </div>
 
             <a
+              className={`pill ${
+                isActive("/why-jerushaligne-is-different") ? "active" : ""
+              }`}
               href="/why-jerushaligne-is-different"
-              className={isActive("/why-jerushaligne-is-different") ? "active" : ""}
             >
               Why Jerushaligne
             </a>
 
             <a
+              className={`pill ${isActive("/our-outlets") ? "active" : ""}`}
               href="/our-outlets"
-              className={isActive("/our-outlets") ? "active" : ""}
             >
               Outlets
             </a>
 
-            <a href="/blog" className={isActive("/blog") ? "active" : ""}>
+            <a
+              className={`pill ${isActive("/blog") ? "active" : ""}`}
+              href="/blog"
+            >
               Blog
             </a>
 
             <a
+              className={`pill ${isActive("/contact-us") ? "active" : ""}`}
               href="/contact-us"
-              className={isActive("/contact-us") ? "active" : ""}
             >
               Contact
             </a>
           </nav>
 
           {/* CTA */}
-          <div className="navbar-cta">
-            <a href="/book" className="btn-primary">
-              Book Appointment
-            </a>
-          </div>
+          <a href="/book" className="cta desktop-only">
+            Book Appointment
+          </a>
 
           {/* HAMBURGER */}
           <button className="hamburger" onClick={() => setMobileOpen(true)}>
@@ -103,29 +99,28 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* MOBILE MENU */}
-      <div className={`mobile-menu ${mobileOpen ? "open" : ""}`}>
+      {/* ================= MOBILE DRAWER ================= */}
+      <aside className={`mobile-drawer ${mobileOpen ? "open" : ""}`}>
         <div className="mobile-header">
           <img src="/images/logo-black.png" alt="Logo" />
           <button onClick={() => setMobileOpen(false)}>✕</button>
         </div>
 
-        <nav className="mobile-links">
-          <a href="/" className={isActive("/") ? "active" : ""}>
+        <nav className="mobile-nav">
+          <a className={isActive("/") ? "active" : ""} href="/">
             Home
           </a>
 
+          {/* MOBILE DROPDOWN (NO ACTIVE ON PARENT) */}
           <button
-            className={`mobile-dropdown-btn ${
-              isAlignerActive ? "active" : ""
-            }`}
-            onClick={() => setMobileDropdown(!mobileDropdown)}
+            className="mobile-drop"
+            onClick={() => setMobileAligners(!mobileAligners)}
           >
-            Aligners <span>{mobileDropdown ? "−" : "+"}</span>
+            Aligners <span>{mobileAligners ? "−" : "+"}</span>
           </button>
 
-          {mobileDropdown && (
-            <div className="mobile-submenu">
+          {mobileAligners && (
+            <div className="mobile-sub">
               <a
                 href="/clear-aligners"
                 className={isActive("/clear-aligners") ? "active" : ""}
@@ -141,41 +136,21 @@ export default function Navbar() {
             </div>
           )}
 
-          <a
-            href="/why-jerushaligne-is-different"
-            className={isActive("/why-jerushaligne-is-different") ? "active" : ""}
-          >
-            Why Jerushaligne
-          </a>
-
-          <a
-            href="/our-outlets"
-            className={isActive("/our-outlets") ? "active" : ""}
-          >
-            Outlets
-          </a>
-
-          <a href="/blog" className={isActive("/blog") ? "active" : ""}>
-            Blog
-          </a>
-
-          <a
-            href="/contact-us"
-            className={isActive("/contact-us") ? "active" : ""}
-          >
-            Contact
-          </a>
+          <a href="/why-jerushaligne-is-different">Why Jerushaligne</a>
+          <a href="/our-outlets">Outlets</a>
+          <a href="/blog">Blog</a>
+          <a href="/contact-us">Contact</a>
         </nav>
 
         <div className="mobile-cta">
-          <a href="/book" className="btn-primary">
+          <a href="/book" className="cta">
             Book Appointment
           </a>
-          <a href="tel:+919999999999" className="btn-secondary">
+          <a href="tel:+919999999999" className="cta secondary">
             Call Now
           </a>
         </div>
-      </div>
+      </aside>
     </>
   );
 }

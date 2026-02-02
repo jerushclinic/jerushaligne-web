@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import WhyJerushaligneIsDifferent from "./pages/WhyJerushaligneIsDifferent";
 import ClearAligners from "./pages/ClearAligners"
+import Retainers from "./pages/Retainers";
 import OurOutlets from "./pages/OurOutlets";
 import ContactUs from "./pages/ContactUs";
 import AppointmentSlots from "./pages/AppointmentSlots";
@@ -43,8 +44,18 @@ function App() {
               </PageTransition>
             }
           />
-            
 
+          
+           <Route
+            path="/retainers"
+            element={
+              <PageTransition>
+                <Retainers />
+              </PageTransition>
+            }
+          />
+            
+            
            <Route
             path="/why-jerushaligne-is-different"
             element={
