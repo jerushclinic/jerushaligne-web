@@ -16,31 +16,34 @@ export default function AppointmentCTA() {
 
   const [status, setStatus] = useState("");
 
-  /* NAME – ONLY LETTERS */
-  const handleNameChange = (e) => {
-    const value = e.target.value.replace(/[^a-zA-Z\s]/g, "");
-    setFormData({ ...formData, name: value });
-  };
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("loading");
+  if (!formData.name.trim()) return setStatus("error");
+  if (!formData.phone || formData.phone.length < 8) return setStatus("error");
 
-    try {
-      const res = await fetch("/api/appointment", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+  const emailRegex = /\S+@\S+\.\S+/;
+  if (!emailRegex.test(formData.email)) return setStatus("error");
 
-      if (!res.ok) throw new Error("Failed");
+  if (!formData.treatment) return setStatus("error");
 
-      setStatus("success");
-      setFormData({ name: "", phone: "", email: "", treatment: "" });
-    } catch (err) {
-      setStatus("error");
-    }
-  };
+  setStatus("loading");
+
+  try {
+    const res = await fetch("/api/appointment", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (!res.ok) throw new Error("Failed");
+
+    setStatus("success");
+    setFormData({ name: "", phone: "", email: "", treatment: "" });
+  } catch (err) {
+    setStatus("error");
+  }
+};
 
   return (
     <section className="appt-cta">
