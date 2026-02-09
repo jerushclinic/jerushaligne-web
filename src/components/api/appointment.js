@@ -2,13 +2,13 @@ import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).json({ message: "Method not allowed" });
+    return res.status(405).json({ error: "Method not allowed" });
   }
 
   const { name, phone, email, treatment } = req.body;
 
   if (!name || !phone || !email || !treatment) {
-    return res.status(400).json({ error: "All fields are required" });
+    return res.status(400).json({ error: "Missing fields" });
   }
 
   const transporter = nodemailer.createTransport({
@@ -35,7 +35,7 @@ export default async function handler(req, res) {
 
     return res.status(200).json({ success: true });
   } catch (err) {
-    console.error("Email error:", err);
+    console.error(err);
     return res.status(500).json({ error: "Email failed" });
   }
 }
