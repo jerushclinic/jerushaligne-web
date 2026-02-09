@@ -16,34 +16,49 @@ export default function AppointmentCTA() {
 
   const [status, setStatus] = useState("");
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  /* ✅ NAME – ONLY LETTERS */
+  const handleNameChange = (e) => {
+    const value = e.target.value.replace(/[^a-zA-Z\s]/g, "");
+    setFormData({ ...formData, name: value });
+  };
 
-  if (!formData.name.trim()) return setStatus("error");
-  if (!formData.phone || formData.phone.length < 8) return setStatus("error");
+  /* ✅ FORM SUBMIT */
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const emailRegex = /\S+@\S+\.\S+/;
-  if (!emailRegex.test(formData.email)) return setStatus("error");
+    // basic validations
+    if (!formData.name.trim()) return setStatus("error");
+    if (!formData.phone || formData.phone.length < 8)
+      return setStatus("error");
 
-  if (!formData.treatment) return setStatus("error");
+    const emailRegex = /\S+@\S+\.\S+/;
+    if (!emailRegex.test(formData.email))
+      return setStatus("error");
 
-  setStatus("loading");
+    if (!formData.treatment) return setStatus("error");
 
-  try {
-    const res = await fetch("/api/appointment", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
+    setStatus("loading");
 
-    if (!res.ok) throw new Error("Failed");
+    try {
+      const res = await fetch("/api/appointment", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    setStatus("success");
-    setFormData({ name: "", phone: "", email: "", treatment: "" });
-  } catch (err) {
-    setStatus("error");
-  }
-};
+      if (!res.ok) throw new Error("Failed");
+
+      setStatus("success");
+      setFormData({
+        name: "",
+        phone: "",
+        email: "",
+        treatment: "",
+      });
+    } catch (err) {
+      setStatus("error");
+    }
+  };
 
   return (
     <section className="appt-cta">
@@ -77,9 +92,9 @@ const handleSubmit = async (e) => {
                 required
               />
 
-              {/* PHONE WITH COUNTRY CODE */}
+              {/* PHONE */}
               <PhoneInput
-                country={"in"}
+                country="in"
                 value={formData.phone}
                 onChange={(phone) =>
                   setFormData({ ...formData, phone })
@@ -96,7 +111,10 @@ const handleSubmit = async (e) => {
                 placeholder="Email Address"
                 value={formData.email}
                 onChange={(e) =>
-                  setFormData({ ...formData, email: e.target.value })
+                  setFormData({
+                    ...formData,
+                    email: e.target.value,
+                  })
                 }
                 required
               />
@@ -105,7 +123,10 @@ const handleSubmit = async (e) => {
               <select
                 value={formData.treatment}
                 onChange={(e) =>
-                  setFormData({ ...formData, treatment: e.target.value })
+                  setFormData({
+                    ...formData,
+                    treatment: e.target.value,
+                  })
                 }
                 required
               >
@@ -123,7 +144,7 @@ const handleSubmit = async (e) => {
                 : "Request Appointment →"}
             </button>
 
-            {/* STATUS MESSAGE */}
+            {/* STATUS */}
             {status === "success" && (
               <p className="form-success">
                 ✅ Thanks for reaching us! We’ll contact you soon.
