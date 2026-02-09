@@ -14,7 +14,7 @@
   background: rgba(255,255,255,0.15);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  transition: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 

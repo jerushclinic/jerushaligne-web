@@ -1660,3 +1660,194 @@
             border-radius: 50%;
           }
         }
+
+
+        
+
+
+/* ================= APPOINTMENT CTA SECTION ================= */
+
+.appt-cta {
+  padding: 4rem 1.5rem;
+  background: linear-gradient(180deg, #fff7e6, #ffffff);
+
+  position: relative;
+  overflow: hidden; /* 🔒 VERY IMPORTANT – stops top yellow bleed */
+}
+
+/* ================= CARD ================= */
+
+.appt-card {
+  max-width: 1100px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+
+  background: #fffdf8;
+  border-radius: 26px;
+
+  overflow: hidden; /* card boundary clean */
+  box-shadow: 0 19px 14px rgb(0 0 0 / 12%);
+}
+
+/* ================= LEFT CONTENT ================= */
+
+.appt-left {
+  padding: 2.6rem 3rem;
+  background: linear-gradient(90deg, #ffea96, #fff5da);
+}
+
+.appt-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  font-weight: 700;
+  color: #f59e0b;
+  display: inline-block;
+  margin-bottom: 0.4rem;
+}
+
+.appt-left h2 {
+  font-size: 2.1rem;
+  font-weight: 900;
+  margin: 0.4rem 0 1.6rem;
+  color: #0f172a;
+  line-height: 1.15;
+}
+
+.appt-left h2 span {
+  color: #f59e0b;
+}
+
+/* ================= FORM ================= */
+
+.appt-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+
+.appt-left input,
+.appt-left select {
+  width: 100%;
+  padding: 12px 14px;
+
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+
+  font-size: 0.9rem;
+  background: #fff;
+}
+
+.appt-left input:focus,
+.appt-left select:focus {
+  outline: none;
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+}
+
+/* ================= BUTTON ================= */
+
+.appt-left button {
+  margin-top: 1.6rem;
+
+  padding: 10px 26px; /* compact button */
+  min-width: 220px;
+
+  border-radius: 999px;
+  border: none;
+
+  font-weight: 700;
+  font-size: 0.9rem;
+
+  background: linear-gradient(90deg, #facc15, #f59e0b);
+  color: #111;
+  cursor: pointer;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.appt-left button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(245, 158, 11, 0.35);
+}
+
+/* ================= RIGHT IMAGE AREA ================= */
+
+.appt-right {
+  background: linear-gradient(92deg, #fef4d8, #fbbf24);
+
+  position: relative;
+  display: flex;
+  align-items: flex-end; 
+  justify-content: center;
+  overflow: visible;
+}
+
+/* IMAGE – 3D POP EFFECT */
+.appt-right img {
+  max-width: 360px;
+  width: 100%;
+  object-fit: contain;
+  transform: translateY(5px);
+  filter: drop-shadow(0 24px 32px rgba(0, 0, 0, 0.3));
+
+  pointer-events: none;
+}
+
+
+/* PHONE INPUT FIX */
+.phone-container {
+  width: 100%;
+}
+
+.phone-input {
+  width: 100% !important;
+  height: 46px !important;
+  border-radius: 12px !important;
+  border: 1px solid #e5e7eb !important;
+  font-size: 0.9rem;
+}
+
+/* SUCCESS / ERROR */
+.form-success {
+  margin-top: 0.8rem;
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.form-error {
+  margin-top: 0.8rem;
+  color: #dc2626;
+  font-weight: 600;
+}
+
+
+
+
+/* ================= MOBILE & TABLET ================= */
+
+@media (max-width: 768px) {
+  .appt-card {
+    grid-template-columns: 1fr;
+  }
+
+  .appt-left {
+    padding: 2rem;
+    background: linear-gradient(144deg, #ffea96, #fff5da);
+  }
+
+  .appt-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .appt-right {
+    padding-top: 1.5rem;
+    background: linear-gradient(184deg, #fef4d8, #fbbf24);
+  }
+
+  .appt-right img {
+    max-width: 320px;
+    transform: translateY(5px);
+  }
+}

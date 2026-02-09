@@ -45,7 +45,7 @@ export default function RetainersWhy() {
   ];
 
   return (
-    <section className="ret-why-alt">
+    <section className="ret-why-alt" id="ret-why">
       <div className="ret-why-alt-inner">
 
         {/* LEFT STORY */}
