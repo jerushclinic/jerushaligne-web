@@ -1,0 +1,313 @@
+/* ================= OUTLET SHOWCASE ================= */
+
+.outlet-showcase {
+  padding: 7rem 1.5rem;
+  background: #ffffff;
+}
+
+.outlet-showcase-inner {
+  max-width: 1300px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 0.9fr;
+  gap: 2.5rem;
+  align-items: stretch; /* 🔑 IMPORTANT */
+}
+
+/* ================= LEFT CONTENT ================= */
+
+.outlet-info h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 900;
+  margin: 1rem 0;
+}
+
+.outlet-info h1 span {
+  color: #f59e0b;
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 1rem 0;
+}
+
+.rating img {
+  width: 26px;
+}
+
+.stars {
+  color: #fbbf24;
+}
+
+.outlet-meta {
+  margin: 1.2rem 0;
+  color: #374151;
+  line-height: 1.7;
+}
+
+.cta-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ================= SHARED CARD STYLE ================= */
+
+.image-slider,
+.banner-slider,
+.map-box {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+  background: #f9fafb;
+}
+
+/* ================= RIGHT STACK ================= */
+
+.right-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  /* TOTAL HEIGHT CONTROL */
+  height: 420px;
+}
+
+/* Banner */
+.banner-slider {
+  flex: 1;
+  min-height: 190px;
+}
+
+/* Map */
+.map-box {
+  flex: 1;
+  min-height: 190px;
+}
+
+.map-box iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ================= CENTER IMAGE (SYNC HEIGHT) ================= */
+
+.image-slider {
+  height: 420px; 
+}
+
+/* ================= SLIDER IMAGES ================= */
+
+.image-slider img,
+.banner-slider img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.image-slider img.active,
+.banner-slider img.active {
+  opacity: 1;
+}
+
+/* ================= BUTTONS ================= */
+
+.btn-primary {
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  background: linear-gradient(90deg,#facc15,#f59e0b);
+  color: #111;
+  text-decoration: none;
+}
+
+.btn-outline {
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 2px solid #f59e0b;
+  color: #f59e0b;
+  text-decoration: none;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* TABLET */
+@media (max-width: 1024px) {
+  .outlet-showcase-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .image-slider {
+    height: 260px;
+  }
+
+  .right-stack {
+    height: auto;
+  }
+
+  .banner-slider,
+  .map-box {
+    min-height: 200px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .image-slider {
+    height: 220px;
+  }
+
+  .banner-slider,
+  .map-box {
+    min-height: 180px;
+  }
+}
+
+
+/* ================= OUTLET ABOUT ================= */
+
+.outlet-about {
+  background: #ffffff;
+  padding: 4.5rem 1.5rem;
+}
+
+.outlet-about-inner {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* TITLE */
+.outlet-about-title {
+  text-align: center;
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 1.6rem;
+}
+
+/* DESCRIPTION */
+.outlet-about-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #374151;
+  max-width: 980px;
+  margin: auto;
+  text-align: center;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .outlet-about {
+    padding: 3.5rem 1.25rem;
+  }
+
+  .outlet-about-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+}
+
+
+/* ================= OUTLET ABOUT ================= */
+
+.outlet-about {
+  padding: 4.5rem 1.5rem;
+  background: #ffffff;
+}
+
+/* ===== STATS BAR ===== */
+
+.outlet-about-stats {
+  max-width: 1300px;
+  margin: 0 auto 3rem;
+  padding: 1.6rem 1.8rem;
+
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1.2rem;
+
+  background: #fff7ed;
+  border-radius: 18px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-icon {
+  display: block;
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.stat-value {
+  display: block;
+  font-size: 15px;
+  font-weight: 800;
+  color: #f97316;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: #374151;
+  font-weight: 500;
+}
+
+/* ===== CONTENT ===== */
+
+.outlet-about-content {
+  max-width: 980px;
+  margin: auto;
+  text-align: center;
+}
+
+.outlet-about-content h2 {
+  font-size: clamp(22px, 3.2vw, 32px);
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 1.4rem;
+}
+
+.outlet-about-content p {
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: #374151;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .outlet-about-stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .outlet-about {
+    padding: 3.5rem 1.2rem;
+  }
+
+  .outlet-about-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .outlet-about-content p {
+    font-size: 14.5px;
+  }
+}

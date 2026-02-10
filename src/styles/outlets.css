@@ -1,73 +1,79 @@
-/* ===== OUTLETS ===== */
+/* ================= OUTLETS SECTION ================= */
 
 .outlets-section {
-  padding: 80px 17%;
+  padding: 80px 16%;
   background: #f9fafb;
 }
 
 .outlets-title {
   text-align: center;
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 50px;
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 800;
+  margin-bottom: 52px;
+  color: #0f172a;
 }
 
-/* GRID */
+/* ================= GRID ================= */
+
 .outlets-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 28px;
 }
 
-/* CARD */
+/* ================= CARD ================= */
+
 .outlet-card {
-  background: #fff;
+  background: #ffffff;
   border-radius: 22px;
   overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-  transition: transform .3s ease, box-shadow .3s ease;
+
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .outlet-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.14);
 }
 
-/* IMAGE */
+/* ================= IMAGE ================= */
+
 .outlet-card img {
   width: 100%;
   height: 210px;
   object-fit: cover;
+  display: block;
 }
 
-/* CONTENT */
+/* ================= CONTENT ================= */
+
 .outlet-content {
   padding: 22px;
 }
 
 .outlet-city {
-  color: #000000;
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-
-.outlet-content h4 {
-  font-size: 16px;
-  margin-bottom: 8px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 6px;
 }
 
 .outlet-address {
   font-size: 14px;
-  color: #000000;
-  line-height: 1.5;
+  color: #374151;
+  line-height: 1.55;
 }
 
 .outlet-phone {
   margin: 12px 0;
+  font-size: 14px;
   font-weight: 600;
+  color: #111827;
 }
 
-/* GOOGLE RATING */
+/* ================= GOOGLE RATING ================= */
+
 .outlet-rating {
   display: flex;
   align-items: center;
@@ -75,87 +81,111 @@
   margin-top: 14px;
 }
 
-/* Google logo wrapper */
-.outlet-rating .google {
-  display: flex;
-  align-items: center;
-}
-
-/* ✅ CONTROL GOOGLE LOGO SIZE HERE */
 .outlet-rating .google img {
-  width: 34px;        /* change this if needed */
+  width: 30px;
   height: auto;
   object-fit: contain;
 }
 
-/* Stars */
 .outlet-rating .stars {
   font-size: 14px;
-  color: #fbbc05; /* Google yellow */
+  color: #fbbf24;
   letter-spacing: 1px;
 }
 
-/* Rating text */
 .outlet-rating .rating-text {
   font-size: 13px;
   color: #6b7280;
   font-weight: 500;
 }
 
-.google {
-  font-weight: 800;
-  color: #4285F4;
-}
+/* ================= ACTION BUTTONS ================= */
 
-.stars {
-  color: #fbbf24;
-}
-
-.rating-text {
-  font-size: 14px;
-  color: #374151;
-}
-
-/* BUTTONS */
 .outlet-actions {
   display: flex;
   gap: 12px;
-  margin-top: 30px;
+  margin-top: 26px;
 }
 
+/* VIEW MORE */
 .btn-outline {
   flex: 1;
   text-align: center;
-  padding: 10px;
+
+  padding: 8px 0;
   border-radius: 999px;
-  border: 1.5px solid #ef4444;
-  color: #ef4444;
+
+  border: 1.5px solid #f59e0b;
+  background: transparent;
+
+  font-size: 14px;
   font-weight: 600;
+  color: #f59e0b;
+
+  transition: all 0.25s ease;
 }
 
 .btn-outline:hover {
-  background: #fee2e2;
+  background: #fff7ed;
 }
 
+/* MAKE APPOINTMENT */
 .btn-primary {
   flex: 1;
   text-align: center;
-  padding: 10px;
+
+  padding: 8px 0;
   border-radius: 999px;
-  background: linear-gradient(90deg, #facc15, #f59e0b);
+
+  font-size: 14px;
   font-weight: 600;
-  color: #000;
+
+  background: linear-gradient(90deg, #facc15, #f59e0b);
+  color: #111;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* RESPONSIVE */
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(245, 158, 11, 0.35);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* TABLET */
 @media (max-width: 1024px) {
+  .outlets-section {
+    padding: 70px 8%;
+  }
+
   .outlets-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* MOBILE */
 @media (max-width: 640px) {
+  .outlets-section {
+    padding: 60px 5%;
+  }
+
   .outlets-grid {
     grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .outlet-card img {
+    height: 190px;
+  }
+
+  .outlet-actions {
+    gap: 10px;
+  }
+
+  .btn-outline,
+  .btn-primary {
+    padding: 9px 0;
+    font-size: 13.5px;
   }
 }
