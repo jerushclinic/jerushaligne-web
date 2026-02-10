@@ -2,7 +2,6 @@
 import { motion } from "framer-motion";
 import "../styles/outlets.css";
 import HeroBreadcrumb from "../components/HeroBreadcrumb";
-
 const outlets = [
   {
     city: "Jerush Dentofacial and Cosmetic Laser Centre, Thuckalay",
@@ -12,7 +11,7 @@ const outlets = [
     phone: "+91 99999 99999",
     rating: 4.6,
     reviews: 320,
-    map: "https://www.google.com/maps?q=Jerush+Dentofacial+and+Cosmetic+Laser+Centre+Thuckalay",
+    slug: "thuckalay-outlet",
   },
   {
     city: "Jerush Dentofacial and Cosmetic Laser Centre, Trichy",
@@ -22,7 +21,7 @@ const outlets = [
     phone: "+91 88888 88888",
     rating: 4.4,
     reviews: 210,
-    map: "https://www.google.com/maps?q=Jerush+Dentofacial+and+Cosmetic+Laser+Centre+Trichy",
+    slug: "trichy-outlet",
   },
   {
     city: "Jerush Dentofacial and Cosmetic Laser Centre, Chennai",
@@ -32,7 +31,7 @@ const outlets = [
     phone: "+91 77777 77777",
     rating: 4.5,
     reviews: 185,
-    map: "https://www.google.com/maps?q=Jerush+Dentofacial+and+Cosmetic+Laser+Centre+Chennai",
+    slug: "chennai-outlet",
   },
 ];
 
@@ -87,7 +86,7 @@ export default function OurOutlets() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          Make Your Nearest Jerush Centre Now
+          Visit Your Nearest Jerush Centre Now
         </motion.div>
 
         <motion.div
@@ -131,8 +130,7 @@ export default function OurOutlets() {
                 {/* ACTIONS */}
                 <div className="outlet-actions">
                   <a
-                    href={outlet.map}
-                    target="_blank"
+                    href={`/outlets/${outlet.slug}`}
                     rel="noreferrer"
                     className="btn-outline"
                   >
@@ -148,5 +146,6 @@ export default function OurOutlets() {
         </motion.div>
       </section>
     </>
+    
   );
 }

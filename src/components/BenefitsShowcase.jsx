@@ -47,7 +47,7 @@ export default function BenefitsShowcase() {
         >
           <div className="video-card">
             <video
-              src="https://vod-adaptive-ak.vimeocdn.com/exp=1770022992~acl=%2Fd1b8076e-459e-4b6f-b89e-422906a6e428%2Fpsid%3D769ddd9c6632522017a9fc13e99318f613667ce5705c4a55b699307c81bd4d93%2F%2A~hmac=68defcc1b7774e3ee9788861712cd1a41e23607621053744b7f3fa38946e7ead/d1b8076e-459e-4b6f-b89e-422906a6e428/psid=769ddd9c6632522017a9fc13e99318f613667ce5705c4a55b699307c81bd4d93/v2/playlist/av/primary/playlist.m3u8?omit=av1-hevc-opus&pathsig=8c953e4f~pIvrbwA8MzN9K61vVHzv9VKo6lT8yj_yx8_9TZaNImk&r=dXM%3D&rh=4k1xCC&sf=ts"  
+              src="/videos/aligner.mp4"  
               controls
               autoPlay
               muted

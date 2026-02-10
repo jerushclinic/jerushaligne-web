@@ -8,6 +8,7 @@ import WhyJerushaligneIsDifferent from "./pages/WhyJerushaligneIsDifferent";
 import ClearAligners from "./pages/ClearAligners"
 import Retainers from "./pages/Retainers";
 import OurOutlets from "./pages/OurOutlets";
+import ThuckalayOutlet from "./pages/outlets/ThuckalayOutlet";
 import ContactUs from "./pages/ContactUs";
 import AppointmentSlots from "./pages/AppointmentSlots";
 import AdminSlots from "./pages/AdminSlots";
@@ -34,9 +35,9 @@ function App() {
               </PageTransition>
             }
           />
-          
 
-           <Route
+
+          <Route
             path="/clear-aligners"
             element={
               <PageTransition>
@@ -45,8 +46,8 @@ function App() {
             }
           />
 
-          
-           <Route
+
+          <Route
             path="/retainers"
             element={
               <PageTransition>
@@ -54,9 +55,9 @@ function App() {
               </PageTransition>
             }
           />
-            
-            
-           <Route
+
+
+          <Route
             path="/why-jerushaligne-is-different"
             element={
               <PageTransition>
@@ -75,6 +76,26 @@ function App() {
             }
           />
 
+
+          <Route
+            path="/outlets/thuckalay-outlet"
+            element={
+              <PageTransition>
+                <ThuckalayOutlet />
+              </PageTransition>
+            }
+          />
+
+          <Route
+            path="/outlets/trichy-outlet"
+            element={
+              <PageTransition>
+                <ThuckalayOutlet />
+              </PageTransition>
+            }
+          />
+
+
           <Route
             path="/contact-us"
             element={
@@ -87,7 +108,7 @@ function App() {
         </Routes>
       </AnimatePresence>
       <BackToTopIcon />
-   
+
       <Footer />
     </>
   );
