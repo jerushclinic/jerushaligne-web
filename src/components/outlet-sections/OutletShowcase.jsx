@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../../styles/outlet-showcase.css";
 
 export default function OutletShowcase({
@@ -17,7 +18,7 @@ export default function OutletShowcase({
   useEffect(() => {
     const t = setInterval(
       () => setActiveImage((p) => (p + 1) % clinicImages.length),
-      3000
+      6000
     );
     return () => clearInterval(t);
   }, [clinicImages.length]);
@@ -25,7 +26,7 @@ export default function OutletShowcase({
   useEffect(() => {
     const t = setInterval(
       () => setActiveBanner((p) => (p + 1) % banners.length),
-      3500
+      6500
     );
     return () => clearInterval(t);
   }, [banners.length]);
@@ -33,11 +34,18 @@ export default function OutletShowcase({
   return (
     <section className="outlet-showcase">
       <div className="outlet-showcase-inner">
+
         {/* LEFT */}
         <div className="outlet-info">
-          <span className="breadcrumb">
-            Home › Our Outlets › {city}
-          </span>
+
+          {/* ✅ LINKABLE BREADCRUMB */}
+          <div className="breadcrumb">
+            <Link to="/">Home</Link>
+            <span> › </span>
+            <Link to="/our-outlets">Our Outlets</Link>
+            <span> › </span>
+            <span className="current">{city}</span>
+          </div>
 
           <h1>
             Best Dental Clinic in <span>{city}</span>
@@ -98,6 +106,7 @@ export default function OutletShowcase({
             />
           </div>
         </div>
+
       </div>
     </section>
   );

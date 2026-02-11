@@ -11,7 +11,7 @@ export default function ThuckalayOutlet() {
         address="Near & Behind Bustand, Brammapuram South, Thuckalay – 629175"
         phone="+919999999999"
         clinicImages={[
-          "/images/outlets/thuckalay/post-1.png",
+          "/images/outlets/thuckalay/before-post.jpg",
           "/images/outlets/thuckalay/post-2.jpg",
         ]}
         banners={[
@@ -22,18 +22,19 @@ export default function ThuckalayOutlet() {
       />
 
       <OutletAbout
-        title="Jerush Dental Clinic Thuckalay"
+        title="Jerush Dental Clinic Thuckalay" 
         description="Jerush Dental Clinic Thuckalay offers advanced dental treatments including aligners, implants, braces, cosmetic dentistry and smile makeover procedures. Our clinic is equipped with modern technology and experienced specialists to ensure painless, safe and long-lasting dental care for every patient."
         stats={[
           { icon: "😊", value: "30L+", label: "Happy Patients" },
           { icon: "🦷", value: "1500+", label: "Dentists" },
-          { icon: "🏥", value: "650+", label: "Clinics" },
           { icon: "📅", value: "7 Days", label: "Open" },
           { icon: "🦷", value: "55K+", label: "Implants" },
           { icon: "😁", value: "7.8K+", label: "Dentures" },
           { icon: "🦷", value: "2L+", label: "Crowns" },
         ]}
       />
+
+
     </>
   );
 }
