@@ -69,7 +69,7 @@ export default function Navbar() {
               className={`pill ${isActive("/our-outlets") ? "active" : ""}`}
               href="/our-outlets"
             >
-              Outlets
+              Our Outlets
             </a>
 
             <a
@@ -137,7 +137,7 @@ export default function Navbar() {
           )}
 
           <a href="/why-jerushaligne-is-different">Why Jerushaligne</a>
-          <a href="/our-outlets">Outlets</a>
+          <a href="/our-outlets">Our Outlets</a>
           <a href="/blog">Blog</a>
           <a href="/contact-us">Contact</a>
         </nav>
