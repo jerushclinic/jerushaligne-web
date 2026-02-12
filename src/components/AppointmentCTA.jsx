@@ -23,42 +23,54 @@ export default function AppointmentCTA() {
   };
 
   /* ✅ FORM SUBMIT */
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  /* ✅ UPDATED HANDLESUBMIT WITH BETTER LOGIC */
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    // basic validations
-    if (!formData.name.trim()) return setStatus("error");
-    if (!formData.phone || formData.phone.length < 8)
-      return setStatus("error");
+  // Basic Validations
+  if (!formData.name.trim()) return setStatus("error");
+  // Minimum 10 digits for phone (excluding country code) logic apply pannalam
+  if (!formData.phone || formData.phone.length < 10) {
+    alert("Please enter a valid phone number");
+    return setStatus("error");
+  }
 
-    const emailRegex = /\S+@\S+\.\S+/;
-    if (!emailRegex.test(formData.email))
-      return setStatus("error");
+  const emailRegex = /\S+@\S+\.\S+/;
+  if (!emailRegex.test(formData.email)) return setStatus("error");
 
-    if (!formData.treatment) return setStatus("error");
+  if (!formData.treatment) return setStatus("error");
 
-    setStatus("loading");
+  setStatus("loading");
 
-    try {
-      const res = await fetch("/api/appointment", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+  try {
+    const res = await fetch("/api/appointment", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
 
-      if (!res.ok) throw new Error("Failed");
+    const data = await res.json();
 
-      setStatus("success");
-      setFormData({
-        name: "",
-        phone: "",
-        email: "",
-        treatment: "",
-      });
-    } catch (err) {
-      setStatus("error");
-    }
-  };
+    if (!res.ok) throw new Error(data.error || "Failed");
+
+    setStatus("success");
+    
+    // Reset Form
+    setFormData({
+      name: "",
+      phone: "",
+      email: "",
+      treatment: "",
+    });
+
+    // 3 seconds aprom success message-ai hidden aakkalam
+    setTimeout(() => setStatus(""), 5000);
+
+  } catch (err) {
+    console.error("Submission Error:", err);
+    setStatus("error");
+  }
+};
 
   return (
     <section className="appt-cta">
