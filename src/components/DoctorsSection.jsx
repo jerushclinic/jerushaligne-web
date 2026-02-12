@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "../styles/component.css";
 
@@ -6,44 +6,28 @@ const doctors = [
   {
     name: "Dr. Naveen Raj",
     degree: "MDS – Dentofacial Orthopedics",
-    img: "/images/doctors/dr-bladbin.png",
-    desc: "Orthodontic specialist focused on aligners and precision smile planning."
+    img: "/images/doctors/naveen.webp",
+    desc: "Orthodontic specialist focused on aligners and advanced smile planning."
   },
   {
     name: "Dr. Meera Joseph",
     degree: "BDS – Cosmetic Dentistry",
     img: "/images/doctors/meera.webp",
-    desc: "Expert in aesthetic smile design and invisible aligner transformation."
-  },
-   {
-    name: "Dr. Meera Joseph",
-    degree: "BDS – Cosmetic Dentistry",
-    img: "/images/doctors/meera.webp",
-    desc: "Expert in aesthetic smile design and invisible aligner transformation."
-  },
-   {
-    name: "Dr. Meera Joseph",
-    degree: "BDS – Cosmetic Dentistry",
-    img: "/images/doctors/meera.webp",
-    desc: "Expert in aesthetic smile design and invisible aligner transformation."
+    desc: "Smile design expert delivering confident invisible aligner transformations."
   },
   {
     name: "Dr. Arun Kumar",
     degree: "MDS – Orthodontist",
     img: "/images/doctors/arun.webp",
-    desc: "Advanced orthodontic specialist delivering faster predictable results."
+    desc: "Advanced orthodontic specialist with years of clinical experience."
   }
-  
 ];
 
-export default function DoctorsLuxury() {
+export default function DoctorsSection() {
   const [index, setIndex] = useState(0);
-  const [active, setActive] = useState(null);
-  const trackRef = useRef(null);
+  const [selected, setSelected] = useState(null);
 
-  const CARD_WIDTH = 360;
-
-  /* Auto Slide */
+  /* AUTO SLIDE */
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % doctors.length);
@@ -52,72 +36,85 @@ export default function DoctorsLuxury() {
     return () => clearInterval(interval);
   }, []);
 
+  const next = () => {
+    setIndex((prev) => (prev + 1) % doctors.length);
+  };
+
+  const prev = () => {
+    setIndex((prev) =>
+      prev === 0 ? doctors.length - 1 : prev - 1
+    );
+  };
+
+  const currentDoctor = doctors[index];
+
   return (
     <>
-      <section className="lux-doctor-section">
-        <div className="lux-header">
+      <section className="doc-section">
+        <div className="doc-header">
           <h2>Meet Our Smile Experts</h2>
-          <p>Certified specialists delivering confident smiles</p>
+          <p>Certified doctors driving confident smiles</p>
         </div>
 
-        <div className="lux-carousel">
+        <div className="doc-carousel">
+
+          <button className="doc-arrow left" onClick={prev}>‹</button>
+
           <motion.div
-            ref={trackRef}
-            className="lux-track"
-            animate={{ x: -index * CARD_WIDTH }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            key={index}
+            className="doc-card"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4 }}
+            onClick={() => setSelected(currentDoctor)}
           >
-            {doctors.map((doc, i) => (
-              <motion.div
-                key={i}
-                className="lux-card"
-                whileHover={{ scale: 1.05 }}
-                onClick={() => setActive(doc)}
-              >
-                <div className="lux-img">
-                  <img src={doc.img} alt={doc.name} />
-                  <div className="spotlight"></div>
-                </div>
+            <div className="doc-image">
+              <img src={currentDoctor.img} alt={currentDoctor.name} />
+            </div>
 
-                <div className="lux-info">
-                  <h4>{doc.name}</h4>
-                  <span>{doc.degree}</span>
-                </div>
-
-                <div className="gold-line"></div>
-              </motion.div>
-            ))}
+            <div className="doc-info">
+              <h4>{currentDoctor.name}</h4>
+              <span>{currentDoctor.degree}</span>
+            </div>
           </motion.div>
+
+          <button className="doc-arrow right" onClick={next}>›</button>
+
         </div>
       </section>
 
-      {/* Modal */}
+      {/* MODAL */}
 
       <AnimatePresence>
-        {active && (
+        {selected && (
           <motion.div
-            className="lux-modal-overlay"
+            className="doc-modal-overlay"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setActive(null)}
+            onClick={() => setSelected(null)}
           >
             <motion.div
-              className="lux-modal"
-              initial={{ scale: 0.85, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.85, opacity: 0 }}
+              className="doc-modal"
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 40, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <button className="lux-close" onClick={() => setActive(null)}>×</button>
+              <button
+                className="modal-close"
+                onClick={() => setSelected(null)}
+              >
+                ×
+              </button>
 
-              <img src={active.img} alt={active.name} />
+              <img src={selected.img} alt={selected.name} />
 
-              <h3>{active.name}</h3>
-              <p className="degree">{active.degree}</p>
-              <p className="desc">{active.desc}</p>
+              <h3>{selected.name}</h3>
+              <p className="degree">{selected.degree}</p>
+              <p className="desc">{selected.desc}</p>
 
-              <a href="/contact" className="lux-btn">
+              <a href="/contact" className="consult-btn">
                 Book Consultation
               </a>
             </motion.div>
