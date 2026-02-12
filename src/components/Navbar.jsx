@@ -65,12 +65,32 @@ export default function Navbar() {
               Why Jerushaligne
             </a>
 
-            <a
-              className={`pill ${isActive("/our-outlets") ? "active" : ""}`}
-              href="/our-outlets"
-            >
-              Our Outlets
-            </a>
+
+                    {/* DROPDOWN (NO ACTIVE ON PARENT) */}
+            <div className="dropdown">
+              <button className="pill">Our Outlets ▾</button>
+              <div className="dropdown-menu">
+                <a
+                  href="/outlets/thuckalay-outlet"
+                  className={isActive("/outlets/thuckalay-outlet") ? "active" : ""}
+                >
+                  Thuckalay
+                </a>
+                <a
+                  href="/outlets/trichy-outlet"
+                  className={isActive("/trichy-outlet") ? "active" : ""}
+                >
+                 Trichy
+                </a>
+                <a
+                  href="/outlets/chennai-outlet"
+                  className={isActive("/chennai-outlet") ? "active" : ""}
+                >
+                 Chennai
+                </a>
+              </div>
+            </div>
+
 
             <a
               className={`pill ${isActive("/blog") ? "active" : ""}`}
