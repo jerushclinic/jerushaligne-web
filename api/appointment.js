@@ -12,7 +12,9 @@ export default async function handler(req, res) {
   }
 
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
     auth: {
       user: process.env.GMAIL_USER,
       pass: process.env.GMAIL_PASS,
@@ -21,7 +23,7 @@ export default async function handler(req, res) {
 
   try {
     await transporter.sendMail({
-      from: `"JerushaLine Website" <${process.env.GMAIL_USER}>`,
+      from: `"Jerushaligne Website" <${process.env.GMAIL_USER}>`,
       to: process.env.GMAIL_USER,
       subject: "New Appointment Request",
       html: `

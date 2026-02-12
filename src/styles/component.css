@@ -335,248 +335,218 @@
 }
 
 
-/* ================= DOCTORS SECTION ================= */
 
-.doctor-section {
-  padding: 7rem 1.5rem;
-  background: linear-gradient(180deg, #fffaf0, #fff1cc);
+/* DOCTORS SECTION */
+
+/* SECTION */
+.lux-doctor-section {
+  padding: 8rem 1.5rem;
+  background: linear-gradient(135deg,#fff8e1,#fff1cc);
   overflow: hidden;
 }
 
-/* HEADER */
-
-.doctor-header {
+.lux-header {
   text-align: center;
-  max-width: 720px;
-  margin: 0 auto 3.5rem;
+  margin-bottom: 4rem;
 }
 
-.doctor-header h2 {
-  font-size: 38px;
+.lux-header h2 {
+  font-size: 40px;
   font-weight: 900;
-  color: #111827;
+  background: linear-gradient(90deg,#111827,#f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.doctor-header p {
-  margin-top: 0.6rem;
-  font-size: 1.05rem;
-  color: #4b5563;
-}
-
-/* ================= CAROUSEL LAYOUT ================= */
-
-.doctor-carousel-wrapper {
-  max-width: 1100px;
-  margin: auto;
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.doctor-viewport {
-  overflow: hidden;
-  width: 100%;
-}
-
-/* TRACK (MOVES LEFT) */
-
-.doctor-track {
-  display: flex;
-  will-change: transform;
-}
-
-/* ================= CARD ================= */
-
-.doctor-card {
-  width: 320px;
-  flex-shrink: 0;
-  margin-right: 24px;
-  background: #ffffff;
-  border-radius: 28px;
-  padding: 2.2rem 1.6rem;
-  box-shadow: 0 28px 80px rgba(0,0,0,0.16);
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.doctor-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 40px 100px rgba(0,0,0,0.22);
-}
-
-.doctor-card img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1.2rem;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-}
-
-.doctor-card h4 {
-  font-size: 1.15rem;
-  font-weight: 800;
-  margin-bottom: 0.25rem;
-  color: #111827;
-}
-
-.doctor-card span {
-  font-size: 0.9rem;
+.lux-header p {
   color: #6b7280;
 }
 
-/* ================= ARROWS ================= */
+/* CAROUSEL */
+.lux-carousel {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+}
 
-.doc-arrow {
-  background: #111827;
-  color: #facc15;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  font-size: 28px;
-  border: none;
+.lux-track {
+  display: flex;
+  gap: 2rem;
+}
+
+/* CARD */
+.lux-card {
+  width: 340px;
+  flex-shrink: 0;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.1);
+  position: relative;
   cursor: pointer;
-  display: grid;
-  place-items: center;
-  transition: transform 0.25s ease, background 0.25s ease;
-  z-index: 5;
+  border: 1px solid rgba(255,255,255,0.6);
 }
 
-.doc-arrow:hover {
-  transform: scale(1.1);
-  background: #000000;
+/* Soft Glowing Border */
+.lux-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  padding: 2px;
+  background: linear-gradient(45deg,#facc15,#f59e0b,#fde68a);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: glow 4s linear infinite;
 }
 
-.doc-arrow.left {
-  margin-right: 6px;
+@keyframes glow {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
 }
 
-.doc-arrow.right {
-  margin-left: 6px;
+/* IMAGE */
+.lux-img {
+  height: 320px;
+  overflow: hidden;
+  position: relative;
 }
 
-/* ================= MODAL ================= */
+.lux-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.6s ease;
+}
 
-.doctor-modal-overlay {
+/* Spotlight */
+.spotlight {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 20%,rgba(255,255,255,0.4),transparent 60%);
+  opacity: 0;
+  transition: 0.4s ease;
+}
+
+.lux-card:hover .spotlight {
+  opacity: 1;
+}
+
+/* INFO */
+.lux-info {
+  padding: 2rem;
+  text-align: center;
+}
+
+.lux-info h4 {
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.lux-info span {
+  color: #6b7280;
+}
+
+/* GOLD LINE */
+.gold-line {
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg,#facc15,#f59e0b);
+  position: absolute;
+  bottom: 0;
+}
+
+/* MODAL */
+.lux-modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(17, 24, 39, 0.78);
+  background: rgba(17,24,39,0.85);
   display: grid;
   place-items: center;
   z-index: 9999;
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
-.doctor-modal {
-  background: #ffffff;
-  width: 420px;
+.lux-modal {
+  width: 480px;
   max-width: 100%;
-  border-radius: 28px;
-  padding: 2.4rem 2rem;
+  background: linear-gradient(145deg,#ffffff,#fff7ed);
+  border-radius: 32px;
+  padding: 2.5rem;
   text-align: center;
   position: relative;
-  box-shadow: 0 40px 120px rgba(0,0,0,0.35);
 }
 
-.doctor-modal img {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
+.lux-modal img {
+  width: 160px;
+  height: 160px;
+  border-radius: 20px;
   object-fit: cover;
   margin-bottom: 1rem;
 }
 
-.doctor-modal h3 {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #111827;
+.lux-modal h3 {
+  font-weight: 900;
 }
 
-.doctor-modal .degree {
-  font-size: 0.95rem;
-  color: #6b7280;
-  margin-bottom: 1rem;
+.degree {
+  color: #f59e0b;
+  font-weight: 600;
 }
 
-.doctor-modal .desc {
-  font-size: 0.95rem;
-  line-height: 1.65;
-  color: #4b5563;
+.desc {
+  margin: 1rem 0 1.5rem;
+  color: #374151;
 }
 
-/* SOCIAL ICONS */
-
-.doctor-socials {
-  display: flex;
-  justify-content: center;
-  gap: 1.2rem;
-  margin: 1.4rem 0;
-}
-
-.doctor-socials a {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: #111827;
-  color: #facc15;
-  display: grid;
-  place-items: center;
-  font-size: 1.1rem;
-  text-decoration: none;
-  transition: transform 0.25s ease;
-}
-
-.doctor-socials a:hover {
-  transform: scale(1.15);
-}
-
-/* CONSULT BUTTON */
-
-.consult-btn.big {
-  display: inline-block;
-  padding: 12px 32px;
-  background: linear-gradient(180deg, #fde68a, #facc15);
+.lux-btn {
+  padding: 12px 36px;
   border-radius: 999px;
+  background: linear-gradient(90deg,#facc15,#f59e0b);
   font-weight: 800;
-  color: #111827;
   text-decoration: none;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  color: #111827;
 }
 
-/* CLOSE */
-
-.modal-close {
+.lux-close {
   position: absolute;
   top: 14px;
-  right: 16px;
-  font-size: 28px;
+  right: 18px;
+  font-size: 24px;
   background: none;
   border: none;
   cursor: pointer;
-  color: #111827;
 }
 
-/* ================= MOBILE ================= */
-
+/* MOBILE */
 @media (max-width: 768px) {
-  .doctor-carousel-wrapper {
-    gap: 0.5rem;
+  .lux-track {
+    gap: 1rem;
   }
 
-  .doctor-card {
-    width: 100%;
-    margin-right: 0;
+  .lux-card {
+    width: 280px;
   }
 
-  .doc-arrow {
-    width: 40px;
-    height: 40px;
+  .lux-img {
+    height: 240px;
+  }
+
+  .lux-header h2 {
+    font-size: 28px;
+  }
+
+  .lux-modal {
+    padding: 2rem 1.5rem;
+  }
+
+  .lux-modal img {
+    width: 130px;
+    height: 130px;
   }
 }
-
-
 
 
 

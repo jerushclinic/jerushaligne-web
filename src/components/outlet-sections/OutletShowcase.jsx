@@ -48,7 +48,7 @@ export default function OutletShowcase({
           </div>
 
           <h1>
-            Best Dental Clinic in <span>{city}</span>
+            Best Dental Hospital in <span>{city}</span>
           </h1>
 
           <div className="rating">

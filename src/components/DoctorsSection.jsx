@@ -2,163 +2,123 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "../styles/component.css";
 
-/* ================= DATA ================= */
-
 const doctors = [
-  {
-    name: "Dr. Priya Sharma",
-    degree: "BDS, Invisalign Certified",
-    img: "/images/doctors/priya.webp",
-    desc: "Expert in invisible aligner treatments with a patient-first approach.",
-    socials: {
-      instagram: "#",
-      linkedin: "#",
-      whatsapp: "#",
-    },
-  },
   {
     name: "Dr. Naveen Raj",
     degree: "MDS – Dentofacial Orthopedics",
-    img: "/images/doctors/naveen.webp",
-    desc: "Specialist in orthodontics with advanced aligner planning expertise.",
-    socials: {
-      instagram: "#",
-      linkedin: "#",
-      whatsapp: "#",
-    },
+    img: "/images/doctors/dr-bladbin.png",
+    desc: "Orthodontic specialist focused on aligners and precision smile planning."
   },
   {
     name: "Dr. Meera Joseph",
     degree: "BDS – Cosmetic Dentistry",
     img: "/images/doctors/meera.webp",
-    desc: "Focused on aesthetic smile corrections and cosmetic dentistry.",
-    socials: {
-      instagram: "#",
-      linkedin: "#",
-      whatsapp: "#",
-    },
+    desc: "Expert in aesthetic smile design and invisible aligner transformation."
+  },
+   {
+    name: "Dr. Meera Joseph",
+    degree: "BDS – Cosmetic Dentistry",
+    img: "/images/doctors/meera.webp",
+    desc: "Expert in aesthetic smile design and invisible aligner transformation."
+  },
+   {
+    name: "Dr. Meera Joseph",
+    degree: "BDS – Cosmetic Dentistry",
+    img: "/images/doctors/meera.webp",
+    desc: "Expert in aesthetic smile design and invisible aligner transformation."
   },
   {
     name: "Dr. Arun Kumar",
     degree: "MDS – Orthodontist",
     img: "/images/doctors/arun.webp",
-    desc: "Aligner expert with years of orthodontic clinical experience.",
-    socials: {
-      instagram: "#",
-      linkedin: "#",
-      whatsapp: "#",
-    },
-  },
+    desc: "Advanced orthodontic specialist delivering faster predictable results."
+  }
+  
 ];
 
-/* duplicate for infinite loop */
-const loopDoctors = [...doctors, ...doctors];
-
-/* ================= COMPONENT ================= */
-
-export default function DoctorsCarousel() {
+export default function DoctorsLuxury() {
   const [index, setIndex] = useState(0);
-  const [activeDoctor, setActiveDoctor] = useState(null);
-  const intervalRef = useRef(null);
+  const [active, setActive] = useState(null);
+  const trackRef = useRef(null);
 
-  const CARD_WIDTH = 340;
-  const TOTAL = doctors.length;
+  const CARD_WIDTH = 360;
 
-  /* ================= AUTO SLIDE ================= */
-
+  /* Auto Slide */
   useEffect(() => {
-    intervalRef.current = setInterval(() => {
-      setIndex((prev) => prev + 1);
-    }, 5000);
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % doctors.length);
+    }, 4000);
 
-    return () => clearInterval(intervalRef.current);
+    return () => clearInterval(interval);
   }, []);
-
-  /* ================= LOOP FIX ================= */
-
-  useEffect(() => {
-    if (index === TOTAL) {
-      setTimeout(() => {
-        setIndex(0);
-      }, 500);
-    }
-  }, [index, TOTAL]);
-
-  const next = () => setIndex((i) => i + 1);
-  const prev = () => setIndex((i) => (i === 0 ? TOTAL - 1 : i - 1));
-
-  /* ================= RENDER ================= */
 
   return (
     <>
-      <section className="doctor-section">
-        <div className="doctor-header">
+      <section className="lux-doctor-section">
+        <div className="lux-header">
           <h2>Meet Our Smile Experts</h2>
-          <p>Certified doctors driving confident smiles with Jerushaligne</p>
+          <p>Certified specialists delivering confident smiles</p>
         </div>
 
-        <div className="doctor-carousel-wrapper">
-          <button className="doc-arrow left" onClick={prev}>‹</button>
-
-          <div className="doctor-viewport">
-            <motion.div
-              className="doctor-track"
-              animate={{ x: -index * CARD_WIDTH }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
-            >
-              {loopDoctors.map((doc, i) => (
-                <div
-                  className="doctor-card"
-                  key={i}
-                  onClick={() => setActiveDoctor(doc)}
-                >
+        <div className="lux-carousel">
+          <motion.div
+            ref={trackRef}
+            className="lux-track"
+            animate={{ x: -index * CARD_WIDTH }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+          >
+            {doctors.map((doc, i) => (
+              <motion.div
+                key={i}
+                className="lux-card"
+                whileHover={{ scale: 1.05 }}
+                onClick={() => setActive(doc)}
+              >
+                <div className="lux-img">
                   <img src={doc.img} alt={doc.name} />
+                  <div className="spotlight"></div>
+                </div>
+
+                <div className="lux-info">
                   <h4>{doc.name}</h4>
                   <span>{doc.degree}</span>
                 </div>
-              ))}
-            </motion.div>
-          </div>
 
-          <button className="doc-arrow right" onClick={next}>›</button>
+                <div className="gold-line"></div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
-      {/* ================= MODAL ================= */}
+      {/* Modal */}
+
       <AnimatePresence>
-        {activeDoctor && (
+        {active && (
           <motion.div
-            className="doctor-modal-overlay"
+            className="lux-modal-overlay"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setActiveDoctor(null)}
+            onClick={() => setActive(null)}
           >
             <motion.div
-              className="doctor-modal"
+              className="lux-modal"
               initial={{ scale: 0.85, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.85, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <button className="modal-close" onClick={() => setActiveDoctor(null)}>
-                ×
-              </button>
+              <button className="lux-close" onClick={() => setActive(null)}>×</button>
 
-              <img src={activeDoctor.img} alt={activeDoctor.name} />
+              <img src={active.img} alt={active.name} />
 
-              <h3>{activeDoctor.name}</h3>
-              <p className="degree">{activeDoctor.degree}</p>
-              <p className="desc">{activeDoctor.desc}</p>
+              <h3>{active.name}</h3>
+              <p className="degree">{active.degree}</p>
+              <p className="desc">{active.desc}</p>
 
-              <div className="doctor-socials">
-                <a href={activeDoctor.socials.instagram}>📸</a>
-                <a href={activeDoctor.socials.linkedin}>💼</a>
-                <a href={activeDoctor.socials.whatsapp}>💬</a>
-              </div>
-
-              <a href="/contact" className="consult-btn big">
-                Consult Now
+              <a href="/contact" className="lux-btn">
+                Book Consultation
               </a>
             </motion.div>
           </motion.div>
