@@ -5,7 +5,6 @@ import "react-phone-input-2/lib/style.css";
 
 import "../styles/component.css";
 
-
 export default function AppointmentCTA() {
   const [formData, setFormData] = useState({
     name: "",
@@ -22,55 +21,81 @@ export default function AppointmentCTA() {
     setFormData({ ...formData, name: value });
   };
 
-  /* ✅ FORM SUBMIT */
-  /* ✅ UPDATED HANDLESUBMIT WITH BETTER LOGIC */
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  /* ✅ FORM SUBMIT - UPDATED WITH BETTER ERROR HANDLING */
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  // Basic Validations
-  if (!formData.name.trim()) return setStatus("error");
-  // Minimum 10 digits for phone (excluding country code) logic apply pannalam
-  if (!formData.phone || formData.phone.length < 10) {
-    alert("Please enter a valid phone number");
-    return setStatus("error");
-  }
+    // Basic Validations
+    if (!formData.name.trim()) {
+      alert("Please enter your name");
+      return setStatus("error");
+    }
 
-  const emailRegex = /\S+@\S+\.\S+/;
-  if (!emailRegex.test(formData.email)) return setStatus("error");
+    if (!formData.phone || formData.phone.length < 10) {
+      alert("Please enter a valid phone number");
+      return setStatus("error");
+    }
 
-  if (!formData.treatment) return setStatus("error");
+    const emailRegex = /\S+@\S+\.\S+/;
+    if (!emailRegex.test(formData.email)) {
+      alert("Please enter a valid email");
+      return setStatus("error");
+    }
 
-  setStatus("loading");
+    if (!formData.treatment) {
+      alert("Please select a treatment");
+      return setStatus("error");
+    }
 
-  try {
-    const res = await fetch("/api/appointment", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
+    setStatus("loading");
 
-    const data = await res.json();
+    try {
+      // ✅ FULL URL (Vercel production URL)
+      const API_URL = window.location.hostname === "localhost" 
+        ? "http://localhost:3000/api/appointment"
+        : "https://jerushaligne-web-tau.vercel.app/api/appointment";
 
-    if (!res.ok) throw new Error(data.error || "Failed");
+      const res = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    setStatus("success");
-    
-    // Reset Form
-    setFormData({
-      name: "",
-      phone: "",
-      email: "",
-      treatment: "",
-    });
+      // ✅ Get response as text first (to handle non-JSON errors)
+      const text = await res.text();
+      console.log("Response:", text);
 
-    // 3 seconds aprom success message-ai hidden aakkalam
-    setTimeout(() => setStatus(""), 5000);
+      // ✅ Parse JSON safely
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (e) {
+        throw new Error("Server error: " + text.substring(0, 100));
+      }
 
-  } catch (err) {
-    console.error("Submission Error:", err);
-    setStatus("error");
-  }
-};
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to send");
+      }
+
+      setStatus("success");
+      
+      // Reset Form
+      setFormData({
+        name: "",
+        phone: "",
+        email: "",
+        treatment: "",
+      });
+
+      // Hide success message after 5 seconds
+      setTimeout(() => setStatus(""), 5000);
+
+    } catch (err) {
+      console.error("Submission Error:", err);
+      alert("Error: " + err.message);
+      setStatus("error");
+    }
+  };
 
   return (
     <section className="appt-cta">
@@ -159,7 +184,7 @@ const handleSubmit = async (e) => {
             {/* STATUS */}
             {status === "success" && (
               <p className="form-success">
-                ✅ Thanks for reaching us! We’ll contact you soon.
+                ✅ Thanks for reaching us! We'll contact you soon.
               </p>
             )}
 
