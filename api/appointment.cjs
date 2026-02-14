@@ -1,6 +1,6 @@
-const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
 
-module.exports = async (req, res) => {
+export default async function handler(req, res) {
   // CORS Headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -27,7 +27,7 @@ module.exports = async (req, res) => {
     const pass = process.env.GMAIL_PASS;
 
     if (!user || !pass) {
-      console.error("Missing env vars:", { user: !!user, pass: !!pass });
+      console.error("Missing env vars");
       return res.status(500).json({ error: "Server config error" });
     }
 
@@ -62,4 +62,4 @@ module.exports = async (req, res) => {
     console.error("Email Error:", err.message);
     return res.status(500).json({ error: err.message });
   }
-};
+}
