@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
 
 module.exports = async (req, res) => {
-  // CORS
+  // 1. CORS Headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -22,41 +22,37 @@ module.exports = async (req, res) => {
       return res.status(400).json({ error: "Missing required fields" });
     }
 
-    // Check env vars
+    // Environment Variables
     const user = process.env.GMAIL_USER;
     const pass = process.env.GMAIL_PASS;
 
     if (!user || !pass) {
-      console.error("Missing env vars");
-      return res.status(500).json({ error: "Server config error" });
+      console.error("ENV MISSING:", { user: !!user, pass: !!pass });
+      return res.status(500).json({ error: "Server config error: Check env vars" });
     }
 
-    // Create transporter with explicit settings
+    // Create Transporter - GMAIL SPECIFIC SETTINGS
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
-      port: 587,
-      secure: false, // true for 465, false for other ports
+      port: 465,
+      secure: true, // SSL
       auth: {
         user: user.trim(),
         pass: pass.trim(),
       },
-      tls: {
-        rejectUnauthorized: false // Vercel-la idha add panunga
-      }
     });
 
-    // Verify connection first
+    // Verify connection
     await transporter.verify();
-    console.log("SMTP Connection verified");
 
-    // Send mail
-    const info = await transporter.sendMail({
+    // Send Email
+    await transporter.sendMail({
       from: `"JerushaLine Website" <${user}>`,
       to: user,
       subject: `New Appointment: ${name} - ${treatment}`,
       html: `
-        <div style="font-family: sans-serif; padding: 20px;">
-          <h2 style="color: #0070f3;">New Appointment Request</h2>
+        <div style="font-family: Arial, sans-serif; padding: 20px; border: 1px solid #ddd;">
+          <h2 style="color: #f59e0b;">New Appointment Request</h2>
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Phone:</strong> ${phone}</p>
           <p><strong>Email:</strong> ${email}</p>
@@ -65,14 +61,13 @@ module.exports = async (req, res) => {
       `,
     });
 
-    console.log("Email sent:", info.messageId);
-    return res.status(200).json({ success: true, messageId: info.messageId });
+    return res.status(200).json({ success: true });
 
   } catch (err) {
-    console.error("Detailed Error:", err);
+    console.error("SERVER ERROR:", err);
     return res.status(500).json({ 
       error: "Email failed", 
-      details: err.message 
+      message: err.message 
     });
   }
 };
