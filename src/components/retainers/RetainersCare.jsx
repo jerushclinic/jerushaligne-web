@@ -38,7 +38,7 @@ export default function RetainersCare() {
           transition={{ duration: 0.6 }}
         >
           <img
-            src="/images/retainers/care-main.webp"
+            src="/images/retainers/clean.webp"
             alt="Retainer Care"
           />
         </motion.div>
