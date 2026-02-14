@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
 
 module.exports = async (req, res) => {
-  // 1. CORS & Methods handling
+  // CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -14,39 +14,48 @@ module.exports = async (req, res) => {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { name, phone, email, treatment } = req.body;
-
-  // 2. Validation
-  if (!name || !phone || !email || !treatment) {
-    return res.status(400).json({ error: "Missing required fields" });
-  }
-
-  // 3. Environment Variables (Vercel-la irundhu edukkum)
-  const user = process.env.GMAIL_USER;
-  const pass = process.env.GMAIL_PASS;
-
-  if (!user || !pass) {
-    console.error("Vercel Config Error: GMAIL_USER or GMAIL_PASS is missing.");
-    return res.status(500).json({ error: "Vercel Config Error: Check Environment Variables" });
-  }
-
-  // 4. Create Transporter
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: user.trim(),
-      pass: pass.trim(), // Andha 16-digit App Password
-    },
-  });
-
   try {
-    // 5. Send Mail
-    await transporter.sendMail({
+    const { name, phone, email, treatment } = req.body;
+
+    // Validation
+    if (!name || !phone || !email || !treatment) {
+      return res.status(400).json({ error: "Missing required fields" });
+    }
+
+    // Check env vars
+    const user = process.env.GMAIL_USER;
+    const pass = process.env.GMAIL_PASS;
+
+    if (!user || !pass) {
+      console.error("Missing env vars");
+      return res.status(500).json({ error: "Server config error" });
+    }
+
+    // Create transporter with explicit settings
+    const transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false, // true for 465, false for other ports
+      auth: {
+        user: user.trim(),
+        pass: pass.trim(),
+      },
+      tls: {
+        rejectUnauthorized: false // Vercel-la idha add panunga
+      }
+    });
+
+    // Verify connection first
+    await transporter.verify();
+    console.log("SMTP Connection verified");
+
+    // Send mail
+    const info = await transporter.sendMail({
       from: `"JerushaLine Website" <${user}>`,
-      to: user, 
+      to: user,
       subject: `New Appointment: ${name} - ${treatment}`,
       html: `
-        <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee;">
+        <div style="font-family: sans-serif; padding: 20px;">
           <h2 style="color: #0070f3;">New Appointment Request</h2>
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Phone:</strong> ${phone}</p>
@@ -56,15 +65,14 @@ module.exports = async (req, res) => {
       `,
     });
 
-    return res.status(200).json({ success: true });
+    console.log("Email sent:", info.messageId);
+    return res.status(200).json({ success: true, messageId: info.messageId });
 
   } catch (err) {
-    console.error("Nodemailer Error:", err.message);
-    
-    if (err.message.includes("EAUTH")) {
-      return res.status(500).json({ error: "Email Authentication Failed. Check App Password." });
-    }
-
-    return res.status(500).json({ error: "Failed to send email. " + err.message });
+    console.error("Detailed Error:", err);
+    return res.status(500).json({ 
+      error: "Email failed", 
+      details: err.message 
+    });
   }
 };

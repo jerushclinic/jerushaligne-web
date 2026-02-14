@@ -1,6 +1,7 @@
 import OutletShowcase from "../../components/outlet-sections/OutletShowcase";
 import OutletAbout from "../../components/outlet-sections/OutletAbout";
 import DoctorsSection from "../../components/DoctorsSection";
+import BranchReviews from "../../components/outlet-sections/BranchReviews";
 
 export default function ThuckalayOutlet() {
   return (
@@ -35,6 +36,25 @@ export default function ThuckalayOutlet() {
         ]}
       />
 <DoctorsSection />
+
+<BranchReviews
+  branchName="Jerushaligne Thuckalay"
+  rating="4.9"
+  totalReviews="2.5 Lakh+"
+  reviews={[
+    {
+      name: "Krishan Yadav",
+      rating: 5,
+      text: "Very professional dentist..."
+    },
+    {
+      name: "Mildred James",
+      rating: 5,
+      text: "Excellent experience with all doctors..."
+    }
+  ]}
+/>
+
 
 
     </>
