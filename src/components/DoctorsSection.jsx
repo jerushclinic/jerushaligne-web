@@ -8,8 +8,8 @@ const doctors = [
     name: "Dr. A. Bladbin",
     role: "Chairman, Jerush Groups",
     degree: "MBBS(Ukraine), LLB, MDS(OMFS), PHD(Srilanka), PHD(Hons), FAM(Ger), MCHT(Ger), MCDC(Ger)",
-    img: "/images/doctors/dr-bladbin.png",
-    additionalImg: "/images/doctors/dr-bladbin-2.png",
+    img: "/images/doctors/dr_bladbin.webp",
+    additionalImg: "/images/doctors/dr_bladbin2.webp",
     contentSections: [
       {
         heading: "Academic Achievements and Professional Milestones:",
@@ -50,8 +50,8 @@ const doctors = [
     name: "Dr. C. Binila Asir",
     role: "Director, Jerush Groups",
     degree: "MDS.,Oral & Maxillofacial Surgeon",
-    img: "/images/doctors/dr-bladbin.png",
-    additionalImg: "/images/doctors/dr-bladbin-2.png",
+    img: "/images/doctors/dr_binila.webp",
+    additionalImg: "/images/doctors/dr_binila2.webp",
     contentSections: [
       {
         heading: "Academic Achievements and Professional Milestones:",
@@ -87,12 +87,28 @@ const doctors = [
       }
     ]
   },
+
+  {
+    name: "Dr. C. J. Aishwarya",
+    role: "Dental Surgeon",
+    degree: "BDS",
+    img: "/images/doctors/dr_aishwarya.webp",
+    additionalImg: "/images/doctors/dr_aishwarya2.webp",
+    contentSections: [
+      {
+        heading: "Career Path:",
+        paragraph: "Dr. Aishwarya qualified as a dental surgeon in 2014 and joined Jerush as a duty doctor in 2015. Since her joining, she has excelled in diagnosing dental issues with expertise and precision. Her primary area of interest lies in endodontics, though she has also developed significant expertise in fixed partial dentures, restorations, extractions, and other dental procedures.\n\nDr. Aishwarya’s dedication and skill have consistently earned positive feedback from patients. She is highly regarded for her ability to clearly explain dental issues and treatment options, making her a trusted professional among her patients. She continues to be an integral part of the hospital, showcasing her extraordinary talent and commitment to the field of dentistry."
+      }
+    ]
+  },
+
+
   {
     name: "Dr. Sherine Ponraj",
     role: "Prosthodontics | Crown | Bridge",
     degree: "BDS.,MDS",
-    img: "/images/doctors/meera.webp",
-    additionalImg: "/images/doctors/meera-2.webp",
+    img: "/images/doctors/dr_sherine.webp",
+    additionalImg: "/images/doctors/dr_sherine2.webp",
     contentSections: [
       {
         heading: "Career Path:",
@@ -101,25 +117,12 @@ const doctors = [
       ]
   },
   
-  {
-    name: "Dr. C. J. Aishwarya",
-    role: "Dental Surgeon",
-    degree: "BDS",
-    img: "/images/doctors/priya.webp",
-    additionalImg: "/images/doctors/priya-2.webp",
-    contentSections: [
-      {
-        heading: "Career Path:",
-        paragraph: "Dr. Aishwarya qualified as a dental surgeon in 2014 and joined Jerush as a duty doctor in 2015. Since her joining, she has excelled in diagnosing dental issues with expertise and precision. Her primary area of interest lies in endodontics, though she has also developed significant expertise in fixed partial dentures, restorations, extractions, and other dental procedures.\n\nDr. Aishwarya’s dedication and skill have consistently earned positive feedback from patients. She is highly regarded for her ability to clearly explain dental issues and treatment options, making her a trusted professional among her patients. She continues to be an integral part of the hospital, showcasing her extraordinary talent and commitment to the field of dentistry."
-      }
-    ]
-  },
-  {
+    {
     name: "Dr. V. Jasmin Shamili",
     role: "Dental Surgeon",
     degree: "BDS.,MDS",
-    img: "/images/doctors/priya.webp",
-    additionalImg: "/images/doctors/priya-2.webp",
+    img: "/images/doctors/dr_jasmin.webp",
+    additionalImg: "/images/doctors/dr_jasmin2.webp",
     contentSections: [
       {
         heading: "Career Path:",
@@ -128,11 +131,11 @@ const doctors = [
     ]
   },
   {
-    name: "Dr. Priyadharshini",
+    name: "Dr. Suryambika",
     role: "Dental Surgeon",
     degree: "BDS",
-    img: "/images/doctors/priya.webp",
-    additionalImg: "/images/doctors/priya-2.webp",
+    img: "/images/doctors/dr_suryambika.webp",
+    additionalImg: "/images/doctors/dr_suryambika2.webp",
     contentSections: [
       {
         heading: "Career Path:",
@@ -141,11 +144,11 @@ const doctors = [
     ]
   },
   {
-    name: "Dr. C. J. Aishwarya",
-    role: "Restoration Specialist",
+    name: "Dr. Priyadharshini",
+    role: "Dental Surgeon",
     degree: "BDS",
-    img: "/images/doctors/rajesh.webp",
-    additionalImg: "/images/doctors/rajesh-2.webp",
+    img: "/images/doctors/dr_priyadharshini.webp",
+    additionalImg: "/images/doctors/dr_priyadharshini2.webp",
     contentSections: [
       {
         heading: "Career Path:",

@@ -78,13 +78,13 @@ export default function Navbar() {
                 </a>
                 <a
                   href="/outlets/trichy-outlet"
-                  className={isActive("/trichy-outlet") ? "active" : ""}
+                  className={isActive("/outlets/trichy-outlet") ? "active" : ""}
                 >
                  Trichy
                 </a>
                 <a
                   href="/outlets/chennai-outlet"
-                  className={isActive("/chennai-outlet") ? "active" : ""}
+                  className={isActive("/outlets/chennai-outlet") ? "active" : ""}
                 >
                  Chennai
                 </a>

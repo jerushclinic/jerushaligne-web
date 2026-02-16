@@ -380,15 +380,11 @@
 
 .track {
   display: flex;
-  /* Dynamic calculation based on number of cards */
-  /* 16 cards total (8 doctors × 2), showing 3 at a time */
-  /* Track width = (total_cards / visible_cards) × 100% */
-  width: calc(1600% / 3); /* 533.333% */
+   width: calc(1600% / 3); /* 533.333% */
   will-change: transform;
 }
 
 .card {
-  /* Each card is 1/16th of track (16 cards total) */
   flex: 0 0 6.25%; /* 100% / 16 = 6.25% */
   padding: 0 1rem;
   text-align: center;
@@ -410,17 +406,17 @@
 }
 
 .img-wrapper {
-  width: 100%; /* FIXED: was 16rem - now responsive */
+  width: 100%; 
   height: 370px;
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 25px 70px rgba(0,0,0,0.15);
-  margin: 0 auto 1rem auto; /* Center the image */
+  /* box-shadow: 0 25px 70px rgba(0,0,0,0.15); */
+  margin: 0 auto 1rem auto; 
 }
 
 .img-wrapper img {
   width: 100%;
-  height: 100%;
+  height: 25rem;
   object-fit: cover;
 }
 
@@ -824,7 +820,7 @@
 
   .modal {
     max-width: 92%;
-    padding: 1.25rem;
+    padding: 0.7rem;
   }
 
   .modal h3 {
@@ -2112,4 +2108,171 @@
     transform: translateY(5px);
   }
 }
+
+
+/* TEETH YT SHORTS SECTION */
+/* ================= SECTION ================= */
+
+.shorts-section {
+  padding: 6rem 1.5rem 7rem; /* extra bottom space */
+  background: linear-gradient(180deg, #fffaf0, #fff1cc);
+}
+
+/* HEADER */
+
+.shorts-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.shorts-header h2 {
+  font-size: 34px;
+  font-weight: 900;
+}
+
+.shorts-header p {
+  color: #6b7280;
+}
+
+/* VIEWPORT */
+
+.shorts-viewport {
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding-top: 15px; /* 🔥 prevents top crop */
+}
+
+/* TRACK */
+
+.shorts-track {
+  display: flex;
+  gap: 2rem;
+  will-change: transform;
+}
+
+/* CARD */
+
+.short-card {
+  width: 240px;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.short-card:hover {
+  transform: translateY(-6px);
+}
+
+/* THUMB */
+
+.thumb {
+  position: relative;
+  height: 380px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* BLACK PLAY BUTTON */
+
+.play-btn {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0,0,0,0.15);
+}
+
+.play-btn span {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.75);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 28px;
+}
+
+/* INFO */
+
+.short-info {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.short-info h4 {
+  font-weight: 800;
+}
+
+.short-info span {
+  color: #f59e0b;
+  font-size: 14px;
+}
+
+/* MODAL */
+
+.shorts-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  z-index: 9999;
+}
+
+.shorts-modal {
+  background: #fff;
+  border-radius: 24px;
+  padding: 1rem;
+  width: 360px;
+  max-width: 100%;
+  position: relative;
+}
+
+.shorts-modal iframe {
+  width: 100%;
+  height: 500px;
+  border-radius: 16px;
+  border: none;
+}
+
+.close {
+  position: absolute;
+  top: 8px;
+  right: 14px;
+  font-size: 24px;
+  background: #f59e0b;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .short-card {
+    width: 200px;
+  }
+
+  .thumb {
+    height: 320px;
+  }
+
+  .shorts-modal iframe {
+    height: 480px;
+  }
+}
+
+
 

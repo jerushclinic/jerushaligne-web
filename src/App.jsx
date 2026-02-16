@@ -10,6 +10,7 @@ import Retainers from "./pages/Retainers";
 import OurOutlets from "./pages/OurOutlets";
 import ThuckalayOutlet from "./pages/outlets/ThuckalayOutlet";
 import TrichyOutlet from "./pages/outlets/TrichyOutlet";
+import ChennaiOutlet from "./pages/outlets/ChennaiOutlet";
 import ContactUs from "./pages/ContactUs";
 import AppointmentSlots from "./pages/AppointmentSlots";
 import AdminSlots from "./pages/AdminSlots";
@@ -96,7 +97,14 @@ function App() {
             }
           />
 
-          
+           <Route
+            path="/outlets/chennai-outlet"
+            element={
+              <PageTransition>
+                <ChennaiOutlet />
+              </PageTransition>
+            }
+          />
 
 
           <Route
