@@ -43,13 +43,48 @@
   margin: 0 auto;
 }
 
+/* ─── Header Row ────────────────────────────────────────── */
+.gallery-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+/* ─── View More Button ──────────────────────────────────── */
+.gallery-view-more {
+  flex-shrink: 0;
+  background: linear-gradient(92deg, #faca15, #f6a30c 100%);
+  border: none;
+  padding: 12px 26px;
+  border-radius: 100px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(230, 168, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 8px;
+}
+
+.gallery-view-more:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(230, 168, 0, 0.45);
+}
+
+.gallery-view-more:active {
+  transform: translateY(0);
+}
+
 /* ─── Header ────────────────────────────────────────────── */
 .gallery-header {
   max-width: 560px;
-  margin: 0 0 48px 0;
+  margin: 0;
   width: 100%;
 }
-
 
 .gallery-header__title {
   font-family: 'Playfair Display', Georgia, serif;
@@ -138,19 +173,30 @@
   border-radius: var(--radius);
   overflow: hidden;
   cursor: pointer;
-  animation: fadeSlideUp 0.5s both ease;
+  /* FIX: animation starts from opacity 0, transform ready — no flash */
+  animation: fadeSlideUp 0.45s both ease;
   min-width: 0;
+  /* FIX: tell browser to composite this element on GPU from the start */
+  will-change: transform, opacity;
+  /* FIX: prevent any subpixel paint glitch */
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 @keyframes fadeSlideUp {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(20px) translateZ(0);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) translateZ(0);
   }
+}
+
+/* FIX: after animation ends, remove will-change to free GPU memory */
+.gallery-card.animated {
+  will-change: auto;
 }
 
 .gallery-card__inner {
@@ -158,14 +204,45 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  background: var(--border); /* visible while image loads */
 }
 
+/* ─── Skeleton loader ───────────────────────────────────── */
+.gallery-card__skeleton {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    #e8e3db 25%,
+    #f0ece4 50%,
+    #e8e3db 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  z-index: 1;
+  border-radius: var(--radius);
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ─── Image fade-in on load ─────────────────────────────── */
 .gallery-card__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform var(--transition);
+  /* FIX: image starts invisible, fades in once loaded */
+  opacity: 0;
+  transition: opacity 0.4s ease, transform var(--transition);
+  position: relative;
+  z-index: 2;
+}
+
+.gallery-card__img.loaded {
+  opacity: 1;
 }
 
 .gallery-card:hover .gallery-card__img {
@@ -188,6 +265,7 @@
   padding: 16px;
   opacity: 0;
   transition: opacity var(--transition);
+  z-index: 3;
 }
 
 .gallery-card:hover .gallery-card__overlay {
@@ -339,10 +417,17 @@
     max-width: 100%;
   }
 
-  .gallery-header {
+  .gallery-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
     margin-bottom: 32px;
+  }
+
+  .gallery-header {
     max-width: 100%;
     width: 100%;
+    margin: 0;
   }
 
   .gallery-grid {
@@ -352,7 +437,6 @@
     overflow: hidden;
   }
 
-  /* Reset ALL card sizes to equal on mobile — prevents gaps and overflow */
   .gallery-card--wide,
   .gallery-card--tall,
   .gallery-card--normal {
@@ -360,7 +444,6 @@
     grid-row: span 1 !important;
   }
 
-  /* Always show overlay on touch */
   .gallery-card__overlay {
     opacity: 1;
     background: linear-gradient(
@@ -389,7 +472,6 @@
     overflow: hidden;
   }
 
-  /* Reset ALL card sizes to equal on small mobile */
   .gallery-card--wide,
   .gallery-card--tall,
   .gallery-card--normal {

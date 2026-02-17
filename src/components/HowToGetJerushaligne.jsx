@@ -4,8 +4,8 @@ import "../styles/whyjerush.css";
 const steps = [
   {
     step: "01",
-    title: "Find Jerush Hospital Near You",
-    desc: "Locate a certified Jerushaligne centre close to you for expert consultation.",
+    title: "Find a Jerushaligne Centre Near to You",
+    desc: "Locate our center for consultation and orthodontic evaluation.",
     img: "/images/how-to-get-jerushaligne/jerush-hospital.webp",
   },
   {
@@ -16,14 +16,14 @@ const steps = [
   },
   {
     step: "03",
-    title: "Get Your Invisible Aligners",
-    desc: "Receive custom-made invisible aligners designed just for you.",
+    title: "Receive Your Aligners",
+    desc: "Custom-made aligners are designed and delivered for your case.",
     img: "/images/how-to-get-jerushaligne/get-aligner.webp",
   },
   {
     step: "04",
     title: "Affordable & Flexible Pricing",
-    desc: "Achieve your perfect smile with transparent and affordable pricing.",
+    desc: "Transparent pricing makes premium orthodontic treatment accessible.",
     img: "/images/how-to-get-jerushaligne/smiling-girl.webp",
   },
 ];

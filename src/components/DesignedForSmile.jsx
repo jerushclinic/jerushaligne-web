@@ -58,11 +58,9 @@ export default function DesignedForSmile() {
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
         viewport={{ once: true }}
       >
-        Clear aligners, also known as invisible braces, are transparent teeth
-        aligners made from a special material designed to perfectly straighten
-        your teeth. Unlike metal braces, aligners are painless, comfortable and
-        removable. They are custom-made for each patient using digital scans,
-        helping to achieve a bright and confident smile.
+        Enhance the appearance of your smile using clear aligners, a comfortable and discreet way to have a modern smile. 
+        Our aligners are created with the help of the most accurate digital technology to help you to obtain the perfect 
+        teeth alignment without wires and brackets.
       </motion.p>
 
       {/* BIG BACK WORD – LETTER BY LETTER */}

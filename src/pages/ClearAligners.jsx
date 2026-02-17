@@ -120,7 +120,7 @@ export default function ClearAlignersHero() {
         </div>
       </section>
 
-      {/* ================= DESIGNED FOR SMILE (NO ANIMATION) ================= */}
+      {/* ================= DESIGNED FOR SMILE ================= */}
       <section>
         <DesignedForSmile />
       </section>

@@ -3,9 +3,11 @@ import { motion } from "framer-motion";
 import HeroBreadcrumb from "../components/HeroBreadcrumb";
 import BenefitsShowcase from "../components/BenefitsShowcase";
 import JerushTechnology from "../components/JerushTechnology";
-import HowJerushWorks from "../components/HowJerushWorks";
 import HowToGetJerushaligne from "../components/HowToGetJerushaligne";
+import ClinicalSafety from "../components/ClinicalSafety";
+import TrustSection from "../components/TrustSection";
 import "../styles/whyjerush.css";
+import FutureSection from "../components/FutureSection";
 
 /* ================= FRAMER VARIANTS ================= */
 
@@ -67,20 +69,23 @@ export default function WhyJerushaligneIsDifferent() {
             <span className="why-badge">ALIGNERS</span>
 
             <h1 className="why-title">
-              Why Jerushaligne is Different
+            Why Jerushaligne Leads in the Best Teeth Aligners in India?
             </h1>
 
             <p className="why-text">
-              At Jerushaligne, we specialize in creating high-quality clear aligners
-              designed specifically for adults. Our mission is to provide effective
-              and discreet orthodontic solutions that fit seamlessly into your lifestyle.
+              At Jerushaligne, we specialize in creating high-quality clear aligners designed 
+              specifically for adults and teens seeking discreet, modern orthodontic treatment.
+            </p>
+            <p className="why-text">
+              Our mission is simple—to deliver the best teeth aligners in India through 
+              advanced clear aligner technology, personalized treatment systems and continuous expert orthodontic care.
             </p>
 
             <p className="why-text">
-              With state-of-the-art technology and personalized treatment plans,
-              each aligner is custom-made to deliver optimal, long-lasting results —
-              without compromising comfort or confidence.
-            </p>
+             With state-of-the-art digital technology and individually planned aligners, 
+             every aligner will provide safe and efficient teeth straightening without 
+             compromising a sense of comfort or confidence.
+             </p>
 
             <motion.a
               href="/our-outlets"
@@ -110,6 +115,7 @@ export default function WhyJerushaligneIsDifferent() {
 
         </div>
       </motion.section>
+      
 
       {/* ================= BENEFITS SHOWCASE ================= */}
       <motion.div variants={sectionVariants}>
@@ -121,15 +127,24 @@ export default function WhyJerushaligneIsDifferent() {
         <JerushTechnology />
       </motion.div>
 
-      {/* ================= HOW JERUSH WORKS ================= */}
-      <motion.div variants={sectionVariants}>
-        <HowJerushWorks />
-      </motion.div>
+        {/* ================= CLINICAL SAFETY  ================= */}
+        <TrustSection />
 
+      {/* ================= CLINICAL SAFETY  ================= */}
+        <ClinicalSafety />
+
+
+        
+      {/* ================= FUTURE SECTION  ================= */}
+        <FutureSection />
+
+      
       {/* ================= HOW TO GET JERUSHALIGNE ================= */}
       <motion.div variants={sectionVariants}>
         <HowToGetJerushaligne />
       </motion.div>
+
+
 
     </motion.div>
   );

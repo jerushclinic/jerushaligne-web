@@ -6,17 +6,17 @@ const technologyData = [
   {
     icon: "/images/icons/aligner.gif",
     title: "Jerushaligne Material",
-    desc: "We use a proprietary crack & stain-resistant material that ensures smooth, accurate and long-lasting aligners.",
+    desc: "We use proprietary crack and stain-resistant material for a smooth, comfortable fit and long-lasting durability. Our clear aligners provide aesthetic, controlled tooth movement and are BPA-free, bio-compatible and completely gum-safe.",
   },
   {
     icon: "/images/icons/3d.gif",
     title: "3D Design Portal",
-    desc: "Track your smile transformation using our in-house 3D design portal at every treatment stage.",
+    desc: "Track your complete smile transformation using our in-house 3D design portal. Patients can preview their treatment outcome and monitor every stage of alignment progress with full transparency.",
   },
   {
     icon: "/images/icons/ai.gif",
-    title: "Artificial Intelligence",
-    desc: "AI-powered planning helps doctors and patients achieve predictable, precise outcomes.",
+    title: "Artificial Intelligence Implementation",
+    desc: "Orthodontists can use AI-based planning to provide quality and predictable results. This integration enhances treatment efficiency and accuracy, reinforcing our position among providers of the best teeth aligners in India.",
   },
 ];
 
@@ -35,8 +35,8 @@ export default function JerushTechnology() {
         >
           <h2>Jerushaligne Technology</h2>
           <p className="jt-subtitle">
-            Advanced science, smart design and AI-powered systems —
-            engineered for perfect smiles.
+            Jerushaligne integrates advanced clear aligner technology with 
+            orthodontic science to provide controlled and gradual tooth movement.
           </p>
 
           <div className="jt-cards">
