@@ -1,7 +1,8 @@
+import SectionWrapper from "../../components/SectionWrapper";
 import OutletShowcase from "../../components/outlet-sections/OutletShowcase";
 import OutletAbout from "../../components/outlet-sections/OutletAbout";
 import DoctorsSection from "../../components/DoctorsSection";
-import BranchReviews from "../../components/outlet-sections/BranchReviews";
+import ReviewsSection from "../../components/outlet-sections/ReviewsSection";
 
 export default function ChennaiOutlet() {
   return (
@@ -38,23 +39,9 @@ export default function ChennaiOutlet() {
 
       <DoctorsSection />
       
-      <BranchReviews
-        branchName="Jerushaligne Thuckalay"
-        rating="4.9"
-        totalReviews="2.5 Lakh+"
-        reviews={[
-          {
-            name: "Krishan Yadav",
-            rating: 5,
-            text: "Very professional dentist..."
-          },
-          {
-            name: "Mildred James",
-            rating: 5,
-            text: "Excellent experience with all doctors..."
-          }
-        ]}
-      />
+     <SectionWrapper delay={0.4}>
+           <ReviewsSection />
+           </SectionWrapper>
 
     </>
   );

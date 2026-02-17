@@ -2,8 +2,8 @@ import SectionWrapper from "../../components/SectionWrapper";
 import OutletShowcase from "../../components/outlet-sections/OutletShowcase";
 import OutletAbout from "../../components/outlet-sections/OutletAbout";
 import DoctorsSection from "../../components/DoctorsSection";
-import BranchReviews from "../../components/outlet-sections/BranchReviews";
 import TeethShortsSection from "../../components/TeethShortsSection";
+import ReviewsSection from "../../components/outlet-sections/ReviewsSection";
 
 export default function ThuckalayOutlet() {
   return (
@@ -51,23 +51,7 @@ export default function ThuckalayOutlet() {
       </SectionWrapper>
 
       <SectionWrapper delay={0.4}>
-        <BranchReviews
-          branchName="Jerushaligne Thuckalay"
-          rating="4.9"
-          totalReviews="2.5 Lakh+"
-          reviews={[
-            {
-              name: "Krishan Yadav",
-              rating: 5,
-              text: "Very professional dentist..."
-            },
-            {
-              name: "Mildred James",
-              rating: 5,
-              text: "Excellent experience..."
-            }
-          ]}
-        />
+      <ReviewsSection />
       </SectionWrapper>
     </>
   );
