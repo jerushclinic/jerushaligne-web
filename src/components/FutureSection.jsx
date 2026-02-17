@@ -81,7 +81,7 @@ export default function FutureSection() {
           >
             Modern orthodontics has advanced far beyond traditional systems.
             With <strong>digital precision</strong>, <strong>AI-powered planning</strong>
-            and <strong>clinical supervision</strong>, Jerushaligne represents
+            and <strong> clinical supervision</strong>, Jerushaligne represents
             the next generation of smile correction, precision, comfort and
             confidence, delivered.
           </motion.p>

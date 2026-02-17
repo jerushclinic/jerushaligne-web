@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "../styles/Navbar.css";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileAligners, setMobileAligners] = useState(false);
+  const [mobileAlignersOpen, setMobileAlignersOpen] = useState(false);
+  const [mobileOutletsOpen, setMobileOutletsOpen] = useState(false);
 
-  const path = window.location.pathname;
-  const isActive = (p) => path === p;
+  const { pathname } = useLocation();
+  const isActive = (p) => pathname === p;
 
   /* SCROLL EFFECT */
   useEffect(() => {
@@ -16,186 +18,274 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  /* LOCK BODY SCROLL */
+  /* LOCK BODY SCROLL WHEN MOBILE MENU OPEN */
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
   }, [mobileOpen]);
+
+  /* CLOSE MOBILE MENU ON NAVIGATION */
+  const handleMobileNavClick = () => {
+    setMobileOpen(false);
+    setMobileAlignersOpen(false);
+    setMobileOutletsOpen(false);
+  };
 
   return (
     <>
       {/* ================= NAVBAR ================= */}
       <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
-        <div className="nav-inner">
+        <div className="nav-container">
           {/* LOGO */}
-          <a href="/" className="logo">
+          <Link to="/" className="logo">
             <img src="/images/logo-black.png" alt="Jerushaligne" />
-          </a>
+          </Link>
 
-          {/* DESKTOP NAV */}
-          <nav className="nav-links">
-            <a className={`pill ${isActive("/") ? "active" : ""}`} href="/">
+          {/* DESKTOP NAVIGATION */}
+          <nav className="nav-menu">
+            <Link 
+              className={`nav-link ${isActive("/") ? "active" : ""}`} 
+              to="/"
+            >
               Home
-            </a>
+            </Link>
 
-            {/* DROPDOWN (NO ACTIVE ON PARENT) */}
+            {/* ALIGNERS DROPDOWN */}
             <div className="dropdown">
-              <button className="pill">Aligners ▾</button>
-              <div className="dropdown-menu">
-                <a
-                  href="/clear-aligners"
+              <button className="nav-link dropdown-trigger">
+                Aligners
+                <svg className="chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              <div className="dropdown-content">
+                <Link
+                  to="/clear-aligners"
                   className={isActive("/clear-aligners") ? "active" : ""}
                 >
-                  Clear Aligners
-                </a>
-                <a
-                  href="/retainers"
+                  <span className="dropdown-label">Clear Aligners</span>
+                  <span className="dropdown-desc">Invisible teeth straightening</span>
+                </Link>
+                <Link
+                  to="/retainers"
                   className={isActive("/retainers") ? "active" : ""}
                 >
-                  Retainers
-                </a>
+                  <span className="dropdown-label">Retainers</span>
+                  <span className="dropdown-desc">Maintain your perfect smile</span>
+                </Link>
               </div>
             </div>
 
-            <a
-              className={`pill ${
-                isActive("/why-jerushaligne-is-different") ? "active" : ""
-              }`}
-              href="/why-jerushaligne-is-different"
+            <Link
+              className={`nav-link ${isActive("/why-jerushaligne-is-different") ? "active" : ""}`}
+              to="/why-jerushaligne-is-different"
             >
               Why Jerushaligne
-            </a>
+            </Link>
 
-
-                    {/* DROPDOWN (NO ACTIVE ON PARENT) */}
+            {/* OUTLETS DROPDOWN */}
             <div className="dropdown">
-              <button className="pill">Our Outlets ▾</button>
-              <div className="dropdown-menu">
-                <a
-                  href="/outlets/thuckalay-outlet"
+              <button className="nav-link dropdown-trigger">
+                Our Outlets
+                <svg className="chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              <div className="dropdown-content">
+                <Link
+                  to="/outlets/thuckalay-outlet"
                   className={isActive("/outlets/thuckalay-outlet") ? "active" : ""}
                 >
-                  Thuckalay
-                </a>
-                <a
-                  href="/outlets/trichy-outlet"
+                  <span className="dropdown-label">Thuckalay</span>
+                  <span className="dropdown-desc">Main location</span>
+                </Link>
+                <Link
+                  to="/outlets/trichy-outlet"
                   className={isActive("/outlets/trichy-outlet") ? "active" : ""}
                 >
-                 Trichy
-                </a>
-                <a
-                  href="/outlets/chennai-outlet"
+                  <span className="dropdown-label">Trichy</span>
+                  <span className="dropdown-desc">Central Tamil Nadu</span>
+                </Link>
+                <Link
+                  to="/outlets/chennai-outlet"
                   className={isActive("/outlets/chennai-outlet") ? "active" : ""}
                 >
-                 Chennai
-                </a>
+                  <span className="dropdown-label">Chennai</span>
+                  <span className="dropdown-desc">Metropolitan clinic</span>
+                </Link>
               </div>
             </div>
 
-
-            <a
-              className={`pill ${isActive("/blog") ? "active" : ""}`}
-              href="/blog"
+            <Link
+              className={`nav-link ${isActive("/blog") ? "active" : ""}`}
+              to="/blog"
             >
               Blog
-            </a>
+            </Link>
 
-            <a
-              className={`pill ${isActive("/contact-us") ? "active" : ""}`}
-              href="/contact-us"
+            <Link
+              className={`nav-link ${isActive("/contact-us") ? "active" : ""}`}
+              to="/contact-us"
             >
               Contact
-            </a>
+            </Link>
           </nav>
 
-          {/* CTA */}
-          <a href="/book" className="cta desktop-only">
+          {/* CTA BUTTON */}
+          <Link to="/book" className="btn-primary desktop-only">
             Book Appointment
-          </a>
+          </Link>
 
-          {/* HAMBURGER */}
-          <button className="hamburger" onClick={() => setMobileOpen(true)}>
-            ☰
+          {/* HAMBURGER MENU */}
+          <button 
+            className="hamburger" 
+            onClick={() => setMobileOpen(true)}
+            aria-label="Open menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
           </button>
         </div>
       </header>
 
       {/* ================= MOBILE DRAWER ================= */}
+      {mobileOpen && <div className="overlay" onClick={() => setMobileOpen(false)} />}
+      
       <aside className={`mobile-drawer ${mobileOpen ? "open" : ""}`}>
         <div className="mobile-header">
-          <img src="/images/logo-black.png" alt="Logo" />
-          <button onClick={() => setMobileOpen(false)}>✕</button>
+          <img src="/images/logo-black.png" alt="Jerushaligne" />
+          <button 
+            className="close-btn"
+            onClick={() => setMobileOpen(false)}
+            aria-label="Close menu"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
+          </button>
         </div>
 
         <nav className="mobile-nav">
-          <a className={isActive("/") ? "active" : ""} href="/">
-            Home
-          </a>
-
-          {/* MOBILE DROPDOWN (NO ACTIVE ON PARENT) */}
-          <button
-            className="mobile-drop"
-            onClick={() => setMobileAligners(!mobileAligners)}
+          <Link 
+            className={isActive("/") ? "active" : ""} 
+            to="/"
+            onClick={handleMobileNavClick}
           >
-            Aligners <span>{mobileAligners ? "−" : "+"}</span>
-          </button>
+            Home
+          </Link>
 
-          {mobileAligners && (
-            <div className="mobile-sub">
-              <a
-                href="/clear-aligners"
+          {/* ALIGNERS ACCORDION */}
+          <div className="mobile-accordion">
+            <button
+              className={`accordion-trigger ${mobileAlignersOpen ? "open" : ""}`}
+              onClick={() => setMobileAlignersOpen(!mobileAlignersOpen)}
+            >
+              <span>Aligners</span>
+              <svg 
+                className="chevron" 
+                width="16" 
+                height="16" 
+                viewBox="0 0 16 16"
+                style={{ transform: mobileAlignersOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+              >
+                <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            
+            <div className={`accordion-content ${mobileAlignersOpen ? "open" : ""}`}>
+              <Link
+                to="/clear-aligners"
                 className={isActive("/clear-aligners") ? "active" : ""}
+                onClick={handleMobileNavClick}
               >
                 Clear Aligners
-              </a>
-              <a
-                href="/retainers"
+              </Link>
+              <Link
+                to="/retainers"
                 className={isActive("/retainers") ? "active" : ""}
+                onClick={handleMobileNavClick}
               >
                 Retainers
-              </a>
+              </Link>
             </div>
-          )}
+          </div>
 
-          <a href="/why-jerushaligne-is-different">Why Jerushaligne</a>
-           {/* MOBILE DROPDOWN (NO ACTIVE ON PARENT) */}
-          <button
-            className="mobile-drop"
-            onClick={() => setMobileAligners(!mobileAligners)}
+          <Link 
+            to="/why-jerushaligne-is-different"
+            className={isActive("/why-jerushaligne-is-different") ? "active" : ""}
+            onClick={handleMobileNavClick}
           >
-            Our Outlets <span>{mobileAligners ? "−" : "+"}</span>
-          </button>
+            Why Jerushaligne
+          </Link>
 
-          {mobileAligners && (
-            <div className="mobile-sub">
-              <a
-                href="/outlets/thuckalay-outlet"
+          {/* OUTLETS ACCORDION */}
+          <div className="mobile-accordion">
+            <button
+              className={`accordion-trigger ${mobileOutletsOpen ? "open" : ""}`}
+              onClick={() => setMobileOutletsOpen(!mobileOutletsOpen)}
+            >
+              <span>Our Outlets</span>
+              <svg 
+                className="chevron" 
+                width="16" 
+                height="16" 
+                viewBox="0 0 16 16"
+                style={{ transform: mobileOutletsOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+              >
+                <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            
+            <div className={`accordion-content ${mobileOutletsOpen ? "open" : ""}`}>
+              <Link
+                to="/outlets/thuckalay-outlet"
                 className={isActive("/outlets/thuckalay-outlet") ? "active" : ""}
+                onClick={handleMobileNavClick}
               >
-               Thuckalay 
-              </a>
-              <a
-                href="/outlets/trichy-outlet"
+                Thuckalay
+              </Link>
+              <Link
+                to="/outlets/trichy-outlet"
                 className={isActive("/outlets/trichy-outlet") ? "active" : ""}
+                onClick={handleMobileNavClick}
               >
-               Trichy 
-              </a>
-              <a
-                href="/outlets/chennai-outlet"
+                Trichy
+              </Link>
+              <Link
+                to="/outlets/chennai-outlet"
                 className={isActive("/outlets/chennai-outlet") ? "active" : ""}
+                onClick={handleMobileNavClick}
               >
-               Thuckalay 
-              </a>
+                Chennai
+              </Link>
             </div>
-          )}
-          <a href="/blog">Blog</a>
-          <a href="/contact-us">Contact</a>
+          </div>
+
+          <Link 
+            to="/blog"
+            className={isActive("/blog") ? "active" : ""}
+            onClick={handleMobileNavClick}
+          >
+            Blog
+          </Link>
+
+          <Link 
+            to="/contact-us"
+            className={isActive("/contact-us") ? "active" : ""}
+            onClick={handleMobileNavClick}
+          >
+            Contact
+          </Link>
         </nav>
 
         <div className="mobile-cta">
-          <a href="/book" className="cta">
+          <Link to="/book" className="btn-primary" onClick={handleMobileNavClick}>
             Book Appointment
-          </a>
-          <a href="tel:+919999999999" className="cta secondary">
+          </Link>
+          <a href="tel:+919999999999" className="btn-secondary">
             Call Now
           </a>
         </div>
