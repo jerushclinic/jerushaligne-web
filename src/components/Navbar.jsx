@@ -157,7 +157,36 @@ export default function Navbar() {
           )}
 
           <a href="/why-jerushaligne-is-different">Why Jerushaligne</a>
-          <a href="/our-outlets">Our Outlets</a>
+           {/* MOBILE DROPDOWN (NO ACTIVE ON PARENT) */}
+          <button
+            className="mobile-drop"
+            onClick={() => setMobileAligners(!mobileAligners)}
+          >
+            Our Outlets <span>{mobileAligners ? "−" : "+"}</span>
+          </button>
+
+          {mobileAligners && (
+            <div className="mobile-sub">
+              <a
+                href="/outlets/thuckalay-outlet"
+                className={isActive("/outlets/thuckalay-outlet") ? "active" : ""}
+              >
+               Thuckalay 
+              </a>
+              <a
+                href="/outlets/trichy-outlet"
+                className={isActive("/outlets/trichy-outlet") ? "active" : ""}
+              >
+               Trichy 
+              </a>
+              <a
+                href="/outlets/chennai-outlet"
+                className={isActive("/outlets/chennai-outlet") ? "active" : ""}
+              >
+               Thuckalay 
+              </a>
+            </div>
+          )}
           <a href="/blog">Blog</a>
           <a href="/contact-us">Contact</a>
         </nav>

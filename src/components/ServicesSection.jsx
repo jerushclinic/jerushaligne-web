@@ -7,8 +7,10 @@ export default function ServicesSection({ services = defaultServices }) {
     <section id="services" className="services-section">
       <div className="services-container">
         <header className="services-header">
-          <h2>Why to Choose Jerushaligne?</h2>
-          <p>Advanced treatments delivered with care and precision.</p>
+          <h2>Why Jerushaligne is a Trusted Brand for Invisible Aligners?</h2>
+          <p>Advanced Clear Aligners treatment delivered with care, precision and technology.</p>
+          <p>We specialize in invisible aligners that provide safe, comfortable and highly accurate teeth straightening solutions for teens and adults. If you’re looking for the best invisible aligners in India, your smile journey starts here.
+</p>
         </header>
 
         <div className="services-grid">
@@ -41,13 +43,13 @@ const defaultServices = [
   },
   {
     id: "all-in-one",
-    title: "All in One Dental Aligners",
+    title: "All-in-One Clear Aligners Solution",
     excerpt: "End-to-end solution from patient monitoring to aligner delivery.",
     icon: "🦷",
   },
   {
     id: "technology",
-    title: "Technology First",
+    title: "Technology-First Approach",
     excerpt: "Proprietary technology built with years of experience.",
     icon: "⚙️",
   },
@@ -59,13 +61,13 @@ const defaultServices = [
   },
   {
     id: "platform",
-    title: "Easy to Use Platform",
+    title: "Easy-to-Use Monitoring Platform",
     excerpt: "Patient data, monitoring & support – all in one place.",
     icon: "📱",
   },
   {
     id: "material",
-    title: "Revolutionary Material",
+    title: "Revolutionary Aligner Material",
     excerpt: "High-grade material ensuring comfort and durability.",
     icon: "🔬",
   },

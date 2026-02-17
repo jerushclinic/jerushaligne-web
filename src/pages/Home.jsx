@@ -97,7 +97,6 @@ export default function Home() {
         >
           <GallerySection />
         </motion.div>
-
      
 
         {/* Events */}

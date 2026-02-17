@@ -4,7 +4,7 @@ import "../styles/component.css";
 
 export default function AboutSection({
   title = "About Jerushaligne",
-  text = "We combine advanced dental technology and thoughtful patient care to deliver exceptional results. Our team focuses on comfort, precision and long-lasting outcomes.",
+  text = "Jerushaligne combines advanced dental technology with personalized patient care to deliver exceptional smile results.",
   image = "/images/jerushaligne-all-kit.webp",
   headerImage = null,
   headerImageAlt = "Jerushaligne clinic",
@@ -100,22 +100,23 @@ export default function AboutSection({
 const features = [
   {
     title: "Comfort-first treatments",
-    desc: "Sedation options and gentle protocols for every age.",
+    desc: "Gentle protocols for all age groups",
     icon: "🦷",
   },
   {
     title: "Sterile & modern clinic",
-    desc: "ISO-grade sterilization and latest treatment tech.",
+    desc: "ISO-grade sterilization standards",
+
     icon: "🛡️",
   },
   {
-    title: "Personalized plans",
+    title: "Personalized smile makeover plans",
     desc: "Treatment plans crafted for long-term oral health.",
     icon: "❤️",
   },
   {
     title: "Proven results",
-    desc: "Decades of clinician experience & satisfied patients.",
+    desc: "1 lakh+ happy smiles and 24+ years of clinical expertise",
     icon: "😊",
   },
 ];

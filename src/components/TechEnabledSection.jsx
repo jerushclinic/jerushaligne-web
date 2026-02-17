@@ -6,20 +6,15 @@ export default function TechEnabledSection() {
       <div className="tech-card">
         {/* LEFT CONTENT */}
         <div className="tech-content">
-          <h2>JERUSHALIGNE is Tech Enabled</h2>
+          <h3>JERUSHALIGNE is Tech Enabled</h3>
 
           <p>
-            Proprietary Artificial Intelligence Technology that develops & builds
-            highly precise 3D models of the smile up to the last detail.
-            These are the exact 3D replica of the patient’s mouth.
+            Proprietary artificial intelligence systems that create highly precise 3D models of each patient’s smile.
           </p>
-
           <p>
-            OrthoPlanZ system built in-house helps in predicting tooth movements
-            using the power of proprietary tech. This combination equips
-            Jerushaligne doctors to treat even the most complex cases with
-            greater precision and efficiency.
+            Our in-house OrthoPlanZ system predicts tooth movement with accuracy, allowing doctors to treat even complex teeth-straightening cases efficiently.
           </p>
+          <p>This ensures better control, comfort and faster results compared to conventional invisible braces.</p>
 
           <button className="tech-btn">Learn More</button>
         </div>

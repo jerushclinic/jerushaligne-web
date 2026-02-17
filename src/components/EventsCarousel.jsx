@@ -56,7 +56,7 @@ export default function EventsCarousel() {
       <div className="events-container">
         {/* HEADER */}
         <div className="events-header">
-          <h2>What’s New At Jerushaligne</h2>
+          <h3>What’s New At Jerushaligne</h3>
           <button className="events-cta">Explore More →</button>
         </div>
 

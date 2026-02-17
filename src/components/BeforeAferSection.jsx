@@ -58,8 +58,8 @@ export default function BeforeAfterCarousel() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2>Before & After – Patient Smiles</h2>
-          <p>Real patient transformations. Slide or tap to compare results.</p>
+          <h3>Before & After - Real Patient Smiles</h3>
+          <p>Every transformation reflects the precision of our clear aligners and expert-driven approach.</p>
         </motion.div>
 
         <div className="before-after-grid">

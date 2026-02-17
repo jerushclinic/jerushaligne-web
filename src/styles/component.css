@@ -1,9 +1,5 @@
 
 
-
-
-
-
 /* ================= ABOUT SECTION ================= */
 
 .about-section {
@@ -865,7 +861,7 @@
 
 /* ================= CONTENT ================= */
 
-.tech-content h2 {
+.tech-content h3 {
   font-size: 32px;
   font-weight: 800;
   color: #000000;
@@ -1373,7 +1369,7 @@
 }
 
 .year-text {
-  font-family: "Cinzel", serif;
+  font-family: "poppins", sans-serif;
   font-size: 1.8rem;
   color: rgba(124, 58, 18, 0.4);
   transition: 0.3s;
@@ -1548,158 +1544,7 @@
 
 
 
-/* ================= GALLERY SECTION ================= */
 
-.gallery-section {
-  padding: 6rem 1rem;
-  background: #fff9ec;
-}
-
-.gallery-box {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* ================= TITLE ================= */
-
-.gallery-title {
-  font-size: 32px;
-  font-weight: 800;
-  color: #1f2937;
-}
-
-.gallery-subtitle {
-  margin-top: 0.5rem;
-  color: #6b7280;
-}
-
-/* ================= CAROUSEL ================= */
-
-.gallery-carousel {
-  margin-top: 3rem;
-  display: flex;
-  gap: 2rem;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding-bottom: 1rem;
-  scrollbar-width: none;
-}
-
-.gallery-carousel::-webkit-scrollbar {
-  display: none;
-}
-
-/* ================= CARD ================= */
-
-.gallery-card {
-  min-width: 280px;
-  flex-shrink: 0;
-  position: relative;
-  cursor: zoom-in;
-}
-
-.gallery-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 18px;
-  box-shadow: var(--shadow-lg);
-}
-
-/* ================= HOVER ================= */
-
-.gallery-hint {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-  color: #fff;
-  background: rgba(0,0,0,0.45);
-  opacity: 0;
-  border-radius: 18px;
-  transition: 0.3s;
-}
-
-.gallery-card:hover .gallery-hint {
-  opacity: 1;
-}
-
-/* ================= POPUP ================= */
-
-.gallery-popup {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.75);
-  backdrop-filter: blur(6px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-.gallery-popup-inner {
-  position: relative;
-  max-width: 90vw;
-  max-height: 90vh;
-  text-align: center;
-}
-
-.gallery-popup-inner img {
-  max-width: 100%;
-  max-height: 80vh;
-  border-radius: 16px;
-  background: #fff;
-  padding: 10px;
-  transition: transform 0.2s ease;
-}
-
-.gallery-caption {
-  margin-top: 1rem;
-  color: #fff;
-}
-
-/* ================= BUTTONS ================= */
-
-.close-btn {
-  position: absolute;
-  top: -15px;
-  right: -15px;
-  background: #7c3a12;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  cursor: pointer;
-}
-
-.nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 3rem;
-  background: none;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-
-.nav.prev { left: -40px; }
-.nav.next { right: -40px; }
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 600px) {
-  .gallery-card {
-    min-width: 220px;
-  }
-
-  .nav.prev { left: 10px; }
-  .nav.next { right: 10px; }
-}
 
 
 /* ================= EVENTS CAROUSEL SECTION ================= */

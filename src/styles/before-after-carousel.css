@@ -13,8 +13,8 @@
   margin-bottom: 3rem;
 }
 
-.before-after-header h2 {
-  font-size: 2.5rem;
+.before-after-header h3 {
+  font-size: 32px;
   font-weight: 800;
   color: #111827;
 }
@@ -118,6 +118,7 @@
   border-radius: 999px;
   border: none;
   font-weight: 600;
+  cursor: pointer;
 }
 
 /* SLIDER */

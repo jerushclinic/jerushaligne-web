@@ -36,10 +36,10 @@ export default function HappySmilesSection() {
 
       <div className="container">
         <p className="eyebrow">Real Patient Transformations</p>
-        <h2>Happy Smiles That Speak for Themselves</h2>
+        <h2>Smile Makeover Results That Speak for Themselves</h2>
         <p className="sub">
-          Authentic smile transformations achieved through precision aligner
-          treatment and expert dental care.
+         Thousands have transformed their smiles using our Invisible Aligners and expert dental care.
+From minor smile correction to full smile makeover, our treatments deliver visible, confidence-boosting results.
         </p>
 
         {/* ROW 1 */}

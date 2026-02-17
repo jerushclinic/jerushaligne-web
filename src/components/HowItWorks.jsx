@@ -6,17 +6,17 @@ export default function HowItWorks() {
     {
       step: "01",
       title: "Register With Us",
-      desc: "Begin your smile journey with expert consultation.",
+      desc: "Start with an expert consultation to evaluate your teeth alignment treatment needs.",
     },
     {
       step: "02",
-      title: "Scan at Your Doorstep",
-      desc: "Advanced dental scan at your convenience.",
+      title: "Scan Your Whole Teeth",
+      desc: "Advanced 3D dental scan for precise treatment planning.",
     },
     {
       step: "03",
       title: "Get Your Results",
-      desc: "AI-powered planning for perfect accuracy.",
+      desc: "AI-powered smile simulation shows your future smile before treatment begins.",
     },
   ];
 
@@ -24,23 +24,23 @@ export default function HowItWorks() {
     {
       step: "04",
       title: "Expert Guidance",
-      desc: "Continuous monitoring by dental specialists.",
+      desc: "Continuous doctor monitoring ensures safe and predictable tooth movement.  ",
     },
     {
       step: "05",
-      title: "Receive Aligners",
-      desc: "Precision-made aligners delivered to you.",
+      title: "Receive Your Teeth Aligners",
+      desc: "Custom-made teeth aligners delivered directly to you.",
     },
     {
       step: "06",
       title: "Smart Monitoring",
-      desc: "Digital tracking for confident results.",
+      desc: " Digital tracking ensures perfect progress until your ideal smile is achieved.",
     },
   ];
 
   return (
     <section className="flow-section">
-      <h3 className="flow-title">How It Works?</h3>
+      <h3 className="flow-title">How Invisible Aligners Work?</h3>
       <p className="flow-subtitle">
         Your smile journey, guided step by step
       </p>

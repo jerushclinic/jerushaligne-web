@@ -13,15 +13,15 @@ export default function TreatmentComparison() {
       <div className="compare-box">
 
         {/* TITLE */}
-        <motion.h2
+        <motion.h3
           className="compare-title"
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          Jerushaligne Treatment Comparison
-        </motion.h2>
+          Jerushaligne vs Other Online Aligners
+        </motion.h3>
 
         {/* SUBTITLE */}
         <motion.p
@@ -31,7 +31,7 @@ export default function TreatmentComparison() {
           transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ once: true }}
         >
-          See why doctor-guided aligners make the difference
+          If you want reliable clear aligners with professional oversight, Jerushaligne is your trusted partner.
         </motion.p>
 
         {/* GRID */}
