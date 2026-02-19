@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap');
+
+.fsm-wrapper {
+  position: fixed;
+  right: 24px;
+  bottom: 34%;
+  transform: translateY(50%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  font-family: 'DM Mono', monospace;
+}
+
+/* ── Brand Colors ── */
+:root {
+  --brand-amber: #f59e0b;
+  --brand-yellow: #facc15;
+  --brand-gold: #fbbf24;
+}
+
+/* ── Toggle Button ── */
+.fsm-toggle {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1c1409, #2a1f06);
+  border: 1.5px solid rgba(245, 158, 11, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s, background 0.3s;
+  color: var(--brand-amber);
+}
+
+.fsm-toggle:hover {
+  border-color: var(--brand-yellow);
+  background: linear-gradient(135deg, #231a07, #342608);
+  box-shadow:
+    0 0 16px rgba(245, 158, 11, 0.6),
+    0 0 40px rgba(250, 204, 21, 0.25);
+}
+
+.fsm-toggle.open {
+  transform: rotate(90deg);
+  border-color: var(--brand-gold);
+  box-shadow:
+    0 0 14px rgba(251, 191, 36, 0.55),
+    0 0 30px rgba(245, 158, 11, 0.2);
+}
+
+/* ── Icon Entrance Animation ── */
+.fsm-icon-wrapper {
+  opacity: 0;
+  transform: translateY(20px) scale(0.7);
+  transition: opacity 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+              transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition-delay: var(--delay, 0s);
+}
+
+.fsm-icon-wrapper.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ── Icon Layout ── */
+.fsm-top-icons {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.fsm-bottom-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Individual Icon ── */
+.fsm-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  text-decoration: none;
+  /* Show the brand color always */
+  color: var(--icon-color, #fff);
+  transition: color 0.2s, transform 0.2s;
+}
+
+/* Circular glow background on hover */
+.fsm-item::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: transparent;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.fsm-item:hover::before {
+  background: color-mix(in srgb, var(--ic, #fff) 20%, transparent);
+  box-shadow:
+    0 0 12px 4px var(--ic, #fff),
+    0 0 30px 8px color-mix(in srgb, var(--ic, #fff) 50%, transparent),
+    0 0 60px 16px color-mix(in srgb, var(--ic, #fff) 20%, transparent);
+}
+
+.fsm-item:hover {
+  color: #fff;
+  transform: scale(1.18);
+}
+
+.fsm-item svg {
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 0 3px color-mix(in srgb, var(--icon-color, #fff) 60%, transparent));
+}
+
+.fsm-item:hover svg {
+  filter: drop-shadow(0 0 8px var(--ic, #fff));
+}
+
+/* ── Tooltip Label ── */
+.fsm-label {
+  position: absolute;
+  right: calc(100% + 12px);
+  background: #0f0f1a;
+  color: var(--icon-color, #eee);
+  border: 1px solid color-mix(in srgb, var(--icon-color, #fff) 40%, transparent);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(8px);
+  transition: opacity 0.2s, transform 0.2s;
+  box-shadow: 0 0 10px color-mix(in srgb, var(--icon-color, #fff) 20%, transparent);
+}
+
+.fsm-item:hover .fsm-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Connector Lines ── */
+.fsm-line {
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(245, 158, 11, 0.5),
+    transparent
+  );
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s;
+  opacity: 0;
+  height: 0;
+}
+
+.fsm-line.visible {
+  opacity: 1;
+  height: 16px;
+}

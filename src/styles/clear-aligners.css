@@ -192,100 +192,13 @@
 
 
 
-/* ================= DESIGNED FOR YOUR SMILE SECTION ================= */
 
-.designed-section {
-  position: relative;
-  min-height: 90vh;
-  background: linear-gradient(180deg, #fde68a, #facc15);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  text-align: center;
-  padding: 2rem 1.5rem;
-}
-
-/* SMALL TOP TEXT */
-.designed-eyebrow {
-  max-width: 680px;
-  font-size: 1.1rem;
-  color: #5b4636;
-  margin-bottom: 1.2rem;
-  z-index: 2;
-}
-
-/* MAIN HEADLINE */
-.designed-title {
-  font-size: 3rem;
-  font-weight: 900;
-  color: #2a1406;
-  z-index: 2;
-}
-
-/* HUGE BACKGROUND WORD */
-.designed-bg-text {
-  position: absolute;
-  bottom: 12%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 18rem;
-  font-weight: 900;
-  color: #7c3a124f;
-  white-space: nowrap;
-  pointer-events: none;
-  user-select: none;
-  z-index: 1;
-}
-
-/* FLOATING ALIGNER */
-.designed-aligner {
-  position: relative;
-  width: 420px;
-  max-width: 90%;
-  margin-top: 4rem;
-  z-index: 3;
-  filter: drop-shadow(0 40px 80px rgba(0,0,0,0.25));
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 1024px) {
-  .designed-bg-text {
-    font-size: 10rem;
-  }
-
-  .designed-title {
-    font-size: 2.4rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .designed-section {
-    min-height: 75vh;
-  }
-
-  .designed-bg-text {
-    font-size: 85px;
-    bottom: 30%;
-  }
-
-  .designed-aligner {
-    width: 300px;
-  }
-
-  .designed-title {
-    font-size: 3rem;
-  }
-}
 
 
 
 
 
 /* ================= INTERACTIVE ALIGNER SECTION ================= */
-
 
 .ai-section {
   position: relative;
@@ -805,7 +718,7 @@
 .faq-answer p {
   font-size: 0.95rem;
   line-height: 1.7;
-  color: #d1d5db;
+  color: #000000;
 }
 
 /* HOVER */

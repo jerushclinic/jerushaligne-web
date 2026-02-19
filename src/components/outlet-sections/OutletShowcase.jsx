@@ -53,7 +53,7 @@ export default function OutletShowcase({
 
           <div className="rating">
             <img src="/images/outlets/g-logo.webp" alt="Google" />
-            <strong>{rating}/5</strong>
+            <strong>{rating}/4.5</strong>
             <span>Average Rating</span>
             <span className="stars">★★★★★</span>
           </div>

@@ -1,0 +1,99 @@
+/* Hide default cursor everywhere */
+*, *::before, *::after {
+  cursor: none !important;
+}
+
+/* Full-screen overlay, no pointer events */
+.dc-root {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* ── Main Cursor ── */
+.dc-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 100000;
+  transform: translate(-50%, -50%);
+  will-change: left, top;
+  transition: filter 0.2s ease;
+  filter: drop-shadow(0 4px 12px rgba(245, 158, 11, 0.45));
+}
+
+/* ── Tooth Image ── */
+.dc-image {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  display: block;
+  animation: toothWobble 1.8s ease-in-out infinite;
+  transition: width 0.15s ease, height 0.15s ease;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Clicking state */
+.dc-cursor.dc-clicking .dc-image {
+  animation: none;
+  transform: scaleY(0.82) scaleX(1.1);
+  filter: brightness(1.15);
+  width: 52px;
+  height: 52px;
+}
+
+.dc-cursor.dc-clicking {
+  filter: drop-shadow(0 0 18px rgba(250, 204, 21, 0.95));
+}
+
+/* Hover state */
+.dc-cursor.dc-hovering .dc-image {
+  width: 66px;
+  height: 66px;
+}
+
+.dc-cursor.dc-hovering {
+  filter: drop-shadow(0 0 14px rgba(245, 158, 11, 0.75));
+}
+
+/* Wobble animation */
+@keyframes toothWobble {
+  0%   { transform: rotate(-6deg) translateY(0px); }
+  25%  { transform: rotate(0deg)  translateY(-3px); }
+  50%  { transform: rotate(6deg)  translateY(0px); }
+  75%  { transform: rotate(0deg)  translateY(-3px); }
+  100% { transform: rotate(-6deg) translateY(0px); }
+}
+
+/* ── Hover Ring ── */
+.dc-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid rgba(245, 158, 11, 0.7);
+  transform: translate(-50%, -50%);
+  animation: ringPulse 0.9s ease-out infinite;
+}
+
+@keyframes ringPulse {
+  0%   { width: 50px; height: 50px; opacity: 0.9; }
+  100% { width: 80px; height: 80px; opacity: 0; }
+}
+
+/* ── Sparkle Particles ── */
+.dc-sparkle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 99998;
+  will-change: transform, opacity, left, top;
+}
+
+.dc-sparkle svg {
+  display: block;
+  filter: drop-shadow(0 0 3px currentColor);
+}

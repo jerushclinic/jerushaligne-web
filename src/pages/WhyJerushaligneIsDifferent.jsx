@@ -1,13 +1,13 @@
 // WhyJerushaligneIsDifferent.jsx
 import { motion } from "framer-motion";
 import HeroBreadcrumb from "../components/HeroBreadcrumb";
-import BenefitsShowcase from "../components/BenefitsShowcase";
-import JerushTechnology from "../components/JerushTechnology";
-import HowToGetJerushaligne from "../components/HowToGetJerushaligne";
-import ClinicalSafety from "../components/ClinicalSafety";
-import TrustSection from "../components/TrustSection";
+import BenefitsShowcase from "../components/why-jerushaligne/BenefitsShowcase";
+import JerushTechnology from "../components/why-jerushaligne/JerushTechnology";
+import HowToGetJerushaligne from "../components/why-jerushaligne/HowToGetJerushaligne";
+import ClinicalSafety from "../components/why-jerushaligne/ClinicalSafety";
+import TrustSection from "../components/why-jerushaligne/TrustSection";
 import "../styles/whyjerush.css";
-import FutureSection from "../components/FutureSection";
+import FutureSection from "../components/why-jerushaligne/FutureSection";
 
 /* ================= FRAMER VARIANTS ================= */
 

@@ -1,25 +1,25 @@
-// Home.jsx
 import React from "react";
 import { motion } from "framer-motion";
 import { fadeUp } from "../animations/motionPresets";
 
-import HeroVideo from "../components/HeroVideo";
-import ServicesSection from "../components/ServicesSection";
-import AboutSection from "../components/AboutSection";
-import BeforeAfterSection from "../components/BeforeAferSection";
-import HappySmilesSection from "../components/HappySmilesSection";
-import EventsCarousel from "../components/EventsCarousel";
-import HowItWorks from "../components/HowItWorks";
-import GallerySection from "../components/GallerySection";
-import TechEnabledSection from "../components/TechEnabledSection";
-import TreatmentComparison from "../components/TreatmentComparison";
-import WhatsAppButton from "../components/WhatsAppButton";
+import HeroVideo from "../components/home/HeroVideo";
+import ServicesSection from "../components/home/ServicesSection";
+import AboutSection from "../components/home/AboutSection";
+import BeforeAfterSection from "../components/home/BeforeAferSection";
+import HappySmilesSection from "../components/home/HappySmilesSection";
+import EventsCarousel from "../components/home/EventsCarousel";
+import HowItWorks from "../components/home/HowItWorks";
+import GallerySection from "../components/home/GallerySection";
+import TechEnabledSection from "../components/home/TechEnabledSection";
+import TreatmentComparison from "../components/home/TreatmentComparison";
+
+
 
 export default function Home() {
   return (
     <div
       className="min-h-screen bg-gray-50 text-gray-800"
-      style={{ fontFamily: "'Figtree', sans-serif" }}
+      style={{ fontFamily: "'poppins', sans-serif" }}
     >
       <main>
         {/* Hero already animated internally */}
@@ -110,12 +110,9 @@ export default function Home() {
         </motion.div>
       </main>
 
-      {/* Floating helpers */}
-      <WhatsAppButton
-        phone="+919876543210"
-        message="Hello! I want to book an appointment."
-      />
-      
+          
+    
+
     </div>
   );
 }

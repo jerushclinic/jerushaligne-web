@@ -1,12 +1,11 @@
 // pages/ClearAlignersHero.jsx
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import "../styles/clear-aligners.css";
 
-import DesignedForSmile from "../components/DesignedForSmile";
-import AlignerInteractive from "../components/AlignerInteractive";
-import ClearAlignerIssues from "../components/ClearAlignerIssues";
-import ClearAlignersFAQ from "../components/ClearAlignersFAQ.jsx";
+import DesignedForSmile from "../components/aligners/DesignedForSmile";
+import AlignerInteractive from "../components/aligners/AlignerInteractive";
+import ClearAlignerIssues from "../components/aligners/ClearAlignerIssues";
+import ClearAlignersFAQ from "../components/aligners/ClearAlignersFAQ.jsx";
 
 /* ================= REUSABLE VARIANTS ================= */
 
