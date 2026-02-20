@@ -123,7 +123,7 @@ export default function TrustSection() {
             initial="hidden" animate={inView ? "visible" : "hidden"}
           >
             <img
-              src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=800&q=80"
+              src="/images/hero/banner-3.webp"
               alt="Patient smiling with confident results"
               className="trust-hero-img"
             />
@@ -171,13 +171,13 @@ export default function TrustSection() {
             initial="hidden" animate={inView ? "visible" : "hidden"}
           >
             <img
-              src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80"
+              src="/images/machine.jpg"
               alt="Dental consultation"
               className="trust-cta-img"
             />
             <div className="trust-cta-overlay">
               <p className="trust-cta-text">One system. Every element.</p>
-              <button className="trust-cta-btn">Book Free Consultation →</button>
+              <button className="trust-cta-btn">Book Consultation →</button>
             </div>
           </motion.div>
 
@@ -188,7 +188,7 @@ export default function TrustSection() {
             initial="hidden" animate={inView ? "visible" : "hidden"}
           >
             <img
-              src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80"
+              src="/images/aligner-machine.jpg"
               alt="Doctor patient consultation"
               className="trust-cta-img"
             />

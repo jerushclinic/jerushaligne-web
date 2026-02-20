@@ -6,6 +6,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileAlignersOpen, setMobileAlignersOpen] = useState(false);
+  const [mobileStoryOpen, setMobileStoryOpen] = useState(false);
   const [mobileOutletsOpen, setMobileOutletsOpen] = useState(false);
 
   const { pathname } = useLocation();
@@ -148,9 +149,9 @@ export default function Navbar() {
           <Link className={isActive("/") ? "active" : ""} to="/" onClick={handleMobileNavClick}>Home</Link>
 
            <div className="mobile-accordion">
-            <button className={`accordion-trigger ${mobileAlignersOpen ? "open" : ""}`} onClick={() => setMobileAlignersOpen(!mobileAlignersOpen)}>
+            <button className={`accordion-trigger ${mobileStoryOpen ? "open" : ""}`} onClick={() => setMobileStoryOpen(!mobileStoryOpen)}>
               <span>Jerushaligne Story</span>
-              <svg className="chevron" width="16" height="16" viewBox="0 0 16 16" style={{ transform: mobileAlignersOpen ? "rotate(180deg)" : "rotate(0deg)" }}>
+              <svg className="chevron" width="16" height="16" viewBox="0 0 16 16" style={{ transform: mobileStoryOpen ? "rotate(180deg)" : "rotate(0deg)" }}>
                 <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
@@ -190,13 +191,13 @@ export default function Navbar() {
           </div>
 
           <Link to="/blog" className={isActive("/blog") ? "active" : ""} onClick={handleMobileNavClick}>Blog</Link>
-          <Link to="/contact-us" className={isActive("/contact-us") ? "active" : ""} onClick={handleMobileNavClick}>Contact</Link>
+          <Link to="/contact-us" className={isActive("/contact-us") ? "active" : ""} onClick={handleMobileNavClick}>Contact Us</Link>
         </nav>
 
         {/* CTA */}
         <div className="mobile-cta">
-          <Link to="/book" className="btn-primary" onClick={handleMobileNavClick}>Book Appointment</Link>
-          <a href="tel:+919999999999" className="btn-secondary">Call Now</a>
+          <Link to="/contact-us" className="btn-primary" onClick={handleMobileNavClick}>Book Appointment</Link>
+          <a href="tel:+919489160055" className="btn-secondary">Call Now</a>
         </div>
 
       </aside>

@@ -80,7 +80,7 @@ export default function FutureSection() {
             initial="hidden" animate={inView ? "visible" : "hidden"}
           >
             Modern orthodontics has advanced far beyond traditional systems.
-            With <strong>digital precision</strong>, <strong>AI-powered planning</strong>
+            With <strong>digital precision</strong>, <strong>AI-powered planning </strong>
             and <strong> clinical supervision</strong>, Jerushaligne represents
             the next generation of smile correction, precision, comfort and
             confidence, delivered.
@@ -108,12 +108,12 @@ export default function FutureSection() {
             initial="hidden" animate={inView ? "visible" : "hidden"}
           >
             <button className="fut-btn-primary">
-              Find a Nearby Center
+              <a href="/our-outlets">Find a Nearby Center</a>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                 <path d="M5 12H19M13 6L19 12L13 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
-            <button className="fut-btn-ghost">Learn More</button>
+            <button className="fut-btn-ghost"><a href="/">Learn More</a></button>
           </motion.div>
 
         </div>

@@ -18,6 +18,8 @@ export default function ChennaiOutlet() {
           "/images/outlets/thuckalay/post-2.jpg",
         ]}
         banners={[
+          "/images/outlets/jerush-chennai.webp",
+          "/images/aligner-machine.jpg",
           "/images/outlets/thuckalay/aligner-kit.webp",
           "/images/outlets/thuckalay/jerushaligne-kit-2.webp",
         ]}
@@ -28,13 +30,13 @@ export default function ChennaiOutlet() {
         title="Jerush Dental Clinic Chennai" 
         description="Jerush Dental Clinic Chennai offers advanced dental treatments including aligners, implants, braces, cosmetic dentistry and smile makeover procedures. Our clinic is equipped with modern technology and experienced specialists to ensure painless, safe and long-lasting dental care for every patient."
         stats={[
-          { icon: "😊", value: "30L+", label: "Happy Patients" },
-          { icon: "🦷", value: "1500+", label: "Dentists" },
-          { icon: "📅", value: "7 Days", label: "Open" },
-          { icon: "🦷", value: "55K+", label: "Implants" },
-          { icon: "😁", value: "7.8K+", label: "Dentures" },
-          { icon: "🦷", value: "2L+", label: "Crowns" },
-        ]}
+            { icon: "🏆", value: "#1", label: "Clear Aligner Design" },
+            { icon: "🦷", value: "5+", label: "Dental Experts" },
+            { icon: "📅", value: "24/7", label: "Consultation" },
+            { icon: "🦷", value: "5L+", label: "Aligner Treatments" },
+            { icon: "😁", value: "2L+", label: "Smiles Delivered" },
+            { icon: "😁", value: "99.9%", label: "Aligner Success Rate" },
+          ]}
       />
 
       <DoctorsSection />

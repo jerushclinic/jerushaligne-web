@@ -203,7 +203,7 @@ export default function GalleryPage() {
         <div className="gal-header-left">
           <span className="gal-eyebrow">Our Gallery</span>
           <h1 className="gal-title">
-            Moments from <em>JERUSHALIGNE</em>
+            Moments from JERUSHALIGNE
           </h1>
           <p className="gal-desc">
             A look inside our world — from team celebrations and awareness drives

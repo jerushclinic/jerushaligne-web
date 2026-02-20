@@ -182,7 +182,6 @@ function App() {
 
       <FloatingSocialIcons />
 
-   
 
 
       <Footer />

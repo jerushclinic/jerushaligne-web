@@ -16,7 +16,8 @@ export default function Footer() {
           </a>
 
           <p>
-            Jerushaligne is a dental technology company with rich exxperience and expertise in dental care, cutting-edge engineering expertise and benchmarked production prowes. With a team of experts and a mission to innovate, Jerushaligne set out to change the way smiles are shaped.
+            Jerushaligne is a dental technology company with rich experience and expertise in dental care, cutting-edge engineering expertise and benchmarked production prowes. 
+            With a team of experts and a mission to innovate, Jerushaligne set out to change the way smiles are shaped.
           </p>
         </div>
 
@@ -28,6 +29,7 @@ export default function Footer() {
             <li><a href="/clear-aligners">Clear Aligners</a></li>
             <li><a href="/retainers">Retainers</a></li>
             <li><a href="/why-jerushaligne">Why Jerushaligne</a></li>
+            <li><a href="/our-outlets">Our Outlets</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
@@ -35,13 +37,18 @@ export default function Footer() {
         {/* ================= CONTACT ================= */}
         <div className="footer-contact">
           <h5 className="footer-title">Contact</h5>
-          <p>123 Main Street, Tamil Nadu, India</p>
+          <p>Main Branch : Near & Behind Bustand,
+                           Brammapuram South,
+                           Thuckalay,
+                           Tamil Nadu - 629175</p>
+                           <br></br>
           <p>
-            <a href="tel:+919876543210">+91 98765 43210</a>
+            <a href="tel:+919489160055">+91 94891 60055</a>
           </p>
+           <br></br>
           <p>
-            <a href="mailto:hello@jerushadental.com">
-              hello@jerushadental.com
+            <a href="mailto:jerushclinic@gmail.com">
+              jerushclinicgmail.com
             </a>
           </p>
         </div>

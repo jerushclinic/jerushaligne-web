@@ -103,10 +103,10 @@ export default function GallerySection() {
               Visual <em>Stories</em>
             </h2>
             <p className="gallery-header__sub">
-              A curated collection of moments from around the world.
+              A curated collection of moments from Jerush
             </p>
           </div>
-          <button className="gallery-view-more">View More →</button>
+          <button className="gallery-view-more"><a href="/gallery-events">View More →</a></button>
         </div>
 
         {/* Filters */}

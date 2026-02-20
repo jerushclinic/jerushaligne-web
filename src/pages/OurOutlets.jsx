@@ -8,9 +8,9 @@ const outlets = [
     image: "/images/outlets/jerush-thuckalay.webp",
     address:
       "Near & Behind Bustand, Brammapuram South, Thuckalay, Tamil Nadu - 629175",
-    phone: "+91 99999 99999",
-    rating: 4.6,
-    reviews: 320,
+    phone: "+91 94891 60055",
+    rating: 4.8,
+    reviews: "2.5K",
     slug: "thuckalay-outlet",
   },
   {
@@ -18,19 +18,19 @@ const outlets = [
     image: "/images/outlets/jerush-trichy.webp",
     address:
       "Second Floor, No.72, Pattabiraman Salai, Anna Nagar, Trichy - 620017",
-    phone: "+91 88888 88888",
-    rating: 4.4,
-    reviews: 210,
+    phone: "+91 94891 60011",
+    rating: 4.9,
+    reviews: "1.5k",
     slug: "trichy-outlet",
   },
   {
     city: "Jerush Dentofacial and Cosmetic Laser Centre, Chennai",
     image: "/images/outlets/jerush-chennai.webp",
     address:
-      "G2, Chandhini Apartment, Mahatma Gandhi Rd, Adyar, Chennai - 600020",
-    phone: "+91 77777 77777",
+      "G2, Chandhini Apartment, Mahatma Gandhi Road, Adyar, Chennai - 600020",
+    phone: "+91 97510 10107",
     rating: 4.5,
-    reviews: 185,
+    reviews: "500+",
     slug: "chennai-outlet",
   },
 ];
@@ -86,7 +86,7 @@ export default function OurOutlets() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          Visit Your Nearest Jerush Centre Now
+           Pick Your Nearby Jerushaligne Centre 
         </motion.div>
 
         <motion.div

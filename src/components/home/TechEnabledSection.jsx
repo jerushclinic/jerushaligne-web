@@ -16,7 +16,7 @@ export default function TechEnabledSection() {
           </p>
           <p>This ensures better control, comfort and faster results compared to conventional invisible braces.</p>
 
-          <button className="tech-btn">Learn More</button>
+         <button className="tech-btn"><a href="/clear-aligners">Learn More</a></button>
         </div>
 
         {/* RIGHT IMAGE */}

@@ -174,7 +174,7 @@ export default function ReviewsSection() {
         <p className="reviews-subtitle">
           Real stories from real people whose lives changed after that first appointment.
         </p>
-
+{/* 
         <div className="stats-row">
           <div className="stat">
             <span className="stat-number">4.9</span>
@@ -190,7 +190,7 @@ export default function ReviewsSection() {
             <span className="stat-number">98%</span>
             <span className="stat-label">Would Recommend</span>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Dual marquee rows */}

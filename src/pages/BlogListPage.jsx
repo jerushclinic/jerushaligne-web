@@ -150,7 +150,7 @@ export default function BlogPage() {
               <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
                 <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
               </svg>
-              Dr. Smile Team
+              Dr. Bladbin
             </span>
           </p>
 
@@ -264,7 +264,12 @@ export default function BlogPage() {
               Retainers can be removable or fixed, but their job remains the same: to maintain your results for the long term.
             </p>
 
-            <h3 className="blog-h3">Why Your Dentist Swears By Retainers</h3>
+           
+          </section>
+
+
+               <section id="why-retainer" className="blog-section">
+                 <h3 className="blog-h3">Why Your Dentist Swears By Retainers</h3>
 
             <div className="blog-img-block">
               <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=900&q=80" alt="Dentist" />
@@ -291,7 +296,10 @@ export default function BlogPage() {
                 </div>
               ))}
             </div>
-          </section>
+                </section> 
+
+
+
 
           {/* ── TYPES ── */}
           <section id="types-of-retainer" className="blog-section">

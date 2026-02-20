@@ -43,7 +43,7 @@ body {
   right: 0;
   height: var(--nav-height);
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgb(255 255 255 / 41%);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);

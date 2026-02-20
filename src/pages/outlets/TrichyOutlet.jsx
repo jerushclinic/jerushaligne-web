@@ -10,7 +10,7 @@ export default function TrichyOutlet() {
     <>
       <OutletShowcase
         city="Trichy"
-        rating="4.5"
+        rating="4.9"
         timings="10:00 AM – 11:00 PM (24/7 All Days)"
         address="No. 72, Second Floor, Pattabiraman Pillai Road, Thenur, Trichy – 600017"
         phone="+919489160033"
@@ -19,6 +19,8 @@ export default function TrichyOutlet() {
           "/images/outlets/thuckalay/post-2.jpg",
         ]}
         banners={[
+          "/images/outlets/jerush-trichy.webp",
+          "/images/aligner-machine.jpg",
           "/images/outlets/thuckalay/aligner-kit.webp",
           "/images/outlets/thuckalay/jerushaligne-kit-2.webp",
         ]}
@@ -28,16 +30,20 @@ export default function TrichyOutlet() {
        <TeethShortsSection />
 
       <OutletAbout
-        title="Jerush Dental Clinic Trichy" 
-        description="Jerush Dental Clinic Thuckalay offers advanced dental treatments including aligners, implants, braces, cosmetic dentistry and smile makeover procedures. Our clinic is equipped with modern technology and experienced specialists to ensure painless, safe and long-lasting dental care for every patient."
+        title="Invisible Teeth Braces in Trichy: Discreet Orthodontic Care for a Confident Smile" 
+        description="At Jerush Dental Clinic, Trichy, we provide advanced invisible teeth braces in Trichy designed for patients 
+        who want a straighter smile without the discomfort and visibility of metal braces. Our premium aligner system Jerushaligne 
+        uses digital precision and customised treatment planning to gently move your teeth into perfect alignment comfortably and predictably. 
+        If you are searching for invisible braces in Trichy or the best dental clinic for teeth alignment, Jerush offers modern orthodontic care 
+        backed by clinical expertise and advanced technology."
         stats={[
-          { icon: "😊", value: "30L+", label: "Happy Patients" },
-          { icon: "🦷", value: "1500+", label: "Dentists" },
-          { icon: "📅", value: "7 Days", label: "Open" },
-          { icon: "🦷", value: "55K+", label: "Implants" },
-          { icon: "😁", value: "7.8K+", label: "Dentures" },
-          { icon: "🦷", value: "2L+", label: "Crowns" },
-        ]}
+            { icon: "🏆", value: "#1", label: "Clear Aligner Design" },
+            { icon: "🦷", value: "5+", label: "Dental Experts" },
+            { icon: "📅", value: "24/7", label: "Consultation" },
+            { icon: "🦷", value: "5L+", label: "Aligner Treatments" },
+            { icon: "😁", value: "2L+", label: "Smiles Delivered" },
+            { icon: "😁", value: "99.9%", label: "Aligner Success Rate" },
+          ]}
       />
 
       <DoctorsSection />

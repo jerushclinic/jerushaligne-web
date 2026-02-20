@@ -26,7 +26,7 @@ export default function ServiceCard({ title, desc, icon }) {
       </div>
 
       <div className="service-card-footer">
-        <a href="#" className="service-btn">
+        <a href="/why-jerushaligne-is-different" className="service-btn">
           Learn more
           <svg viewBox="0 0 24 24" fill="none">
             <path

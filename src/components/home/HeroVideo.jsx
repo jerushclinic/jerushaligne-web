@@ -6,7 +6,7 @@ export default function HeroVideo() {
       {/* Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
-        src="/videos/aligner.mp4"
+        src="/videos/video3.mp4"
         autoPlay
         loop
         muted
@@ -14,7 +14,7 @@ export default function HeroVideo() {
       />
 
       {/* Overlay for text visibility */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-black/20" />     
+      <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/10 to-black/10" />     
 
       {/* Content */}
       {/* <div className="relative z-10 max-w-7xl mx-auto h-full px-6 flex items-center">

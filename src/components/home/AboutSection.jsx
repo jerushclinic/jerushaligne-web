@@ -63,7 +63,7 @@ export default function AboutSection({
 
             {/* CTA + STATS */}
             <motion.div variants={fadeUp} className="about-footer">
-              <a href="#book" className="about-cta">
+              <a href="/story-of-jerushaligne" className="about-cta">
                 View More
               </a>
 
