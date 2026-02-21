@@ -4,11 +4,11 @@ import "../styles/BlogListPage.css";
 // ── DATA ──────────────────────────────────────────────
 const CATEGORIES = [
   { id: "all", label: "All Articles" },
-  { id: "oral-care", label: "Oral Care" },
-  { id: "in-the-news", label: "In the News" },
+  { id: "clear-aligners", label: "Clear Aligners" },
   { id: "aligners-vs-braces", label: "Aligners vs Braces" },
   { id: "teeth-whitening", label: "Teeth Whitening" },
   { id: "retainer", label: "Retainer" },
+  { id: "in-the-news", label: "In the News" },
 ];
 
 const SORT_OPTIONS = [
@@ -20,12 +20,12 @@ const SORT_OPTIONS = [
 const POSTS = [
   {
     id: 1,
-    slug: "bloglist",
+    slug: "blog/clear-aligners/clear-aligners-fix-an-overbite",
     category: "",
-    categoryLabel: "Aligner",
+    categoryLabel: "Clear Aligner",
     date: "Feb 5, 2026",
     dateMs: new Date("2026-02-05").getTime(),
-    title: "So You Got a Retainer….Now what? A Fun Guide to Surviving It",
+    title: "How do clear aligners fix an overbite?",
     reviewer: "Dr. Bladbin",
     img: "/images/hero/banner-2.webp",
     featured: true,

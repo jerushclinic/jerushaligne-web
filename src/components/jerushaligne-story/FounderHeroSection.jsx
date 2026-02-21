@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import "../../styles/AboutPage.css";
+import VisionaryEntrepreneur from "./VisionaryEntrepreneur";
+import "../../styles/AboutPage.css"; 
 
 export default function FounderSection() {
   return (
@@ -44,25 +45,37 @@ export default function FounderSection() {
           </h4>
 
           <p>
-           Dr. A. Bladbin stands as a paragon of excellence in the fields of dentistry and oral surgery, 
-           serving as the founding Chairman and Chief Dental Surgeon of Jerush Hospitals. 
+           Dr. Bladbin’s distinguished professional journey began with his <strong> Bachelor of Dental Surgery (B.D.S.) in 2000 </strong>, 
+           where he earned numerous awards and academic distinctions for his dedication and excellence. Driven by a passion for surgical 
+           precision and advanced dental care, he went on to complete his <strong> Master’s Degree in Oral and Maxillofacial Surgery </strong>, 
+           emerging as the <strong> University Topper in 2011 </strong>.
            
           </p>
 
           <p>
-           Under his visionary leadership, the hospital has grown to serve and treat over one lakh active 
-           patients, becoming a beacon of advanced dental and facial healthcare.
+          Committed to expanding his medical expertise beyond dentistry, he further completed his <strong> MBBS from Ukraine in 2021 </strong>, 
+          strengthening his foundation as a comprehensive healthcare professional.
           </p>
 
           <p>
             To this day, he continues to innovate and transform smile care
-            through cutting-edge aligner systems and patient-first philosophy.
+            through <strong> cutting-edge aligner systems and patient-first philosophy.</strong>
           </p>
         </motion.div>
 
       </div>
+
+      <motion.div
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1.8 }}
+  viewport={{ once: true }}
+>
+  <VisionaryEntrepreneur />
+</motion.div>
       
 
       </section>
+      
   );
 }

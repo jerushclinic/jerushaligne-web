@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import "../styles/component.css";
+import "../styles/doctors-section.css";
 
 
 const doctors = [
@@ -262,7 +262,7 @@ export default function DoctorsCarousel() {
               {extended.map((doc, i) => (
                 <div
                   key={i}
-                  className="card"
+                  className="doc-item"
                   onClick={() => setSelected(doc)}
                   role="button"
                   tabIndex={0}

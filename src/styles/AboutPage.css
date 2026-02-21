@@ -2,7 +2,7 @@
 
 .founder-section {
   padding: 4rem 8%;
-  background: #ffffff;
+ 
 }
 
 /* ================= CONTAINER ================= */
@@ -25,17 +25,7 @@
   align-items: center;
 }
 
-/* Yellow abstract shape */
 
-.yellow-shape {
-  position: absolute;
-  width: 480px;
-  height: 480px;
-  background: #facc15;
-  border-radius: 65% 35% 55% 45% / 50% 60% 40% 50%;
-  transform: rotate(25deg);
-  z-index: 0;
-}
 
 /* Founder Image */
 
@@ -104,5 +94,170 @@
 
   .founder-image {
     max-width: 320px;
+  }
+}
+
+
+
+
+/* ================= THE VISION SECTION ================= */
+
+
+.section-wrapper {
+  width: 100% !important;
+  max-width: 1300px !important;
+  margin: 0 auto !important;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  padding: 80px 20px;
+
+}
+
+.section-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 36px;
+  font-weight: 700 !important;
+  color: #653801;
+  text-align: center !important;
+  margin-bottom: 15px !important;
+  letter-spacing: -0.02em !important;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 52px;
+  display: grid !important;
+  grid-template-columns: 1fr 320px !important;
+  gap: 52px;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow:
+    0 2px 15px rgb(0 0 0 / 12%), 0 8px 24px rgb(0 0 0 / 2%);
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Text Column */
+
+.text-col {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 22px;
+  text-align: left !important;
+}
+
+.text-col p {
+  font-size: 15px;
+  line-height: 1.8 !important;
+  color: #4b5563;
+  font-weight: 500;
+  text-align: left !important;
+  margin: 0 !important;
+}
+
+.text-col p strong {
+  color: #0d2137 !important;
+  font-weight: 600 !important;
+}
+
+.accent-line {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg,#facc15,#f59e0b);
+  border-radius: 2px;
+  margin-bottom: 4px;
+}
+
+/* Stats Row */
+
+.stat-row {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 32px;
+  padding-top: 8px;
+  border-top: 1px solid #eef2f5;
+  margin-top: 4px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left !important;
+}
+
+.stat-value {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: #f59e0b !important;
+  line-height: 1 !important;
+  text-align: left !important;
+}
+
+.stat-label {
+  font-size: 0.72rem !important;
+  color: #000000 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  font-weight: 500 !important;
+  text-align: left !important;
+}
+
+/* Image Column */
+
+.image-col {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  width: 100%;
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.1),
+    0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.image-col img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+  display: block !important;
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to top, rgba(13, 33, 55, 0.15), transparent);
+}
+
+/* Responsive */
+
+@media (max-width: 760px) {
+  .card {
+    grid-template-columns: 1fr !important;
+    padding: 36px 28px;
+    gap: 36px;
+  }
+
+  .image-col {
+    aspect-ratio: 4 / 3;
+    order: -1;
+  }
+
+  .stat-row {
+    flex-wrap: wrap;
+    gap: 20px;
   }
 }

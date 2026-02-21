@@ -15,13 +15,14 @@ import ThuckalayOutlet from "./pages/outlets/ThuckalayOutlet";
 import TrichyOutlet from "./pages/outlets/TrichyOutlet";
 import ChennaiOutlet from "./pages/outlets/ChennaiOutlet";
 import BlogPage from "./pages/BlogPage";
+import ClearAlignersFixAnOverbite from "./pages/blog/clear-aligners/ClearAlignersFixAnOverbite";
 import BlogListPage from "./pages/BlogListPage";
 import ContactUs from "./pages/ContactUs";
 
 import PageTransition from "./animations/PageTransition";
 import BackToTopIcon from "./components/BacktoTopIcon";
-import WhatsAppButton from "./components/WhatsAppButton";
 import FloatingSocialIcons from "./components/FloatingSocialIcons";
+
 
 function App() {
   const location = useLocation();
@@ -154,6 +155,16 @@ function App() {
             }
           />
 
+           <Route
+            path="/blog/clear-aligners/clear-aligners-fix-an-overbite"
+            element={
+              <PageTransition>
+                <ClearAlignersFixAnOverbite />
+              </PageTransition>
+            }
+          />
+
+
           <Route
             path="/contact-us"
             element={
@@ -167,10 +178,10 @@ function App() {
 
       <BackToTopIcon />
 
-      <WhatsAppButton
-        phone="+919876543210"
+      {/* <WhatsAppButton
+        phone="+919489160055"
         message="Hello! I want to book an appointment."
-      />
+      /> */}
 
       <FloatingSocialIcons />
 

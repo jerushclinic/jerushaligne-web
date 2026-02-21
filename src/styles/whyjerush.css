@@ -420,9 +420,7 @@
   width: 150%;
   max-width: none;
   transform: translateY(-80px);
-  filter: drop-shadow(0 30px 40px rgba(0,0,0,0.35));
   pointer-events: none;
-  /* FIX: clip the overflow image so it doesn't widen the page */
   clip-path: inset(0 -100vw 0 -100vw);
 }
 

@@ -5,12 +5,10 @@ import "../styles/gallery-events.css";
    DATA
 ══════════════════════════════════ */
 const GAL_CATEGORIES = [
-  { id: "all",       label: "All",              count: 18 },
+  { id: "all",       label: "All",              count: 14 },
   { id: "events",    label: "Events",            count: 5  },
   { id: "team",      label: "Our Team",          count: 4  },
-  { id: "facility",  label: "Facility",          count: 4  },
-  { id: "awareness", label: "Awareness",         count: 3  },
-  { id: "awards",    label: "Awards",            count: 2  },
+  { id: "euroawards",      label: "Euro Star Awards",            count: 4  },
 ];
 
 const GAL_CAT_INFO = {
@@ -18,8 +16,7 @@ const GAL_CAT_INFO = {
   events:    { title: "Events",                  sub: "Clinic Events & Celebrations" },
   team:      { title: "Our Team",                sub: "The People Behind Your Smile" },
   facility:  { title: "Facility",                sub: "Our Clinic Spaces & Technology" },
-  awareness: { title: "Awareness",               sub: "Community Health Drives" },
-  awards:    { title: "Awards & Milestones",     sub: "Recognition & Achievements" },
+  euroawards:    { title: "Awards & Milestones",        sub: "Recognition & Achievements" },
 };
 
 const GAL_SORT_OPTIONS = [
@@ -29,24 +26,20 @@ const GAL_SORT_OPTIONS = [
 ];
 
 const GAL_PHOTOS = [
-  { id: 1,  cat: "events",    span: "wide", tag: "Events",    title: "Annual Dental Health Day",        date: "Mar 15, 2025", desc: "Our annual Dental Health Day brought together over 200 community members for free check-ups, demonstrations and oral health talks.",      img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=900&q=80" },
-  { id: 2,  cat: "team",      span: "sq",   tag: "Team",      title: "Doctor of the Year Award",        date: "Jan 8, 2025",  desc: "Dr. Priya Rajan was honoured with the regional Doctor of the Year award — a proud moment for our entire team.",                         img: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=700&q=80" },
-  { id: 3,  cat: "facility",  span: "tall", tag: "Facility",  title: "New Sterilisation Suite",         date: "Dec 2, 2024",  desc: "Our brand-new ISO-certified sterilisation suite was inaugurated, reinforcing our commitment to patient safety.",                        img: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=700&q=80" },
-  { id: 4,  cat: "awareness", span: "wide", tag: "Awareness", title: "World Oral Health Day Camp",      date: "Mar 20, 2025", desc: "Free oral cancer screening camp held in partnership with local NGOs. Over 180 screenings conducted across two days.",                  img: "https://images.unsplash.com/photo-1576671081837-49000212a370?w=900&q=80" },
-  { id: 5,  cat: "team",      span: "sq",   tag: "Team",      title: "New Team Members Welcome",        date: "Feb 3, 2025",  desc: "Welcoming three brilliant new dental surgeons to the clinic family. We continue to grow with purpose and passion.",                    img: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=700&q=80" },
-  { id: 6,  cat: "awards",    span: "sq",   tag: "Awards",    title: "Best Dental Clinic Award 2024",   date: "Nov 22, 2024", desc: "Recognised as the Best Dental Clinic in the city for 2024 by the State Dental Council — two years running!",                          img: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=700&q=80" },
-  { id: 7,  cat: "events",    span: "sq",   tag: "Events",    title: "Children's Dental Week",          date: "Nov 10, 2024", desc: "A fun-filled week for young patients with interactive sessions, dental hygiene games and free fluoride treatments for children under 12.", img: "https://images.unsplash.com/photo-1537089421669-ee2f86d4b3e5?w=700&q=80" },
-  { id: 8,  cat: "facility",  span: "wide", tag: "Facility",  title: "3D Imaging Suite Launch",         date: "Oct 5, 2024",  desc: "Launched our state-of-the-art 3D CBCT imaging suite — enabling faster, more accurate diagnosis for every patient.",                    img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=900&q=80" },
-  { id: 9,  cat: "team",      span: "wide", tag: "Team",      title: "Annual Team Day Out",              date: "Sep 14, 2024", desc: "Our full team came together for a day of team building, reflection and celebration. Our people are our greatest strength.",             img: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=900&q=80" },
-  { id: 10, cat: "awareness", span: "sq",   tag: "Awareness", title: "School Oral Health Programme",    date: "Aug 22, 2024", desc: "Visiting 5 local schools to educate over 600 children on brushing technique, diet and the importance of regular dental check-ups.",   img: "https://images.unsplash.com/photo-1560869713-7d0a29430803?w=700&q=80" },
-  { id: 11, cat: "facility",  span: "sq",   tag: "Facility",  title: "Waiting Area Renovation",         date: "Aug 1, 2024",  desc: "Our patient waiting area was fully redesigned — warm, welcoming and designed to put every visitor at ease from the moment they arrive.", img: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=700&q=80" },
-  { id: 12, cat: "events",    span: "tall", tag: "Events",    title: "Charity Smile Makeover Event",    date: "Jul 18, 2024", desc: "Partnering with a local charity to provide free smile makeovers to deserving individuals — giving the gift of confidence.",               img: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=700&q=80" },
-  { id: 13, cat: "team",      span: "sq",   tag: "Team",      title: "Continuing Education Day",        date: "Jun 7, 2024",  desc: "Our team completed an advanced CPD training day, keeping every clinician at the cutting edge of modern dental practice.",              img: "https://images.unsplash.com/photo-1598256989536-775f33bd5cef?w=700&q=80" },
-  { id: 14, cat: "awards",    span: "wide", tag: "Awards",    title: "ISO 9001 Certification",          date: "May 20, 2024", desc: "Proud to receive our ISO 9001:2015 Quality Management System certification — a formal recognition of our high clinical standards.",       img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" },
-  { id: 15, cat: "awareness", span: "sq",   tag: "Awareness", title: "Sugar Awareness Campaign",        date: "Apr 11, 2024", desc: "An in-clinic campaign helping families understand the impact of sugar on oral health — with practical, easy-to-follow tips.",            img: "https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=700&q=80" },
-  { id: 16, cat: "facility",  span: "sq",   tag: "Facility",  title: "Digital X-Ray Upgrade",           date: "Mar 28, 2024", desc: "Upgraded all operatories to digital X-ray systems — reducing radiation exposure by over 80% while delivering superior image clarity.",  img: "https://images.unsplash.com/photo-1581093196277-9f608bb3b511?w=700&q=80" },
-  { id: 17, cat: "events",    span: "sq",   tag: "Events",    title: "Inauguration Ceremony 2019",      date: "Jan 10, 2019", desc: "A proud day — the official inauguration of our clinic, marking the beginning of a journey dedicated to exceptional dental care.",       img: "https://images.unsplash.com/photo-1588776814546-1ffbb3f5e39c?w=700&q=80" },
-  { id: 18, cat: "events",    span: "wide", tag: "Events",    title: "Diwali Celebration 2024",         date: "Nov 1, 2024",  desc: "Celebrating the festival of lights with our patients, team and neighbours — spreading joy, sweets and smiles all around.",             img: "https://images.unsplash.com/photo-1629909615184-74f495363b67?w=900&q=80" },
+  { id: 1,  cat: "euroawards",    span: "sq", tag: "Euro Star Awards",    title: "Euro Star Awards",        date: "Mar 15, 2025",        img: "/images/gallery/euro-star-awards/euro.webp" },
+  { id: 2,  cat: "euroawards",    span: "tall",   tag: "Euro Star Awards",      title: "Doctor of the Year Award",        date: "Jan 8, 2025",  desc: "Dr. Priya Rajan was honoured with the regional Doctor of the Year award — a proud moment for our entire team.",                img: "/images/gallery/euro-star-awards/euro2.webp" },
+  { id: 3,  cat: "euroawards",  span: "tall", tag: "Euro Star Awards",  title: "Euro Star Awards",         date: "Dec 2, 2024",  desc: "Our brand-new ISO-certified sterilisation suite was inaugurated, reinforcing our commitment to patient safety.",                              img: "/images/gallery/euro-star-awards/euro3.webp" },
+  { id: 4,  cat: "euroawards",   span: "sq", tag: "Euro Star Awards", title: "Euro Star Awards",      date: "Mar 20, 2025", desc: "Free oral cancer screening camp held in partnership with local NGOs. Over 180 screenings conducted across two days.",                                img: "/images/gallery/euro-star-awards/euro4.webp" },
+   { id: 5,  cat: "awareness",      span: "sq", tag: "Team",      title: "Annual Team Day Out",              date: "Sep 14, 2024", desc: "Our full team came together for a day of team building, reflection and celebration. Our people are our greatest strength.",             img: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=900&q=80" },
+  { id: 6, cat: "awareness", span: "sq",   tag: "Awareness", title: "School Oral Health Programme",    date: "Aug 22, 2024", desc: "Visiting 5 local schools to educate over 600 children on brushing technique, diet and the importance of regular dental check-ups.",   img: "https://images.unsplash.com/photo-1560869713-7d0a29430803?w=700&q=80" },
+  { id: 7, cat: "facility",  span: "sq",   tag: "Facility",  title: "Waiting Area Renovation",         date: "Aug 1, 2024",  desc: "Our patient waiting area was fully redesigned — warm, welcoming and designed to put every visitor at ease from the moment they arrive.", img: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=700&q=80" },
+  { id: 8, cat: "events",    span: "tall", tag: "Events",    title: "Charity Smile Makeover Event",    date: "Jul 18, 2024", desc: "Partnering with a local charity to provide free smile makeovers to deserving individuals — giving the gift of confidence.",               img: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=700&q=80" },
+  { id: 9, cat: "team",      span: "sq",   tag: "Team",      title: "Continuing Education Day",        date: "Jun 7, 2024",  desc: "Our team completed an advanced CPD training day, keeping every clinician at the cutting edge of modern dental practice.",              img: "https://images.unsplash.com/photo-1598256989536-775f33bd5cef?w=700&q=80" },
+  { id: 10, cat: "awards",    span: "wide", tag: "Awards",    title: "ISO 9001 Certification",          date: "May 20, 2024", desc: "Proud to receive our ISO 9001:2015 Quality Management System certification — a formal recognition of our high clinical standards.",       img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" },
+  { id: 11, cat: "awareness", span: "sq",   tag: "Awareness", title: "Sugar Awareness Campaign",        date: "Apr 11, 2024", desc: "An in-clinic campaign helping families understand the impact of sugar on oral health — with practical, easy-to-follow tips.",            img: "https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=700&q=80" },
+  { id: 12, cat: "facility",  span: "sq",   tag: "Facility",  title: "Digital X-Ray Upgrade",           date: "Mar 28, 2024", desc: "Upgraded all operatories to digital X-ray systems — reducing radiation exposure by over 80% while delivering superior image clarity.",  img: "https://images.unsplash.com/photo-1581093196277-9f608bb3b511?w=700&q=80" },
+  { id: 13, cat: "events",    span: "sq",   tag: "Events",    title: "Inauguration Ceremony 2019",      date: "Jan 10, 2019", desc: "A proud day — the official inauguration of our clinic, marking the beginning of a journey dedicated to exceptional dental care.",       img: "https://images.unsplash.com/photo-1588776814546-1ffbb3f5e39c?w=700&q=80" },
+  { id: 14, cat: "events",    span: "wide", tag: "Events",    title: "Diwali Celebration 2024",         date: "Nov 1, 2024",  desc: "Celebrating the festival of lights with our patients, team and neighbours — spreading joy, sweets and smiles all around.",             img: "https://images.unsplash.com/photo-1629909615184-74f495363b67?w=900&q=80" },
 ];
 
 /* ══════════════════════════════════
