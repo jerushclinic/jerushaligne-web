@@ -2,7 +2,7 @@ import { useRef } from "react";
 import "../../styles/herovideo.css";
 
 export default function BannerVideo({
-  videoSrc = "/videos/banner-video.mp4",
+  videoSrc = "/videos/banner.mp4",
 }) {
   const videoRef = useRef(null);
 

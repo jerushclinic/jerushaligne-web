@@ -4,7 +4,7 @@ import HeroBreadcrumb from "../components/HeroBreadcrumb";
 import FounderSection from "../components/jerushaligne-story/FounderHeroSection";
 import "../styles/whyjerush.css";
 import "../styles/AboutPage.css"
-import FloatingSocialIcons from "../components/FloatingSocialIcons";
+
 
 
 /* ================= FRAMER VARIANTS ================= */
@@ -44,11 +44,10 @@ export default function AboutPage() {
       <motion.div variants={sectionVariants}>
         <HeroBreadcrumb
           title="Story of Jerushaligne"
-          subtitle="Let's Catch up How we Made"
+          subtitle="Let's Catch up How we Made Jerushaligne"
           image="/images/comparison/girl.webp"
         />
       </motion.div>
-
 
 
         {/* ================= FOUNDER SECTION ================= */}

@@ -88,23 +88,6 @@ const doctors = [
     ]
   },
 
-  
-
-  {
-    name: "Dr. Sherine Ponraj",
-    role: "Prosthodontics | Crown | Bridge",
-    degree: "BDS.,MDS",
-    img: "/images/doctors/dr_sherine.webp",
-    additionalImg: "/images/doctors/dr_sherine2.webp",
-    contentSections: [
-      {
-        heading: "Career Path:",
-        paragraph: "Sherine graduated with a Bachelor of Dental Science from Annamalai University – 2008.She has been practising dentistry in Missionary hospitals and private practices for over 14 years. She initially obtained **”FELLOWSHIP IN GENERAL AND HOSPITAL DENTISTRY” from **CHRISTIAN MEDICAL COLLEGE, VELLORE** and currently has a post graduation degree in Prosthodontics and crown and Bridge from Christian Medical College,Ludhiana. Sherine enjoys all aspects of Dentistry and is passionate about delivering evidence based treatments and quality care to her patients in the most professional way possible.."
-      },
-      ]
-  },
-  
-
   {
     name: "Dr. C. J. Aishwarya",
     role: "Dental Surgeon",
@@ -119,6 +102,20 @@ const doctors = [
     ]
   },
 
+
+  {
+    name: "Dr. Sherine Ponraj",
+    role: "Prosthodontics | Crown | Bridge",
+    degree: "BDS.,MDS",
+    img: "/images/doctors/dr_sherine.webp",
+    additionalImg: "/images/doctors/dr_sherine2.webp",
+    contentSections: [
+      {
+        heading: "Career Path:",
+        paragraph: "Sherine graduated with a Bachelor of Dental Science from Annamalai University – 2008.She has been practising dentistry in Missionary hospitals and private practices for over 14 years. She initially obtained **”FELLOWSHIP IN GENERAL AND HOSPITAL DENTISTRY” from **CHRISTIAN MEDICAL COLLEGE, VELLORE** and currently has a post graduation degree in Prosthodontics and crown and Bridge from Christian Medical College,Ludhiana. Sherine enjoys all aspects of Dentistry and is passionate about delivering evidence based treatments and quality care to her patients in the most professional way possible.."
+      },
+      ]
+  },
   
     {
     name: "Dr. V. Jasmin Shamili",

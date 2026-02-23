@@ -168,7 +168,7 @@ const bottomRowSmiles = [
     name: "Priya R",
     treatment: "Smile Correction",
     type: "image",
-    img: "/images/happy-smiles/co2.webp", // ✅ FIXED (was "co2")
+    img: "/images/happy-smiles/co2.webp", 
     size: "normal",
   },
   {
