@@ -14,7 +14,7 @@ export default function BannerVideo({
         src={videoSrc}
         autoPlay
         loop
-        muted
+        muted={true}
         playsInline
       />
     </section>
