@@ -1,18 +1,16 @@
 /* ================= FOUNDER SECTION ================= */
 
-.founder-section {
-  padding: 4rem 8%;
- 
-}
+
 
 /* ================= CONTAINER ================= */
 
 .founder-container {
+  padding: 5rem;
   max-width: 1300px;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1.1fr;
-  gap: 4rem;
+  gap: 3rem;
   align-items: center;
 }
 
@@ -77,6 +75,7 @@
 
 /* ================= RESPONSIVE ================= */
 
+
 @media (max-width: 992px) {
   .founder-container {
     grid-template-columns: 1fr;
@@ -109,7 +108,7 @@
   margin: 0 auto !important;
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
-  padding: 80px 20px;
+  padding: 0px 24px;
 
 }
 

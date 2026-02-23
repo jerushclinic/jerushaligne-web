@@ -35,7 +35,7 @@ export default function VisionaryEntrepreneur() {
             </p>
 
             
-           <div className="stat-row">
+ <div className="stat-row">
   <div className="stat-item">
     <span className="stat-value">20+</span>
     <span className="stat-label">Years of Leadership</span>

@@ -19,7 +19,6 @@ export default function FloatingIcons() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Wait for full layout paint before showing
     const raf = requestAnimationFrame(() => {
       setTimeout(() => setMounted(true), 50);
     });
@@ -28,7 +27,7 @@ export default function FloatingIcons() {
 
   return (
     <>
-      {/* ── DESKTOP: vertical stack on right edge ── */}
+      {/* ══ DESKTOP: each row = ONE full <a> tag (label + icon both clickable) ══ */}
       <div className={`fi-desktop ${mounted ? "fi-ready" : ""}`}>
         {socials.map((s) => (
           <a
@@ -36,18 +35,22 @@ export default function FloatingIcons() {
             href={s.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="fi-icon"
+            className="fi-row"
             style={{ "--c1": s.c1, "--c2": s.c2 }}
             aria-label={s.label}
-            title={s.label}
           >
-            <span className="fi-tooltip">{s.label}</span>
-            <span className="fi-icon-svg">{s.icon}</span>
+            {/* Label — slides in from the right edge on hover */}
+            <span className="fi-label">{s.label}</span>
+
+            {/* Icon box — always visible on right edge */}
+            <span className="fi-icon-box">
+              <span className="fi-icon-svg">{s.icon}</span>
+            </span>
           </a>
         ))}
       </div>
 
-      {/* ── MOBILE: FAB + glassmorphic drawer ── */}
+      {/* ══ MOBILE: FAB + glassmorphic drawer ══ */}
       <div className={`fi-mobile ${mounted ? "fi-ready" : ""}`}>
         {drawerOpen && (
           <div className="fi-backdrop" onClick={() => setDrawerOpen(false)} />

@@ -53,9 +53,7 @@ export default function Navbar() {
                  <Link to="/story-of-jerushaligne" className={isActive("/story-of-jerushaligne") ? "active" : ""}>
                   <span className="dropdown-label">Story of Jerushaligne</span>
                 </Link>
-                <Link to="/leadership" className={isActive("/leadership") ? "active" : ""}>
-                  <span className="dropdown-label">Leadership</span>
-                </Link>
+                
                 <Link to="/gallery-events" className={isActive("/gallery-events") ? "active" : ""}>
                   <span className="dropdown-label">Gallery Events</span>
                 </Link>
@@ -157,7 +155,7 @@ export default function Navbar() {
             </button>
             <div className={`accordion-content ${mobileAlignersOpen ? "open" : ""}`}>
               <Link to="/story-of-jerushaligne" className={isActive("/story-of-jerushaligne") ? "active" : ""} onClick={handleMobileNavClick}>Story of Jeruhshaligne</Link>
-              <Link to="/leadership" className={isActive("/leadership") ? "active" : ""} onClick={handleMobileNavClick}>Leadership</Link>
+             
             </div>
           </div>
 

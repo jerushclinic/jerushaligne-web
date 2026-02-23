@@ -1,0 +1,178 @@
+/* ===============================
+   WRAPPER – Soft Luxury Background
+================================= */
+
+.vm-section-wrapper {
+  width: 100%;
+  padding: 2rem; /* remove side padding */
+  background: linear-gradient(90deg, #f3eee6 0%, #f7f2e9 50%, #f3eee6 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft Gradient Glow (Top Right) */
+.vm-section-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(223,168,21,0.15), transparent 70%);
+  top: -200px;
+  right: -200px;
+  z-index: 0;
+  filter: blur(40px);
+}
+
+/* ===============================
+   TITLE – Premium Style
+================================= */
+
+.vm-title {
+  text-align: center;
+  font-size: 44px;
+  font-weight: 800;
+  color: #5a3b0c;
+  margin-bottom: 4.5rem;
+  position: relative;
+  z-index: 2;
+  letter-spacing: 0.5px;
+}
+
+/* ✨ Animated Underline */
+.vm-underline {
+  height: 4px;
+  width: 0;
+  background: linear-gradient(90deg, #dfa815, #f6c445);
+  margin: 18px auto 0;
+  border-radius: 4px;
+  animation: expandLine 1.2s ease forwards;
+}
+
+@keyframes expandLine {
+  from { width: 0; }
+  to { width: 140px; }
+}
+
+/* ===============================
+   CARD – Glass Depth Effect
+================================= */
+
+.vm-card-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  border-radius: 30px;
+
+  /* ✨ Smooth Glass Effect */
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
+}
+
+/* ✨ Subtle Hover Lift */
+.vm-card-container:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 45px 90px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* ===============================
+   LEFT CONTENT
+================================= */
+
+.vm-card-left {
+  flex: 1.2;
+}
+
+.vm-subtitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: #dfa815;
+  letter-spacing: 3px;
+  margin-bottom: 1.2rem;
+}
+
+.vm-block p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #374151;
+  margin-bottom: 1.2rem;
+}
+
+/* Divider with soft gradient */
+.vm-divider {
+  height: 1px;
+  background: linear-gradient(to right, #dfa81540, #e5e7eb);
+  margin: 3rem 0;
+  transform-origin: left;
+}
+
+/* ===============================
+   RIGHT IMAGE – Floating Motion
+================================= */
+
+.vm-card-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* ✨ Floating Image Motion */
+.vm-card-right img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 24px;
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.2);
+
+  transition: transform 0.4s ease;
+
+  animation: floatImage 6s ease-in-out infinite;
+}
+
+/* Hover interaction */
+.vm-card-right img:hover {
+  transform: scale(1.06);
+}
+
+/* Floating keyframes */
+@keyframes floatImage {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-18px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 992px) {
+
+  .vm-title {
+    font-size: 32px;
+  }
+
+  .vm-card-container {
+    flex-direction: column;
+    padding: 2.5rem;
+  }
+
+  .vm-card-right img {
+    max-width: 100%;
+  }
+}
