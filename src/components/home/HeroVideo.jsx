@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import "../../styles/herovideo.css";
 
 export default function BannerVideo({
@@ -6,17 +6,35 @@ export default function BannerVideo({
 }) {
   const videoRef = useRef(null);
 
+  useEffect(() => {
+    const video = videoRef.current;
+
+    if (video) {
+      video.muted = true; // ensure muted for autoplay policy
+
+      const playPromise = video.play();
+
+      if (playPromise !== undefined) {
+        playPromise.catch((error) => {
+          console.log("Autoplay blocked:", error);
+        });
+      }
+    }
+  }, []);
+
   return (
     <section className="bv-root">
       <video
         ref={videoRef}
         className="bv-video"
-        src={videoSrc}
         autoPlay
         loop
-        muted={true}
+        muted
         playsInline
-      />
+        preload="auto"
+      >
+        <source src={videoSrc} type="video/mp4" />
+      </video>
     </section>
   );
 }
