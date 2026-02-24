@@ -91,8 +91,8 @@ export default function Navbar() {
                 </svg>
               </button>
               <div className="dropdown-content">
-                <Link to="/outlets/thuckalay-outlet" className={isActive("/outlets/thuckalay-outlet") ? "active" : ""}>
-                  <span className="dropdown-label">Thuckalay</span>
+                <Link to="/outlets/kanyakumari-outlet" className={isActive("/outlets/kanyakumari-outlet") ? "active" : ""}>
+                  <span className="dropdown-label">Kanyakumari</span>
                   <span className="dropdown-desc">Main location</span>
                 </Link>
                 <Link to="/outlets/trichy-outlet" className={isActive("/outlets/trichy-outlet") ? "active" : ""}>
@@ -110,7 +110,7 @@ export default function Navbar() {
             <Link className={`nav-link ${isActive("/contact-us") ? "active" : ""}`} to="/contact-us">Contact</Link>
           </nav>
 
-          <Link to="/book" className="btn-primary desktop-only">Book Appointment</Link>
+          <Link to="/book-appointment" className="btn-primary desktop-only">Book Appointment</Link>
 
           <button className="hamburger" onClick={() => setMobileOpen(true)} aria-label="Open menu">
             <span></span><span></span><span></span>
@@ -182,7 +182,7 @@ export default function Navbar() {
               </svg>
             </button>
             <div className={`accordion-content ${mobileOutletsOpen ? "open" : ""}`}>
-              <Link to="/outlets/thuckalay-outlet" className={isActive("/outlets/thuckalay-outlet") ? "active" : ""} onClick={handleMobileNavClick}>Thuckalay</Link>
+              <Link to="/outlets/kanyakumari-outlet" className={isActive("/outlets/kanyakumari-outlet") ? "active" : ""} onClick={handleMobileNavClick}>Kanyakumari</Link>
               <Link to="/outlets/trichy-outlet" className={isActive("/outlets/trichy-outlet") ? "active" : ""} onClick={handleMobileNavClick}>Trichy</Link>
               <Link to="/outlets/chennai-outlet" className={isActive("/outlets/chennai-outlet") ? "active" : ""} onClick={handleMobileNavClick}>Chennai</Link>
             </div>

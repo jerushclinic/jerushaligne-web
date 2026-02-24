@@ -89,7 +89,7 @@ const doctors = [
   },
 
   {
-    name: "Dr. C. J. Aishwarya",
+    name: "Dr. Monika",
     role: "Dental Surgeon",
     degree: "BDS",
     img: "/images/doctors/dr_aishwarya.webp",
@@ -101,63 +101,7 @@ const doctors = [
       }
     ]
   },
-
-
-  {
-    name: "Dr. Sherine Ponraj",
-    role: "Prosthodontics | Crown | Bridge",
-    degree: "BDS.,MDS",
-    img: "/images/doctors/dr_sherine.webp",
-    additionalImg: "/images/doctors/dr_sherine2.webp",
-    contentSections: [
-      {
-        heading: "Career Path:",
-        paragraph: "Sherine graduated with a Bachelor of Dental Science from Annamalai University – 2008.She has been practising dentistry in Missionary hospitals and private practices for over 14 years. She initially obtained **”FELLOWSHIP IN GENERAL AND HOSPITAL DENTISTRY” from **CHRISTIAN MEDICAL COLLEGE, VELLORE** and currently has a post graduation degree in Prosthodontics and crown and Bridge from Christian Medical College,Ludhiana. Sherine enjoys all aspects of Dentistry and is passionate about delivering evidence based treatments and quality care to her patients in the most professional way possible.."
-      },
-      ]
-  },
-  
-    {
-    name: "Dr. V. Jasmin Shamili",
-    role: "Dental Surgeon",
-    degree: "BDS.,MDS",
-    img: "/images/doctors/dr_jasmin.webp",
-    additionalImg: "/images/doctors/dr_jasmin2.webp",
-    contentSections: [
-      {
-        heading: "Career Path:",
-        paragraph: "Dr. Jasmin Shamili is an excellent oral healthcare professional ENDODONTIST from Kanyakumari, Tamil Nadu. Her Under graduation is from Sree Mookambika Institute of Dental Sciences and Research in Kulasekaram, Kanyakumari District. After graduation she had a special training in Department of Dental Surgery in **KANYAKUMARI GOVERNMENT MEDICAL COLLEGE HOSPITAL, NAGERCOIL.** She has completed her Post-Graduation in Operative dentistry and Endodontics in CSI College of Dental Sciences and Research at Madurai. She participated various national and international level Endodontic conferences in India.\n\nShe had published a research paper in “A deep learning approach to segment and classify C shaped canal morphologies in mandibular second molars using Cone Beam Computed Tomography and won the award of the Journal of Endodontics in the category of Basic Research: Technology from USA. Now she joined as an Endodontist in Jerush Dentofacial and Cosmetic Laser Centre and is a part of Jerush family. She is more passionate in complicated Endodontics procedures through well advanced technology. Her main intention is to provide pleasant, pain free, cost effective, international standard clinically proven best treatments to the patients with smiling face, enthusiasm and dedication."
-      }
-    ]
-  },
-  {
-    name: "Dr. Suryambika",
-    role: "Dental Surgeon",
-    degree: "BDS",
-    img: "/images/doctors/dr_suryambika.webp",
-    additionalImg: "/images/doctors/dr_suryambika2.webp",
-    contentSections: [
-      {
-        heading: "Career Path:",
-        paragraph: "I have completed BDS in 2014 from Rajas Dental College. I worked in **St. Mary’s Multispeciality Dental Clinic and Kottarathil Dental Clinic in Kottayam District of Kerala** for past 7 years. I have attended various camps, public awareness Dental programs and school Dental camps. I’m enthusiastic in   learning advanced techniques in Dentistry"
-      }
-    ]
-  },
-  {
-    name: "Dr. Priyadharshini",
-    role: "Dental Surgeon",
-    degree: "BDS",
-    img: "/images/doctors/dr_priyadharshini.webp",
-    additionalImg: "/images/doctors/dr_priyadharshini2.webp",
-    contentSections: [
-      {
-        heading: "Career Path:",
-        paragraph: "Expert in <strong>advanced prosthodontic procedures</strong>, Dr. Rajesh combines aesthetics with function to restore smiles with __precision-crafted dental restorations__ that look and feel natural."
-      }
-    ]
-  }
 ];
-
 
 
 

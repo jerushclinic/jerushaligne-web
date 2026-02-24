@@ -1,0 +1,391 @@
+/* ============================================
+   OUR CLINICS SECTION — Jerushaligne colors
+   Yellow: #ffd700 / #f5c400
+   Dark teal: #1a3a2a / #0d2137
+   Mid teal: #1a9e8f
+   NOTE: Slide widths controlled via JS (useSlideVisible hook)
+   ============================================ */
+
+.oc-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 48px 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ── CARDS ── */
+
+.oc-card {
+  border-radius: 24px;
+  padding: 36px 32px 32px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.oc-card--left {
+  background: #fffbee;
+  border: 1px solid #f0e4a0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.oc-card--right {
+  background: linear-gradient(165deg, #f59e0b 0%, #facc15 60%, #fbbf24 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.oc-card--right::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.12), transparent 70%);
+  pointer-events: none;
+}
+
+/* ── EYEBROW ── */
+
+.oc-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #000000;
+  margin: 0;
+}
+
+.oc-eyebrow--light {
+  color: #ffd700;
+}
+
+/* ── TITLES ── */
+
+.oc-title {
+  font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+  font-weight: 800;
+  color: #0d2137;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.oc-title--light {
+  color: #ffffff;
+}
+
+/* ── SLIDER ── */
+
+.oc-slider {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.oc-track {
+  display: flex;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  /* width is auto — slides fill via inline flex basis */
+}
+
+.oc-slide {
+  /* flex basis set via inline style in JS — do NOT override here */
+  padding: 0 4px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.oc-slide img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+/* Arrows */
+.oc-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  color: #0d2137;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  z-index: 5;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.oc-arrow:hover {
+  background: #ffd700;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.oc-arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+.oc-arrow--left { left: 8px; }
+.oc-arrow--right { right: 8px; }
+
+/* Dots */
+.oc-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.oc-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: #d4c87a;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.oc-dot.active {
+  width: 22px;
+  border-radius: 4px;
+  background: #f59e0b;
+}
+
+/* ── FEATURES ── */
+
+.oc-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.oc-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.oc-feature-icon {
+  font-size: 26px;
+  line-height: 1;
+}
+
+.oc-feature p {
+  font-size: 11.5px;
+  color: #3d4f5e;
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* ── CTA ROW ── */
+
+.oc-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Dropdown */
+.oc-dropdown {
+  position: relative;
+}
+
+.oc-drop-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1.5px solid #0d2137;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0d2137;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.oc-drop-btn:hover {
+  border-color: #f59e0b;
+  background: #fff5cd;
+}
+
+.oc-drop-menu {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 0;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 6px;
+  list-style: none;
+  margin: 0;
+  z-index: 100;
+  min-width: 160px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.oc-drop-menu li button {
+  width: 100%;
+  text-align: left;
+  padding: 9px 14px;
+  border: none;
+  background: none;
+  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+  color: #374151;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.15s ease;
+}
+
+.oc-drop-menu li button:hover,
+.oc-drop-menu li button.active {
+  background: #fff8d6;
+  color: #0d2137;
+  font-weight: 700;
+}
+
+/* Primary button */
+.oc-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 22px;
+  background: linear-gradient(135deg, #ffd700, #f5a623);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0d2137;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 16px rgba(255, 215, 0, 0.35);
+}
+
+.oc-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255, 215, 0, 0.5);
+}
+
+/* Outline button */
+.oc-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1.5px solid rgba(255,255,255,0.4);
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.08);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.oc-btn-outline:hover {
+  background: rgba(255, 215, 0, 0.15);
+  border-color: #ffd700;
+  color: #000000;
+}
+
+/* ── RIGHT CARD IMAGE ── */
+
+.oc-consult-img {
+  position: relative;
+  width: 100%;
+  margin-top: auto;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+}
+
+.oc-consult-img img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+}
+
+
+
+
+/* ============================================
+   RESPONSIVE — spacing & font tweaks only
+   Slide widths are handled by JS, not CSS
+   ============================================ */
+
+@media (min-width: 1400px) {
+  .oc-section { max-width: 1400px; padding: 56px 48px; }
+  .oc-slide img { height: 220px; }
+}
+
+@media (max-width: 1200px) {
+  .oc-section { padding: 36px 28px; gap: 16px; }
+  .oc-title { font-size: clamp(1.1rem, 2vw, 1.5rem); }
+  .oc-slide img { height: 170px; }
+}
+
+@media (max-width: 900px) {
+  .oc-section { grid-template-columns: 1fr; padding: 28px 20px; gap: 16px; }
+  .oc-card--right { min-height: 340px; }
+  .oc-features { grid-template-columns: repeat(3, 1fr); }
+  .oc-slide img { height: 180px; }
+  .oc-consult-img img { max-height: 240px; }
+}
+
+@media (max-width: 600px) {
+  .oc-section { padding: 20px 14px; gap: 14px; }
+  .oc-card { padding: 24px 20px 20px; border-radius: 18px; }
+  .oc-title { font-size: 1.15rem; }
+  /* oc-slide width is set by JS — no override here */
+  .oc-slide img { height: 160px; }
+  .oc-features { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .oc-feature-icon { font-size: 22px; }
+  .oc-feature p { font-size: 10px; }
+  .oc-cta-row { flex-direction: column; align-items: stretch; }
+  .oc-drop-btn, .oc-btn-primary { width: 100%; justify-content: center; }
+  .oc-consult-img img { max-height: 200px; }
+}
+
+@media (max-width: 480px) {
+  .oc-card { padding: 20px 16px; border-radius: 16px; }
+  .oc-title { font-size: 1.05rem; }
+  .oc-features { grid-template-columns: 1fr; gap: 10px; }
+  .oc-feature { flex-direction: row; text-align: left; gap: 10px; }
+  .oc-feature-icon { font-size: 20px; flex-shrink: 0; }
+  .oc-feature p { font-size: 11px; }
+}

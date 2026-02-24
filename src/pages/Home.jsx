@@ -6,7 +6,7 @@ import HeroVideo from "../components/home/HeroVideo";
 import ServicesSection from "../components/home/ServicesSection";
 import AboutSection from "../components/home/AboutSection";
 import BeforeAfterSection from "../components/home/BeforeAferSection";
-import HappySmilesSection from "../components/home/HappySmilesSection";
+import OurClinics from "../components/home/OurClinics";
 import EventsCarousel from "../components/home/EventsCarousel";
 import HowItWorks from "../components/home/HowItWorks";
 import GallerySection from "../components/home/GallerySection";
@@ -60,18 +60,6 @@ export default function Home() {
         </motion.div>
 
 
-
-        {/* Happy Smiles */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-        >
-          <HappySmilesSection />
-        </motion.div>
-
-
           {/* TechEnabled Sectiom */}
         <motion.div
           variants={fadeUp}
@@ -86,8 +74,6 @@ export default function Home() {
         {/* Before / After already animated internally */}
         <BeforeAfterSection />
 
-       
-
         {/* Timeline */}
         <motion.div
           variants={fadeUp}
@@ -96,6 +82,17 @@ export default function Home() {
           viewport={{ once: true }}
         >
           <GallerySection />
+        </motion.div>
+
+
+         {/* Our Clinics */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          <OurClinics />
         </motion.div>
      
 

@@ -17,6 +17,7 @@ import ChennaiOutlet from "./pages/outlets/ChennaiOutlet";
 import BlogPage from "./pages/BlogPage";
 import ClearAlignersFixAnOverbite from "./pages/blog/clear-aligners/ClearAlignersFixAnOverbite";
 import BlogListPage from "./pages/BlogListPage";
+import AppointmentPage from "./pages/AppointmentPage";
 import ContactUs from "./pages/ContactUs";
 
 import PageTransition from "./animations/PageTransition";
@@ -56,14 +57,7 @@ function App() {
             }
           />
 
-          <Route
-            path="/leadership"
-            element={
-              <PageTransition>
-                <AboutPage />
-              </PageTransition>
-            }
-          />
+         
 
           <Route
             path="/gallery-events"
@@ -111,7 +105,7 @@ function App() {
           />
 
           <Route
-            path="/outlets/thuckalay-outlet"
+            path="/outlets/kanyakumari-outlet"
             element={
               <PageTransition>
                 <ThuckalayOutlet />
@@ -164,6 +158,14 @@ function App() {
             }
           />
 
+            <Route
+            path="/book-appointment"
+            element={
+              <PageTransition>
+                <AppointmentPage />
+              </PageTransition>
+            }
+          />
 
           <Route
             path="/contact-us"

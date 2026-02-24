@@ -1,7 +1,7 @@
 import SectionWrapper from "../../components/SectionWrapper";
 import OutletShowcase from "../../components/outlet-sections/OutletShowcase";
 import OutletAbout from "../../components/outlet-sections/OutletAbout";
-import DoctorsSection from "../../components/DoctorsSection";
+import DoctorsTrichySection from "../../components/DoctorsTrichySection";
 import TeethShortsSection from "../../components/TeethShortsSection";
 import ReviewsSection from "../../components/outlet-sections/ReviewsSection";
 
@@ -46,7 +46,7 @@ export default function TrichyOutlet() {
           ]}
       />
 
-      <DoctorsSection />
+      <DoctorsTrichySection />
       
      <SectionWrapper delay={0.4}>
            <ReviewsSection />

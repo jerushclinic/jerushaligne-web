@@ -1,7 +1,7 @@
 import SectionWrapper from "../../components/SectionWrapper";
 import OutletShowcase from "../../components/outlet-sections/OutletShowcase";
 import OutletAbout from "../../components/outlet-sections/OutletAbout";
-import DoctorsSection from "../../components/DoctorsSection";
+import DoctorsChennaiSection from "../../components/DoctorsChennaiSection";
 import ReviewsSection from "../../components/outlet-sections/ReviewsSection";
 
 export default function ChennaiOutlet() {
@@ -39,7 +39,7 @@ export default function ChennaiOutlet() {
           ]}
       />
 
-      <DoctorsSection />
+      <DoctorsChennaiSection />
       
      <SectionWrapper delay={0.4}>
            <ReviewsSection />

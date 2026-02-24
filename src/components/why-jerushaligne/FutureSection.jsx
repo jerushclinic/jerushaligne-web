@@ -151,8 +151,8 @@ export default function FutureSection() {
           transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
         >
           <img
-            src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=900&q=85"
-            alt="Future of orthodontic treatment"
+            src="/images/patient-area.webp"
+            alt="Jerushaligne patient area"
             className="fut-img"
           />
           <div className="fut-img-overlay" />

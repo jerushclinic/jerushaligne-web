@@ -146,6 +146,19 @@ const doctors = [
       }
     ]
   },
+   {
+    name: "Dr. D. Aahina David",
+    role: "Dental Surgeon",
+    degree: "BDS",
+    img: "/images/doctors/dr_aahina.webp",
+    additionalImg: "/images/doctors/dr_aahina2.webp",
+    contentSections: [
+      {
+        heading: "Career Path:",
+        paragraph: "I have completed BDS in 2014 from Rajas Dental College. I worked in **St. Mary’s Multispeciality Dental Clinic and Kottarathil Dental Clinic in Kottayam District of Kerala** for past 7 years. I have attended various camps, public awareness Dental programs and school Dental camps. I’m enthusiastic in   learning advanced techniques in Dentistry"
+      }
+    ]
+  },
   {
     name: "Dr. Priyadharshini",
     role: "Dental Surgeon",

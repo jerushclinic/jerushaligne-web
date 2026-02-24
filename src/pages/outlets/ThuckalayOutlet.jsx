@@ -3,14 +3,14 @@ import OutletShowcase from "../../components/outlet-sections/OutletShowcase";
 import OutletAbout from "../../components/outlet-sections/OutletAbout";
 import DoctorsSection from "../../components/DoctorsSection";
 import TeethShortsSection from "../../components/TeethShortsSection";
-import ReviewsSection from "../../components/outlet-sections/ReviewsSection";
+import PatronReviews from "../../components/outlet-sections/PatronReviews";
 
 export default function ThuckalayOutlet() {
   return (
     <>
       <SectionWrapper>
         <OutletShowcase
-          city="Thuckalay"
+          city="Kanyakumari"
           rating="4.5"
           timings="10:00 AM – 11:00 PM (24/7 All Days)"
           address="Near & Behind Bustand, Brammapuram South, Thuckalay – 629175"
@@ -36,11 +36,12 @@ export default function ThuckalayOutlet() {
 
       <SectionWrapper delay={0.2}>
         <OutletAbout
-          title="Your Trusted Choice for Invisible Aligners in Thuckalay"
-          description="In the Jerush Dentoface clinic we offer the best and most comfortable treatment of teeth alignment using modern orthodontic technology and individual care. 
-          Our dental team is focused on perfection, oral health and patient satisfaction to make your smile perfect. We have 23 years of trusted dental care, and our major strength 
-          is providing advanced treatments such as dental implants, root canal treatment, and single visit dentistry using modern technology. In case you are considering straightening 
-          misaligned teeth using Invisible Aligners in Thuckalay, then you can schedule your appointment now and begin the process of having a healthier and more confident smile."
+          title="Straighten Misaligned Teeth with Invisible Aligners in Kanyakumari"
+          description="Misaligned teeth may also influence your confidence and oral health as well as your smile. The Best Dental Clinic Jerush Dentoface offers the 
+          advanced clear invisible aligners in Kanyakumari to make the patients have a straight, healthier smile without the pain and look of metal braces. Jerushaligne are 
+          clear and custom-made trays that will push your teeth to correct alignment slowly. They are comfortable, precise and convenient; they would be a perfect fit among 
+          teenagers, working professionals and adults who would want an orthodontic treatment that is discrete."
+
 
           stats={[
             { icon: "🏆", value: "#1", label: "Clear Aligner Design" },
@@ -58,7 +59,7 @@ export default function ThuckalayOutlet() {
       </SectionWrapper>
 
       <SectionWrapper delay={0.4}>
-      <ReviewsSection />
+      <PatronReviews />
       </SectionWrapper>
     </>
   );
